@@ -1,0 +1,32 @@
+PODS:
+  - IQKeyboardManager (6.5.19)
+  - SDWebImage (5.21.0):
+    - SDWebImage/Core (= 5.21.0)
+  - SDWebImage/Core (5.21.0)
+  - SwiftMessages (10.0.1):
+    - SwiftMessages/App (= 10.0.1)
+  - SwiftMessages/App (10.0.1)
+  - SwiftyStoreKit (0.16.1)
+
+DEPENDENCIES:
+  - IQKeyboardManager
+  - SDWebImage
+  - SwiftMessages
+  - SwiftyStoreKit
+
+SPEC REPOS:
+  trunk:
+    - IQKeyboardManager
+    - SDWebImage
+    - SwiftMessages
+    - SwiftyStoreKit
+
+SPEC CHECKSUMS:
+  IQKeyboardManager: c8665b3396bd0b79402b4c573eac345a31c7d485
+  SDWebImage: f84b0feeb08d2d11e6a9b843cb06d75ebf5b8868
+  SwiftMessages: 759b4a0bf5c3a116a0d7e8a34b098ba83c458625
+  SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
+
+PODFILE CHECKSUM: 2b1d738aa6b5a8b1418d1e7e4ad3c0cbf9881cc3
+
+COCOAPODS: 1.16.2

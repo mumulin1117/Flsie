@@ -6,8 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		5F1C9EC89DDB6BAFCA09FD71 /* Pods_FlsieDripCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF22B80828254D6C93E25C4 /* Pods_FlsieDripCore.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		0482637C2DD469C20042CD14 /* FlsieDripCore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlsieDripCore.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BF22B80828254D6C93E25C4 /* Pods_FlsieDripCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlsieDripCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54305C7112E3C6C135251314 /* Pods-FlsieDripCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlsieDripCore.debug.xcconfig"; path = "Target Support Files/Pods-FlsieDripCore/Pods-FlsieDripCore.debug.xcconfig"; sourceTree = "<group>"; };
+		8161FCE85E665F42664F181B /* Pods-FlsieDripCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlsieDripCore.release.xcconfig"; path = "Target Support Files/Pods-FlsieDripCore/Pods-FlsieDripCore.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -36,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F1C9EC89DDB6BAFCA09FD71 /* Pods_FlsieDripCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +55,8 @@
 			children = (
 				0482637E2DD469C20042CD14 /* FlsieDripCore */,
 				0482637D2DD469C20042CD14 /* Products */,
+				338B056CAAEF40CB9B7FBEFD /* Pods */,
+				6934503DF8684E7A5C215037 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +68,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		338B056CAAEF40CB9B7FBEFD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				54305C7112E3C6C135251314 /* Pods-FlsieDripCore.debug.xcconfig */,
+				8161FCE85E665F42664F181B /* Pods-FlsieDripCore.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6934503DF8684E7A5C215037 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1BF22B80828254D6C93E25C4 /* Pods_FlsieDripCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -65,9 +92,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0482638F2DD469C40042CD14 /* Build configuration list for PBXNativeTarget "FlsieDripCore" */;
 			buildPhases = (
+				A1E0FEE276736A27AF6297F0 /* [CP] Check Pods Manifest.lock */,
 				048263782DD469C20042CD14 /* Sources */,
 				048263792DD469C20042CD14 /* Frameworks */,
 				0482637A2DD469C20042CD14 /* Resources */,
+				A6C3EC7EAFA86AF27335FA72 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -77,8 +106,6 @@
 				0482637E2DD469C20042CD14 /* FlsieDripCore */,
 			);
 			name = FlsieDripCore;
-			packageProductDependencies = (
-			);
 			productName = FlsieDripCore;
 			productReference = 0482637C2DD469C20042CD14 /* FlsieDripCore.app */;
 			productType = "com.apple.product-type.application";
@@ -128,6 +155,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A1E0FEE276736A27AF6297F0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlsieDripCore-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6C3EC7EAFA86AF27335FA72 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlsieDripCore/Pods-FlsieDripCore-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlsieDripCore/Pods-FlsieDripCore-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlsieDripCore/Pods-FlsieDripCore-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		048263782DD469C20042CD14 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -141,11 +210,13 @@
 /* Begin XCBuildConfiguration section */
 		048263902DD469C40042CD14 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54305C7112E3C6C135251314 /* Pods-FlsieDripCore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FlsieDripCore/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Flsie;
@@ -177,11 +248,13 @@
 		};
 		048263912DD469C40042CD14 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8161FCE85E665F42664F181B /* Pods-FlsieDripCore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FlsieDripCore/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Flsie;

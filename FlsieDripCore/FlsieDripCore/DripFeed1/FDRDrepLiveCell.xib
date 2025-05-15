@@ -35,17 +35,17 @@
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qG0-XE-Ouc">
-                        <rect key="frame" x="8" y="386" width="39" height="16"/>
+                        <rect key="frame" x="8" y="386" width="50" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="H7o-QX-nwu"/>
-                            <constraint firstAttribute="width" constant="39" id="XSi-jn-DlS"/>
+                            <constraint firstAttribute="width" constant="50" id="XSi-jn-DlS"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" title=" 0" image="coolperson"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9d-x2-kFR">
-                        <rect key="frame" x="8" y="364" width="253" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9d-x2-kFR">
+                        <rect key="frame" x="8" y="382" width="253" height="0.0"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -74,6 +74,12 @@
                 <constraint firstItem="yib-qL-mrO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ysk-d4-uMH"/>
             </constraints>
             <size key="customSize" width="269" height="410"/>
+            <connections>
+                <outlet property="brandLoyaltyCount" destination="qG0-XE-Ouc" id="zYu-Q0-XQU"/>
+                <outlet property="liveStaus" destination="YLn-zV-f9K" id="bL3-zy-TUp"/>
+                <outlet property="odorControl" destination="yib-qL-mrO" id="S3C-o6-xyU"/>
+                <outlet property="styleEvolution" destination="q9d-x2-kFR" id="ldZ-GB-VuT"/>
+            </connections>
             <point key="canvasLocation" x="304.58015267175574" y="147.18309859154931"/>
         </collectionViewCell>
     </objects>

@@ -20,7 +20,17 @@ class FDRAppLaunchController: UIViewController {
         self.view.addSubview(storyLaungImageView)
     }
     
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if FDRViralChallenge_Controller.loginuserToken == nil {
+            self.navigationController?.pushViewController(FDRSSignINController.init(), animated: true)
+        }else{
+            let hats = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabbartControlID") as! UITabBarController
+              
+            self.navigationController?.pushViewController(hats, animated: false)
+        }
+        
+    }
     
 
 }
