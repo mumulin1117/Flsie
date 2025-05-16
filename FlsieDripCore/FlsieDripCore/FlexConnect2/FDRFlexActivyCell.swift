@@ -11,7 +11,7 @@ class FDRFlexActivyCell: UICollectionViewCell{
 
     @IBOutlet weak var muteOptionHeader: UIImageView!
     
-    @IBOutlet weak var mutetwoeader: UIImageView!
+   
     
     @IBOutlet weak var odorControl: UIImageView!//big
     
@@ -36,9 +36,7 @@ class FDRFlexActivyCell: UICollectionViewCell{
         muteOptionHeader.layer.cornerRadius = 15
         muteOptionHeader.layer.masksToBounds = true
         
-        
-        mutetwoeader.layer.cornerRadius = 15
-        mutetwoeader.layer.masksToBounds = true
+       
     }
 
     func colorOfTheYear()  {
@@ -52,16 +50,16 @@ class FDRFlexActivyCell: UICollectionViewCell{
     var logoMania:Dictionary<String,Any>?{
         didSet{
             
-            let imagelist = logoMania?["colorOfTheYear"] as? Array<String>
+            let imagelist = logoMania?["colorOfTheYear"] as? Array<Dictionary<String,Any>>
             
-            muteOptionHeader.configimagewithUrl(uilLinkd:imagelist?.first  ?? "")
-            mutetwoeader.configimagewithUrl(uilLinkd:imagelist?.last  ?? "")
+            muteOptionHeader.configimagewithUrl(uilLinkd:imagelist?.first?["techWear"] as? String  ?? "")
+          
             
             odorControl.configimagewithUrl(uilLinkd: logoMania?["communityPoll"] as? String ?? "")
             
             brandLoyalty.text = logoMania?["conversationStarter"] as? String
             
-           
+            
            
         }
     }

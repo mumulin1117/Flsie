@@ -60,7 +60,7 @@ class FDRSSignINController: UIViewController {
            email.count > 0,
            let  effor = effortlessChic.text,effor.count > 0{
             let insights: [String: Any] = [
-                "lightingSetup": "70449652",
+                "lightingSetup": FDRViralChallenge_Controller.appID,
                 "editingProcess": email,
                 "filterPreset": effor
             ]
@@ -122,11 +122,15 @@ class FDRSSignINController: UIViewController {
     
     
     @objc func gamificationElement(){
-        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: "type=1", pageString: .Agreement), animated: true)
+        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: "type=1?", pageString: .Agreement, _isDirrict: true,_typeTErm: 1), animated: true)
     }
     
     
     @objc func rewardSystem(){
-        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: "type=2", pageString: .Agreement), animated: true)
+        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: "type=2?", pageString: .Agreement, _isDirrict: true,_typeTErm: 2), animated: true)
     }
+    
+    
+    
+    
 }

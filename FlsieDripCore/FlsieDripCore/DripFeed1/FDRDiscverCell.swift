@@ -57,7 +57,7 @@ class FDRDiscverCell: UICollectionViewCell {
             
             styleEvolution.text = logoMania?["handPainted"] as? String
             
-            brandLoyalty.text = logoMania?["deconstructedStyle"] as? String
+            brandLoyalty.text = logoMania?["reworkedVintage"] as? String
             
             
             let sustainableFashion = logoMania?["sustainableFashion"] as? Int ?? 0

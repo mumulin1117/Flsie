@@ -87,12 +87,12 @@ class FDRFlexActiveController: SuperPassController, UICollectionViewDelegate, UI
             return
         }
         
-        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl:"activityId=\(activeId)", pageString: .ActiveDetails), animated:true)
+        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl:"activityId=\(activeId)&", pageString: .ActiveDetails, _isDirrict: true), animated:true)
     }
     
     
     @IBAction func createActiveNew(_ sender: UIButton) {
-        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init( pageString: .CreateActive), animated:true)
+        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init( pageString: .CreateActive, _isDirrict: true), animated:true)
     }
     
   
@@ -100,7 +100,7 @@ class FDRFlexActiveController: SuperPassController, UICollectionViewDelegate, UI
       
         
         let OffDuty: [String: Any] = [
-            "contemporaryClassic": "70449652"
+            "contemporaryClassic": FDRViralChallenge_Controller.appID
 
         ]
         self.spinnerView.startAnimating()

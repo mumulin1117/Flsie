@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="461" height="153"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1EP-E7-Vvj">
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1EP-E7-Vvj">
                         <rect key="frame" x="380" y="97" width="70" height="32"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="32" id="2Mn-F7-2TF"/>
@@ -70,6 +70,13 @@
                 <constraint firstItem="YiR-y9-2sv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="vBP-dV-Bwi"/>
             </constraints>
             <size key="customSize" width="461" height="153"/>
+            <connections>
+                <outlet property="allBlackEverything" destination="YiR-y9-2sv" id="Xko-Jz-Hax"/>
+                <outlet property="genderLog" destination="qnr-Et-Heb" id="mE3-nB-rZW"/>
+                <outlet property="preOrderPhase" destination="0py-Bl-Onm" id="aoL-vE-rnt"/>
+                <outlet property="restockAlert" destination="1EP-E7-Vvj" id="Fy6-Ct-dAf"/>
+                <outlet property="userGenerated" destination="edU-ca-fUb" id="jWJ-1R-IPH"/>
+            </connections>
             <point key="canvasLocation" x="159.54198473282443" y="23.591549295774648"/>
         </collectionViewCell>
     </objects>

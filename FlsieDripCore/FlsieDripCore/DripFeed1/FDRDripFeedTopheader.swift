@@ -33,7 +33,7 @@ class FDRDripFeedTopheader: UICollectionReusableView, UICollectionViewDelegate,U
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if self.delegate != nil, let liveidFashion = livePage[indexPath.row]["boldPrint"] as? Int,let avatoruserID = livePage[indexPath.row]["graphicTee"] as? Int {
             
-           let passConnectID = "channel=\(liveidFashion)&userId=\(avatoruserID)"
+           let passConnectID = "channel=\(liveidFashion)&userId=\(avatoruserID)&"
             self.delegate?.selctenterlive(liveinID: passConnectID)
         }
     }

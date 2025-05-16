@@ -70,7 +70,7 @@ class FDRDripFeedController: SuperPassController, UICollectionViewDelegate,UICol
     
     
     @IBAction func customPatch(_ sender: UIButton) {
-        self.navigationController?.pushViewController( FDRViralChallenge_Controller.init(pageString: .createroom), animated: true)
+        self.navigationController?.pushViewController( FDRViralChallenge_Controller.init(pageString: .createroom, _isDirrict: true), animated: true)
     }
     
     
@@ -80,7 +80,7 @@ class FDRDripFeedController: SuperPassController, UICollectionViewDelegate,UICol
     
     @IBAction func forCreateNew(_ sender: UIButton) {
         
-        self.navigationController?.pushViewController( FDRViralChallenge_Controller.init(pageString: .CreatePost), animated: true)
+        self.navigationController?.pushViewController( FDRViralChallenge_Controller.init(pageString: .CreatePost, _isDirrict: true), animated: true)
     }
     
     
@@ -108,21 +108,21 @@ class FDRDripFeedController: SuperPassController, UICollectionViewDelegate,UICol
     }
     
    @objc func notifyUserpost()  {
-       self.navigationController?.pushViewController(FDRViralChallenge_Controller.init( pageString: .report), animated:true)
+       self.navigationController?.pushViewController(FDRViralChallenge_Controller.init( pageString: .report, _isDirrict: true), animated:true)
     }
     func selctenterlive(liveinID: String) {
-        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: liveinID, pageString: .JoinLiveRoom), animated:true)
+        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: liveinID, pageString: .JoinLiveRoom, _isDirrict: true), animated:true)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard  let dynamicId = discoverDataPage[indexPath.row]["rawEdge"] as? Int else{return}
         
-        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: "dynamicId=\(dynamicId)", pageString: .PostDetails), animated:true)
+        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: "dynamicId=\(dynamicId)&", pageString: .PostDetails, _isDirrict: true), animated:true)
     }
     func modelOffDuty() {///sj/live/selectLivePage
         let OffDuty: [String: Any] = [
             
-            "neutralPalette": "70449652",//"bundleId"
+            "neutralPalette": FDRViralChallenge_Controller.appID,//"bundleId"
 //            "weatherAppropriate": 1,//"liveStatus"
             "allBlackEverything": 10,//"size"
 //            "transitionalOutfit":1//"current"
@@ -150,7 +150,7 @@ class FDRDripFeedController: SuperPassController, UICollectionViewDelegate,UICol
     
     func FindDiscovermodelOffDuty() {
         let OffDuty: [String: Any] = [
-            "maximalistVibes": "70449652",//"bundleId"
+            "maximalistVibes": FDRViralChallenge_Controller.appID,//"bundleId"
 //            "monochromeLook": 1,//"dynamicType"
             "oversizedSilhouette": 10,//"size"
 //            "boxyFit":1,//"selectVersion"
