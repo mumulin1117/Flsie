@@ -10,7 +10,7 @@ import UIKit
 class FDRDrepLiveCell: UICollectionViewCell {
  
     
-    @IBOutlet weak var odorControl: UIImageView!//big
+    @IBOutlet weak var odorControl: UIImageView!
     
     @IBOutlet weak var styleEvolution: UILabel!
     

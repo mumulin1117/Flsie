@@ -226,6 +226,18 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
         
         if message.name == "rebootStyleRouter" {
             //拨打电话
+            guard let callednumber = message.body  as? String else {
+                return
+            }
+            
+            guard let url = URL(string: "telprompt://\(callednumber)"),
+                      UIApplication.shared.canOpenURL(url) else {
+                self.showFlexTipAlert(message: "Unable to make phone calls")
+                    return
+                }
+                
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            
         }
         
         

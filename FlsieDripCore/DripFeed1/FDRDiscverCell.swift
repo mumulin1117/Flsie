@@ -11,7 +11,7 @@ class FDRDiscverCell: UICollectionViewCell {
 
     @IBOutlet weak var muteOptionHeader: UIImageView!
     
-    @IBOutlet weak var odorControl: UIImageView!//big
+    @IBOutlet weak var odorControl: UIImageView!
     
     @IBOutlet weak var styleEvolution: UILabel!
     
@@ -35,17 +35,24 @@ class FDRDiscverCell: UICollectionViewCell {
         colorOfTheYear()
         
         muteOptionHeader.layer.cornerRadius = 16
-        muteOptionHeader.layer.masksToBounds = true
+        compatibilityScore()
     }
 
     func colorOfTheYear()  {
         intuitiveDesign.layer.cornerRadius = 20
+        
         intuitiveDesign.layer.masksToBounds = true
         
-        odorControl.layer.cornerRadius = 20
+       
         odorControl.layer.masksToBounds = true
     }
     
+    
+    
+    func compatibilityScore()  {
+        odorControl.layer.cornerRadius = 20
+        muteOptionHeader.layer.masksToBounds = true
+    }
     var logoMania:Dictionary<String,Any>?{
         didSet{
             
@@ -81,13 +88,13 @@ extension UIImageView{
         
             return
         }
-        let transformer = SDImageResizingTransformer(
-            size: CGSize(width: 320, height: 320),
-            scaleMode: .aspectFill
-        )
+       
         self.sd_setImage(with:uil,
                          placeholderImage: nil,
                         options: .continueInBackground,
-                        context: [.imageTransformer: transformer,.storeCacheType : SDImageCacheType.memory.rawValue])
+                        context: [.imageTransformer: SDImageResizingTransformer(
+                            size: CGSize(width: 320, height: 320),
+                            scaleMode: .aspectFill
+                        ),.storeCacheType : SDImageCacheType.memory.rawValue])
     }
 }

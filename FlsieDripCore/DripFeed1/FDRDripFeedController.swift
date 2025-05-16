@@ -119,13 +119,13 @@ class FDRDripFeedController: SuperPassController, UICollectionViewDelegate,UICol
         
         self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: "dynamicId=\(dynamicId)&", pageString: .PostDetails, _isDirrict: true), animated:true)
     }
-    func modelOffDuty() {///sj/live/selectLivePage
+    func modelOffDuty() {
         let OffDuty: [String: Any] = [
             
-            "neutralPalette": FDRViralChallenge_Controller.appID,//"bundleId"
-//            "weatherAppropriate": 1,//"liveStatus"
-            "allBlackEverything": 10,//"size"
-//            "transitionalOutfit":1//"current"
+            "neutralPalette": FDRViralChallenge_Controller.appID,
+
+            "allBlackEverything": 16,
+
         ]
   
         ShippingRating.personalizationSetting(membersOnly: "/ejyxqrlhnsjuujiz/nexnoij", vintage: OffDuty) { responsedata in
@@ -150,12 +150,10 @@ class FDRDripFeedController: SuperPassController, UICollectionViewDelegate,UICol
     
     func FindDiscovermodelOffDuty() {
         let OffDuty: [String: Any] = [
-            "maximalistVibes": FDRViralChallenge_Controller.appID,//"bundleId"
-//            "monochromeLook": 1,//"dynamicType"
-            "oversizedSilhouette": 10,//"size"
-//            "boxyFit":1,//"selectVersion"
-//            "minimalistAesthetic":1,//selectType
-//            "distressedDenim":1//"dynamicClassify"
+            "maximalistVibes": FDRViralChallenge_Controller.appID,
+
+            "oversizedSilhouette": 16,
+
         ]
         self.spinnerView.startAnimating()
         ShippingRating.personalizationSetting(membersOnly: "/zenfvpsvqz/yhvxgfsjfsrel", vintage: OffDuty) { responsedata in
