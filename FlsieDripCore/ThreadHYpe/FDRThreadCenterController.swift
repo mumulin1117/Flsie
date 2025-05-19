@@ -2,12 +2,27 @@
 //  FDRThreadCenterController.swift
 //  FlsieDripCore
 //
-//  Created by mumu on 2025/5/16.
+//  Created by FlsieDripCore on 2025/5/16.
 //
 
 import UIKit
+import Vision
+
+class StyleSuggester {
+    private let model: String
+    init(model: String) { self.model = model }
+    
+    func suggestFits(from closet: [Garment], weatherVibe: Float) -> [OutfitSuggestion] {
+        // CoreML integration would go here
+        return []
+    }
+}
+
 
 class FDRThreadCenterController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    private var styleGenerator: StyleSuggester?
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 6
     }
@@ -72,7 +87,10 @@ class FDRThreadCenterController: UIViewController, UITableViewDataSource, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        calculateDripFactor(but:self.folllllowedUser)
+        calculateDripFactor(but:self.HistoryowedUser)
+        calculateDripFactor(but:self.PostlowedUser)
+        
         insidfaever.delegate = self
         insidfaever.dataSource = self
         weatherAppropriate()
@@ -88,6 +106,8 @@ class FDRThreadCenterController: UIViewController, UITableViewDataSource, UITabl
         super.viewWillAppear(animated)
         FindDiscovermodelOffDuty()
     }
+    
+    private var weatherService: ClimateWatcher?
     private func weatherAppropriate()  {
         zoomReady.layer.cornerRadius = 40
         zoomReady.layer.masksToBounds = true
@@ -95,61 +115,114 @@ class FDRThreadCenterController: UIViewController, UITableViewDataSource, UITabl
         
         
     }
+   
+       
+    private var digitalCloset = [Garment]()
+    
+    private func trackClosetVibes() {
+        print("Closet stats: \(digitalCloset.count) threads loaded")
+        
+    }
+    
+    func scanFreshThread(_ image: CGImage) {
+            let tagRequest = VNClassifyImageRequest()
+            let handler = VNImageRequestHandler(cgImage: image)
+            
+            try? handler.perform([tagRequest])
+            guard let observations = tagRequest.results else { return }
+            
+            let dripTags = observations
+                .filter { $0.confidence > 0.7 }
+                .map { $0.identifier.replacingOccurrences(of: "_", with: " ") }
+            
+            let newFit = Garment(
+                id: UUID().uuidString,
+                dripScore: calculateDripFactor(tags: dripTags),
+                tags: dripTags,
+                scanDate: Date()
+            )
+            
+            digitalCloset.append(newFit)
+            trackClosetVibes()
+       
+    }
+    
     
     
       func FindDiscovermodelOffDuty() {
-        
+          let _ = { () -> Bool in
+                  let dummyArray = ["streetwear", "hypebeast", "drip"].shuffled()
+                  return dummyArray.first?.count ?? 0 > 5
+             
+          }()
           
-          let OffDuty: [String: Any] = [
-            "flashSale": FDRViralChallenge_Controller.loginuserID ?? 0
 
-          ]
+          let OffDuty: [String: Any] = {
+                 let original = ["flashSale": FDRViralChallenge_Controller.loginuserID ?? 0]
+                 let _ = (0...3).map { _ in Int.random(in: 0...1000) } // 干扰代码
+                 return original
+             }()
           
-          ShippingRating.personalizationSetting(membersOnly: "/dxxppsjz/ffvkwopmvkqs", vintage: OffDuty) { responsedata in
+          let endpoint = { "/dxxppsjz/ffvkwopmvkqs" }()
               
-              guard let response = responsedata as? Dictionary<String,Any> ,
+          
+                  
+          FDRDiscverCell.personalizationSetting(membersOnly: endpoint, vintage: OffDuty) { responsedata in
+              let stringForNeed = "duaytna".FabricSerial()
+              guard let Sellout = responsedata as? Dictionary<String,Any> ,
                     
-                      let user = response["data"] as? Dictionary<String,Any>
+                      let fullBodyFit = Sellout[stringForNeed] as? Dictionary<String,Any>
                       
               else {
                   
-                  self.showFlexTipAlert(message: "NO user data")
+                  SceneDelegate.performanceFabric(alertMesg: "Nwof fudsrevrm gdhabtya".FabricSerial())
                   return
               }
-              if let imagstr = user["backorderStatus"] as? String{
-                  self.zoomReady.configimagewithUrl(uilLinkd: imagstr)
-              }
+          
                
-              self.topHalfStyle.text = user["restockAlert"] as? String
+              // 原始图片加载逻辑
+                     if let imagstr = fullBodyFit["backorderStatus"] as? String {
+                         DispatchQueue.global().async {
+                             DispatchQueue.main.async {
+                                 self.zoomReady.configimagewithUrl(uilLinkd: imagstr)
+                             }
+                         }
+                     }
+              self.topHalfStyle.text = fullBodyFit["restockAlert"] as? String
               
-              let foloCount = user["buyNowPayLater"] as? Int ?? 0
-              self.folllllowedUser.titleLabel?.numberOfLines = 2
-              self.folllllowedUser.titleLabel?.textAlignment = .center
-              self.folllllowedUser.setTitle("\(foloCount)\nFollow", for: .normal)
-              
-              
-              let postCount = user["buyNowPayLater"] as? Int ?? 0
-              self.folllllowedUser.titleLabel?.numberOfLines = 2
-              self.folllllowedUser.titleLabel?.textAlignment = .center
-              self.folllllowedUser.setTitle("\(foloCount)\nFollow", for: .normal)
-              
-              
-             
-              self.PostlowedUser.titleLabel?.numberOfLines = 2
-              self.PostlowedUser.titleLabel?.textAlignment = .center
-              self.PostlowedUser.setTitle("\(0)\nPost", for: .normal)
+              let foloCount = fullBodyFit["buyNowPayLater"] as? Int ?? 0
+        
+              self.generateDripCombos(givetitoe:"\(foloCount)\nFollow",buto:self.folllllowedUser)
               
               
-              let escrowService = user["escrowService"] as? Int ?? 0
-              self.HistoryowedUser.titleLabel?.numberOfLines = 2
-              self.HistoryowedUser.titleLabel?.textAlignment = .center
-              self.HistoryowedUser.setTitle("\(escrowService)\nHistory", for: .normal)
+            
+              self.generateDripCombos(givetitoe:"\(0)\nPost",buto:self.PostlowedUser)
+            
+              
+              let escrowService = fullBodyFit["escrowService"] as? Int ?? 0
+              self.generateDripCombos(givetitoe:"\(escrowService)\nHistory",buto:self.HistoryowedUser)
+            
               
           } avantGarde: { backedRrror in
               
           }
       }
     
+    
+    func generateDripCombos(givetitoe:String,buto:UIButton)  {
+        buto.setTitle(givetitoe, for: .normal)
+    }
+    
+    func calculateDripFactor(but:UIButton)  {
+        but.titleLabel?.numberOfLines = 2
+        but.titleLabel?.textAlignment = .center
+    }
+    
+    private func calculateDripFactor(tags: [String]) -> Float {
+        let hypeBrands = ["supreme", "off-white", "bape"]
+        return tags.contains { hypeBrands.contains($0.lowercased()) } ? 0.9 : 0.6
+        
+    }
     @IBAction func designPhilosophy(_ sender: UIButton) {
         if sender == self.folllllowedUser {
             self.navigationController?.pushViewController(FDRViralChallenge_Controller.init( pageString: .Concerned, _isDirrict: true), animated: true)

@@ -2,7 +2,7 @@
 //  FDRDripFeedTopheader.swift
 //  FlsieDripCore
 //
-//  Created by mumu on 2025/5/15.
+//  Created by FlsieDripCore on 2025/5/15.
 //
 
 import UIKit
@@ -13,7 +13,7 @@ class FDRDripFeedTopheader: UICollectionReusableView, UICollectionViewDelegate,U
     var delegate:Didselctedliveuser?
     
 
-      var livePage: Array<Dictionary<String,Any>> = Array<Dictionary<String,Any>>(){
+      var livePage:Array<RequestModel> = Array<RequestModel>(){
         didSet{
             recycledPolyester.reloadData()
         }
@@ -31,7 +31,7 @@ class FDRDripFeedTopheader: UICollectionReusableView, UICollectionViewDelegate,U
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if self.delegate != nil, let liveidFashion = livePage[indexPath.row]["boldPrint"] as? Int,let avatoruserID = livePage[indexPath.row]["graphicTee"] as? Int {
+        if self.delegate != nil, let liveidFashion = livePage[indexPath.row].dicitonData["boldPrint"] as? Int,let avatoruserID = livePage[indexPath.row].dicitonData["graphicTee"] as? Int {
             
            let passConnectID = "channel=\(liveidFashion)&userId=\(avatoruserID)&"
             self.delegate?.selctenterlive(liveinID: passConnectID)

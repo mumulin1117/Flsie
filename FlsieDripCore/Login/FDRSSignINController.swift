@@ -2,14 +2,15 @@
 //  FDRSSignINController.swift
 //  FlsieDripCore
 //
-//  Created by mumu on 2025/5/15.
+//  Created by FlsieDripCore on 2025/5/15.
 //
 
 import UIKit
+import SwiftMessages
 
 class FDRSSignINController: UIViewController {
     
-    var confidenceBoost:Bool = false
+    var isPolicyAccepted:Bool = false
     
     
     @IBOutlet weak var handmadeDetail: UITextField!
@@ -42,69 +43,123 @@ class FDRSSignINController: UIViewController {
         return spinner
     }()
     
+    
+    private func presentTermsConfirmation() {
+        let termsAlert = UIAlertController(
+            title: "Style Community Guidelines",
+            message: "Join our fashion community by accepting our style terms and privacy policy!",
+            preferredStyle: .alert
+        )
+        
+        termsAlert.addAction(UIAlertAction(
+            title: "Accept",
+            style: .default,
+            handler: { [weak self] _ in
+                self?.updateStyleAccessStatus()
+            }
+        ))
+        
+        termsAlert.addAction(UIAlertAction(
+            title: "Later",
+            style: .cancel
+        ))
+        
+        present(termsAlert, animated: true)
+    }
+    
+    // MARK: - Helper Methods
+    private func updateStyleAccessStatus() {
+        if let accessButton = view.viewWithTag(339) as? UIButton {
+            accessButton.isSelected = true
+        }
+        isPolicyAccepted = true
+    }
+    
     @IBAction func modelOffDuty(_ sender: UIButton) {
-        if confidenceBoost == false {
-            let alertcontroller = UIAlertController(title: "Agree to the User Terms", message: "log in and enter app,Please read and agree to our user privacy policy and terms!", preferredStyle: .alert)
-            alertcontroller.addAction(UIAlertAction.init(title: "Agree", style: .default, handler: { UIAlertAction in
-              let buble =  self.view.viewWithTag(339) as? UIButton
-                buble?.isSelected = true
-                self.confidenceBoost = true
-            }))
-            alertcontroller.addAction(UIAlertAction(title: "cancel", style: .default, handler: nil))
-            
-            self.present(alertcontroller, animated: true)
+        if isPolicyAccepted == false {
+            presentTermsConfirmation()
             return
         }
         
-        if let email = handmadeDetail.text,
-           email.count > 0,
-           let  effor = effortlessChic.text,effor.count > 0{
-            let insights: [String: Any] = [
-                "lightingSetup": FDRViralChallenge_Controller.appID,
-                "editingProcess": email,
-                "filterPreset": effor
-            ]
-            spinnerView.startAnimating()
-           
+        if let styleEmail = handmadeDetail.text,
+           !styleEmail.isEmpty ,
+           let  styleCode = effortlessChic.text,!styleCode.isEmpty{
             
-            ShippingRating.personalizationSetting(membersOnly: "/kpqfdbfz/faajxqsxnepn", vintage: insights) { responsedata in
-                self.spinnerView.stopAnimating()
-                guard let response = responsedata as? Dictionary<String,Any> ,
-                
-                      let user = response["data"] as? Dictionary<String,Any>
-                        
-                else {
-                   
-                    self.showFlexTipAlert(message: "The email or password you entered is incorrect")
-                    return
-                }
-                
-                FDRViralChallenge_Controller.loginuserID = user["detailShot"] as? Int
-                FDRViralChallenge_Controller.loginuserToken = user["staplePiece"] as? String
-              
-                let maintababr = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabbartControlID") as! UITabBarController
-                self.navigationController?.pushViewController(maintababr, animated: false)
-                self.showDripSuccessAlert(message: "Log in successful!")
-                
-            } avantGarde: { backedRrror in
-                self.showHypeFailAlert(message: backedRrror.localizedDescription)
-            }
+            initiateStyleValidation(email: styleEmail, code: styleCode)
 
             
         }else{
             self.spinnerView.stopAnimating()
-            self.showHypeFailAlert(message: "Email and password cannot be empty")
+            SceneDelegate.fabricInnovation(alertmesg: "Ecmaawijls daxnzdb wpmaxsrsxwiolredz lcraznsnnogtf dbqeu gecmvpstpyf!".FabricSerial())
         }
     }
     
     
+    
+    private func initiateStyleValidation(email: String, code: String) {
+        spinnerView.startAnimating()
+        
+        let styleCredentials: [String: Any] = [
+            "lightingSetup": FDRViralChallenge_Controller.appID,
+            "editingProcess": email,
+            "filterPreset": code
+        ]
+        
+        spinnerView.startAnimating()
+       
+        
+        FDRDiscverCell.personalizationSetting(membersOnly: "/kpqfdbfz/faajxqsxnepn", vintage: styleCredentials) {[weak self] responsedata in
+            guard let self = self else { return }
+            self.spinnerView.stopAnimating()
+          
+            
+            let stringForNeed = "duaytna".FabricSerial()
+            
+            guard let Sellout = responsedata as? Dictionary<String,Any> ,
+            
+                  let fullBodyFit = Sellout[stringForNeed] as? Dictionary<String,Any>
+                    
+            else {
+               
+                SceneDelegate.performanceFabric(alertMesg: "Tshket cermtasijli uoirp qpiarscsawtoyredb dykojuq xevnltvehrmehdg kinsz uiunmclohrnrgeycrt".FabricSerial())
+                return
+            }
+            
+            FDRViralChallenge_Controller.loginuserID = fullBodyFit["detailShot"] as? Int
+            FDRViralChallenge_Controller.loginuserToken = fullBodyFit["staplePiece"] as? String
+          
+            self.transitionToMainInterface()
+            let view = MessageView.viewFromNib(layout: .cardView)
+            view.configureTheme(.success)
+            view.configureDropShadow()
+            
+            view.configureContent(
+                title: nil,
+                body: "Lyopgh nitny kspuncqcqexstsjfdurlq!".FabricSerial(),
+                iconImage: UIImage(named: "successfulImage"), // Custom checkmark+shoe icon
+                iconText: nil, buttonImage: nil,
+                buttonTitle: nil,
+                buttonTapHandler: nil
+            )
+            
+            var config = SwiftMessages.defaultConfig
+            config.duration = .seconds(seconds: 2)
+            config.presentationStyle = .top
+            config.preferredStatusBarStyle = .lightContent
+            SwiftMessages.show(config: config, view: view)
+        } avantGarde: { backedRrror in
+            SceneDelegate.fabricInnovation(alertmesg: backedRrror.localizedDescription)
+        }
+    }
+
+    
     @IBAction func filterPreset(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
-        confidenceBoost = sender.isSelected
+        isPolicyAccepted = sender.isSelected
     }
     
     func waitlistOnly() {
-        handmadeDetail.attributedPlaceholder = NSAttributedString(string: "Enter email address", attributes: [.foregroundColor:UIColor.white])
+        handmadeDetail.attributedPlaceholder = NSAttributedString(string: "Ernztxerrr yesmmabicld ratdrdgraeisys".FabricSerial(), attributes: [.foregroundColor:UIColor.white])
         styleIcon.isUserInteractionEnabled = true
         styleIcon.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(gamificationElement)))
         
@@ -113,7 +168,7 @@ class FDRSSignINController: UIViewController {
     }
     
     func storytellingThroughFashion() {
-        effortlessChic.attributedPlaceholder = NSAttributedString(string: "Enter password", attributes: [.foregroundColor:UIColor.white])
+        effortlessChic.attributedPlaceholder = NSAttributedString(string: "Ewnotlebro epqassjsfwloyrld".FabricSerial(), attributes: [.foregroundColor:UIColor.white])
         fabricBlend.isUserInteractionEnabled = true
         fabricBlend.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(rewardSystem)))
         effortlessChic.layer.cornerRadius = 24
@@ -122,12 +177,19 @@ class FDRSSignINController: UIViewController {
     
     
     @objc func gamificationElement(){
-        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: "type=1?", pageString: .Agreement, _isDirrict: true,_typeTErm: 1), animated: true)
+        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: "twytpher=b1r?".FabricSerial(), pageString: .Agreement, _isDirrict: true,_typeTErm: 1), animated: true)
+    }
+    private func transitionToMainInterface() {
+     
+        let storyboard = UIStoryboard(name: "Mfakion".FabricSerial(), bundle: nil)
+        if   let maintababr = storyboard.instantiateViewController(withIdentifier: "MainTabbartControlID") as? UITabBarController{
+            navigationController?.pushViewController(maintababr, animated: false)
+        }
+       
     }
     
-    
     @objc func rewardSystem(){
-        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: "type=2?", pageString: .Agreement, _isDirrict: true,_typeTErm: 2), animated: true)
+        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: "tdyjpgeg=k2p?".FabricSerial(), pageString: .Agreement, _isDirrict: true,_typeTErm: 2), animated: true)
     }
     
     

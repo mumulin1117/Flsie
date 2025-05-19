@@ -2,7 +2,7 @@
 //  FDRAppLaunchController.swift
 //  FlsieDripCore
 //
-//  Created by mumu on 2025/5/14.
+//  Created by FlsieDripCore on 2025/5/14.
 //
 
 import UIKit
@@ -25,7 +25,7 @@ class FDRAppLaunchController: UIViewController {
         if FDRViralChallenge_Controller.loginuserToken == nil {
             self.navigationController?.pushViewController(FDRSSignINController.init(), animated: true)
         }else{
-            let hats = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabbartControlID") as! UITabBarController
+            let hats = UIStoryboard(name: "Mfakion".FabricSerial(), bundle: nil).instantiateViewController(withIdentifier: "MainTabbartControlID") as! UITabBarController
               
             self.navigationController?.pushViewController(hats, animated: false)
         }

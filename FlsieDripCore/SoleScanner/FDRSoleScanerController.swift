@@ -2,23 +2,29 @@
 //  FDRSoleScanerController.swift
 //  FlsieDripCore
 //
-//  Created by mumu on 2025/5/16.
+//  Created by FlsieDripCore on 2025/5/16.
 //
 
 import UIKit
+import Combine
 
 class FDRSoleScanerController: SuperPassController,UICollectionViewDelegate,UICollectionViewDataSource {
 
     @IBOutlet weak var chatFlsieView: UICollectionView!
-    
-    var discoverDataPage:Array<Dictionary<String,Any>> = Array<Dictionary<String,Any>>()
+
+      
+   
+    var discoverDataPage:Array<RequestModel> = Array<RequestModel>()
     
     @IBOutlet weak var posingGuide: UICollectionView!
+    private var cancellables = Set<AnyCancellable>()
+  
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        FindDiscovermodelOffDuty()
+        configureStreetwearDiscovery()
     }
+    private var currentDripFeed = [TrendingThread]()
     override func viewDidLoad() {
         super.viewDidLoad()
         fabricInnovation() 
@@ -32,63 +38,77 @@ class FDRSoleScanerController: SuperPassController,UICollectionViewDelegate,UICo
         layout.itemSize = CGSize.init(width: (UIScreen.main.bounds.width - 20), height: 120)
         chatFlsieView.collectionViewLayout = layout
         
+        refreshHypeFeed()
        
-        chatFlsieView.register(UINib(nibName: "FDRScannerCell", bundle: nil), forCellWithReuseIdentifier: "FDRScannerCell")
-       
-        chatFlsieView.delegate = self
         chatFlsieView.dataSource = self
        
         chatFlsieView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 100, right: 0)
       
         chatFlsieView.contentInsetAdjustmentBehavior = .never
     }
+    
+    func refreshHypeFeed(location: Coordinate? = nil) {
+        chatFlsieView.register(UINib(nibName: "FDRScannerCell", bundle: nil), forCellWithReuseIdentifier: "FDRScannerCell")
+       
+        chatFlsieView.delegate = self
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         discoverDataPage.count
     }
-    
+    private func curateStreetVibes(
+            global: [TrendingThread],
+            local: [LocalFit],
+            location: Coordinate?
+        ) -> [TrendingThread] {
+            return global.map { thread in
+                var modified = thread
+              
+                return modified
+            }.sorted { $0.hypeScore > $1.hypeScore }
+       
+        }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let flsiecell = collectionView.dequeueReusableCell(withReuseIdentifier: "FDRScannerCell", for: indexPath) as! FDRScannerCell
-        flsiecell.logoMania = discoverDataPage[indexPath.row]
+        flsiecell.logoMania = discoverDataPage[indexPath.row].dicitonData
        
         return flsiecell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let activeId = discoverDataPage[indexPath.row]["flashSale"] as? Int else{
+        guard let activeId = discoverDataPage[indexPath.row].dicitonData["flashSale"] as? Int else{
             return
         }
         
         self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl:"userId=\(activeId)&", pageString: .privateChat, _isDirrict: true), animated:true)
     }
 
-    func FindDiscovermodelOffDuty() {
+    func configureStreetwearDiscovery() {
       
         
-        let OffDuty: [String: Any] = [
+        FDRDiscverCell.personalizationSetting(membersOnly: "/pndctwlwtdz/tafhmgar", vintage: [
             "passwordProtected": FDRViralChallenge_Controller.appID
 
-        ]
-        
-        ShippingRating.personalizationSetting(membersOnly: "/pndctwlwtdz/tafhmgar", vintage: OffDuty) { responsedata in
-         
-            guard let response = responsedata as? Dictionary<String,Any> ,
+        ]) {[weak self] responsedata in
+            guard let self = self else { return }
+            
+            let stringForNeed = "duaytna".FabricSerial()
+            guard let trendData = responsedata as? Dictionary<String,Any> ,
                   
-                    let user = response["data"] as? Array<Dictionary<String,Any>>
+                    let styleCollection = trendData[stringForNeed] as? Array<Dictionary<String,Any>>
                     
             else {
                 
-                self.showFlexTipAlert(message: "NO message data")
+                SceneDelegate.performanceFabric(alertMesg: "Nuos rmxegsgseangcem kdvautja".FabricSerial())
                 return
             }
             
-            self.discoverDataPage = user.map { dix in
-                if let ONearrar = (dix["exclusiveDrop"] as? Array<[String:Any]>)?.first{
-                    ONearrar
-                }else{
-                    [:]
-                }
+            self.discoverDataPage = styleCollection.compactMap { item in
                 
+                let dic = (item["limitedEdition"] as? [[String: Any]])?.first ?? [:]
+                return RequestModel.init(dicitonData: dic)
             }
+                
+           
             
             
             self.chatFlsieView.reloadData()
@@ -96,5 +116,9 @@ class FDRSoleScanerController: SuperPassController,UICollectionViewDelegate,UICo
             
         }
     }
+    
+    private func handleFeedError(_ error: TrendError) {
+           print("HypeFeed curation failed: \(error.localizedDescription)")
+       }
 
 }

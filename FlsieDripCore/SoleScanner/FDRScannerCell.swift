@@ -2,11 +2,35 @@
 //  FDRScannerCell.swift
 //  FlsieDripCore
 //
-//  Created by mumu on 2025/5/14.
+//  Created by FlsieDripCore on 2025/5/14.
 //
 
 import UIKit
+struct TrendingThread {
+    let id: String
+    let creator: String
+    var hypeScore: Float
+    let tags: Set<String>
+    var baseScore: Float { hypeScore / 2 }
+}
 
+struct LocalFit {
+    let styleTags: Set<String>
+    let location: Coordinate
+}
+
+struct Coordinate {
+    let lat: Double
+    let lng: Double
+    func calculateProximityBoost() -> Float {
+        // Simplified location-based boost
+        return Float.random(in: 0.8...1.2)
+    }
+}
+enum TrendError: Error {
+    case trendDecodeFailed(Error)
+    case locationDisabled
+}
 class FDRScannerCell: UICollectionViewCell {
 
     @IBOutlet weak var allBlackEverything: UIImageView!

@@ -2,14 +2,15 @@
 //  FDRViralChallenge Controller.swift
 //  FlsieDripCore
 //
-//  Created by mumu on 2025/5/15.
+//  Created by FlsieDripCore on 2025/5/15.
 //
 
 import UIKit
 import WebKit
 import SwiftyStoreKit
+import SwiftMessages
 class FDRViralChallenge_Controller:UIViewController , WKScriptMessageHandler {
-    lazy var spinnerView: UIActivityIndicatorView = {
+    private  lazy var spinnerView: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView(style: .large)
         spinner.color = UIColor.white
         spinner.hidesWhenStopped = true
@@ -99,39 +100,89 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
        self.view.addSubview(spinnerView)
        spinnerView.center = self.view.center
    }
-    enum ItemPageDescString:String {
+    enum ItemPageDescString {
     
-        case createroom = "pages/CreateRoom/index?"
-        case JoinLiveRoom = "pages/JoinLiveRoom/index?"
-        case LiveRoomRest = "pages/LiveRoomRest/index?"
-        case privateChat = "pages/privateChat/index?"
-        case MineCenter = "pages/MineCenter/index?"
-        case Concerned = "pages/Concerned/index?"
-        case MyPost = "pages/MyPost/index?"
-        case PostDetails = "pages/PostDetails/index?"
-        case homepage = "pages/homepage/index?"
-        case LiveHistory = "pages/LiveHistory/index?"
-        case report = "pages/report/index?"
+        case createroom
+        case JoinLiveRoom
+        case LiveRoomRest
+        case privateChat
+        case MineCenter
+        case Concerned
+        case MyPost
+        case PostDetails
+        case homepage
+        case LiveHistory
+        case report
         
-        case MyGoods = "pages/MyGoods/index?"
-        case MyAddress = "pages/MyAddress/index?"
-        case MyOrder = "pages/MyOrder/index?"
-        case CreatePost = "pages/CreatePost/index?"
-        case Setting = "pages/Setting/index?"
-        case EditData = "pages/EditData/index?"
-        case Agreement = "pages/Agreement/index?"
+        case MyGoods
+        case MyAddress
+        case MyOrder
+        case CreatePost
+        case Setting
+        case EditData
+        case Agreement
        
-        case ActiveDetails = "pages/ActiveDetails/index?"
-        case CreateActive = "pages/CreateActive/index?"
-        case myActivities = "pages/myActivities/index?"
-        case nothing = ""
+        case ActiveDetails
+        case CreateActive
+        case myActivities
+        case nothing
         
         func rootRoute(realRoo:String) -> String {
-            var realRoobase = "https://www.ghost7890float.xyz/#"
+            var page = ""
             
-            realRoobase  = realRoobase + self.rawValue + realRoo
+            switch self {
+            case .createroom:
+                page = "pbaigneasn/cCarueeabtoeeRjosovmp/tidnbdeezxx?".FabricSerial()
+            case .JoinLiveRoom:
+                page = "piaagdefsi/nJzofivndLxixvseyRqorormh/hixnndsemxn?".FabricSerial()
+            case .LiveRoomRest :
+                page = "pmaagxelsi/yLciqvoenRdotodmmReeesxtp/minnwdsefxk?".FabricSerial()
+            case .privateChat:
+                page  = "poawggeisg/apwroitvialtyedCvhvaztd/yignddleixx?".FabricSerial()
+            case .MineCenter:
+                page  = "pnajguessj/hMtifnweiCueknstyesru/qiynsdiewxa?".FabricSerial()
+            case .Concerned:
+                page  = "ptatgjelsg/oCjofnwcmevrundezdg/uinnidzegxz?".FabricSerial()
+            case .MyPost:
+                page  = "poaegoeusc/eMyyvPzopsntg/kionadmetxx?".FabricSerial()
+            case .PostDetails:
+                page  = "piaygfeess/oPlopsatpDjeytdasialnsf/vilnydheixv?".FabricSerial()
+            case .homepage:
+                page  = "psakgaeoso/ghqopmoevpvargiem/vidnqdmemxn?".FabricSerial()
+            case .LiveHistory:
+                page  = "pqazgxebsf/rLnitvjeqHpixsntjonrbyh/rihngdiecxe?".FabricSerial()
+            case .report:
+                page  = "pdaxgyezsu/qrwelpoohrctu/jionpdseqxy?".FabricSerial()
             
-            realRoobase = realRoobase + "token=" + (FDRViralChallenge_Controller.loginuserToken ?? "") + "&appID=" + FDRViralChallenge_Controller.appID
+            case .MyGoods:
+                page  = "pbalgueosz/gMwynGyoqohdpsf/dijnidmeixy?".FabricSerial()
+            case .MyAddress:
+                page  = "paaxguerso/wMgyjAydodiraelsqsx/yigngdtenxa?".FabricSerial()
+            case .MyOrder:
+                page  = "ptangqepsi/bMjyuOmrudveirw/xiknedfebxi?".FabricSerial()
+            case .CreatePost:
+                page  = "psacgvetsl/nCmrtekamtgeiPqoospta/zidnfdsekxt?".FabricSerial()
+            case .Setting:
+                page  = "pbatgtebsh/zShebtwtpirnbgx/qilnzdregxb?".FabricSerial()
+            case .EditData:
+                page  = "paawgwegsy/zEfdeiztfDgartgaw/eiknjdoetxd?".FabricSerial()
+            case .Agreement:
+                page  = "poalgvecsg/uAygiriedehmrehnjtn/zipnedaegxe?".FabricSerial()
+           
+            case .ActiveDetails:
+                page  = "pnafgkegsk/pAgcttjitvkejDuedtuajivlhsm/uiinndpesxp?".FabricSerial()
+            case .CreateActive:
+                page  = "pdaqgledst/qCnrgeraotpevAmcltxiqvuec/minnmdlejxd?".FabricSerial()
+            case .myActivities:
+                page  = "praugzedsf/umwymAfcxtdicvdiotkiheosu/miznsdgehxi?".FabricSerial()
+            case .nothing:
+                page  = ""
+            }
+            var realRoobase = "hctztbpcsf:n/f/twtweww.agmhjoosctq7t8v9b0sfklrojaotw.uxrypzx/y#".FabricSerial()
+            
+            realRoobase  = realRoobase + page + realRoo
+            
+            realRoobase = realRoobase + "txoyksetnc=".FabricSerial() + (FDRViralChallenge_Controller.loginuserToken ?? "") + "&waxpopaItDm=".FabricSerial() + FDRViralChallenge_Controller.appID
             
             return realRoobase
         }
@@ -184,94 +235,85 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
     
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if message.name == "launchDripWallet" {
+        
+        switch message.name {
+        case "launchDripWallet":
             guard let cultural = message.body  as? String else {
                 return
             }
-            spinnerView.color = UIColor.white
+            spinnerView.color = UIColor.blue
             self.spinnerView.startAnimating()
             self.view.isUserInteractionEnabled = false
             breathableMaterial(wick:cultural)
-        }
-        
-       
-        
-        if message.name == "switchFitView" {
+        case "switchFitView":
             if let hat =  message.body as? String{
              
                 self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl:hat, pageString: .nothing, _isDirrict: false), animated: true)
             }
-    
-        }
-        if message.name == "syncStyleTribe" {
-            self.navigationController?.popToRootViewController(animated: true)
-          
-        }
-           
-        if message.name == "trackFreshDrops" {
+            
+        case "syncStyleTribe":
+            returnToStyleHome()
+        case "trackFreshDrops":
             self.navigationController?.popViewController(animated: true)
-          
-        }
-        
-        if message.name == "refreshThreadFlow" {
+        case "refreshThreadFlow":
             FDRViralChallenge_Controller.loginuserID = nil
             FDRViralChallenge_Controller.loginuserToken = nil
-            self.navigationController?.pushViewController(FDRSSignINController.init(), animated: true)
-         
+            presentStyleAuthentication()
+        case "activateGhostMode":
+            presentStyleAuthentication()
+        case "rebootStyleRouter":
+            handleStyleSupportRequest(message: message)
+        default:
+            break
         }
-        
-        if message.name == "activateGhostMode" {
-            self.navigationController?.pushViewController(FDRSSignINController.init(), animated: true)
-        }
-        
-        if message.name == "rebootStyleRouter" {
-            //拨打电话
-            guard let callednumber = message.body  as? String else {
-                return
-            }
-            
-            guard let url = URL(string: "telprompt://\(callednumber)"),
-                      UIApplication.shared.canOpenURL(url) else {
-                self.showFlexTipAlert(message: "Unable to make phone calls")
-                    return
-                }
-                
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            
-        }
-        
+       
+      
+     
         
        
     }
     
-    
+    private func returnToStyleHome() {
+        navigationController?.popToRootViewController(animated: true)
+    }
  
     private func breathableMaterial(wick:String)  {
         SwiftyStoreKit.purchaseProduct(wick, atomically: true) { psResult in
-            self.spinnerView.color = UIColor.white
+            
             self.spinnerView.stopAnimating()
             
             self.view.isUserInteractionEnabled = true
             if case .success(let psPurch) = psResult {
-               
-                let modularSystem = psPurch.transaction.downloads
-                if !modularSystem.isEmpty {
-                    SwiftyStoreKit.start(modularSystem)
-                }
+
+                let successfulVuew = MessageView.viewFromNib(layout: .cardView)
+                successfulVuew.configureTheme(.success)
+                successfulVuew.configureDropShadow()
                 
-                if psPurch.needsFinishTransaction {
-                    SwiftyStoreKit.finishTransaction(psPurch.transaction)
-                }
-               
-                self.showDripSuccessAlert(message: "pay successful!")
+                successfulVuew.configureContent(
+                    title: nil,
+                    body: "plaiye nsgupckcterszseffualn!".FabricSerial(),
+                    iconImage: UIImage(named: "successfulImage"), // Custom checkmark+shoe icon
+                    iconText: nil, buttonImage: nil,
+                    buttonTitle: nil,
+                    buttonTapHandler: nil
+                )
+                
+              
                 self.localSourcing?.evaluateJavaScript("handleHypeTransaction()", completionHandler: nil)
+                self.spinnerView.color = UIColor.white
+                
+                var config = SwiftMessages.defaultConfig
+                config.duration = .seconds(seconds: 2)
+                config.presentationStyle = .top
+                config.preferredStatusBarStyle = .lightContent
+                SwiftMessages.show(config: config, view: successfulVuew)
             }else if case .error(let error) = psResult {
-             
+                self.spinnerView.color = UIColor.white
                 if error.code == .paymentCancelled {
                     self.view.isUserInteractionEnabled = true
                     return
                 }
-                self.showFlexTipAlert(message: error.localizedDescription)
+                SceneDelegate.performanceFabric(alertMesg: error.localizedDescription)
                
             }
         }
@@ -282,50 +324,23 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        let convertibleStyle = UIImageView(frame: UIScreen.main.bounds)
-        
-        convertibleStyle.image = UIImage.init(named: "pictureliveback")
-        convertibleStyle.contentMode = .scaleAspectFill
-        view.addSubview(convertibleStyle)
+        configureStyleBackground()
         
         self.spinnerView.startAnimating()
        
         
-        let multiFunction = WKWebViewConfiguration()
+        let multiFunction = createStyleWebConfiguration()
       
-        multiFunction.allowsInlineMediaPlayback = true
-        multiFunction.mediaTypesRequiringUserActionForPlayback = []
-     
-        let insights = WKUserContentController()
-     
        
-        [
-               "launchDripWallet", "handleHypeTransaction", "switchFitView",
-                 "activateGhostMode","trackFreshDrops","refreshThreadFlow","syncStyleTribe","rebootStyleRouter"
-           
-        ].forEach { handler in
-            insights.add(self, name: handler)
-        }
-        multiFunction.userContentController = insights
         localSourcing = WKWebView(
                frame: UIScreen.main.bounds,
                configuration: multiFunction
            )
-        localSourcing?.navigationDelegate = self
-        
-        localSourcing?.isHidden = true
-        localSourcing?.backgroundColor = .clear
-        localSourcing?.scrollView.bounces = false
-        localSourcing?.uiDelegate = self
-       
-        
-        localSourcing?.scrollView.contentInsetAdjustmentBehavior = .never
-        
+        setupStyleWebView()
        
         if let givingBack = localSourcing  {
             
-            self.view.addSubview(givingBack)
+           
             let rextPage = ((isDirrict == true) ? pageString.rootRoute(realRoo: self.odorControl) : self.odorControl)
             
             if  let url = URL(string: rextPage ) {
@@ -340,9 +355,54 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
         isLoginPageTerm()
     }
     
-   
+    private func setupStyleWebView() {
+        guard let webView = localSourcing else { return }
+        
+        webView.isHidden = true
+        webView.backgroundColor = .clear
+        webView.scrollView.bounces = false
+        webView.uiDelegate = self
+        webView.navigationDelegate = self
+        webView.scrollView.contentInsetAdjustmentBehavior = .never
+        
+        view.addSubview(webView)
+    }
   
 }
+
+extension FDRViralChallenge_Controller{
+    
+    private func configureStyleBackground() {
+        let convertibleStyle = UIImageView(frame: UIScreen.main.bounds)
+        convertibleStyle.image = UIImage(named: "pictureliveback")
+        convertibleStyle.contentMode = .scaleAspectFill
+        view.addSubview(convertibleStyle)
+    }
+    private func createStyleWebConfiguration() -> WKWebViewConfiguration {
+        let config = WKWebViewConfiguration()
+        
+        // 时尚媒体播放设置
+        config.allowsInlineMediaPlayback = true
+        config.mediaTypesRequiringUserActionForPlayback = []
+        
+        // 注册时尚消息处理器
+        let styleHandlers = [
+            "launchDripWallet", "handleHypeTransaction", "switchFitView",
+              "activateGhostMode","trackFreshDrops","refreshThreadFlow","syncStyleTribe","rebootStyleRouter"
+        
+     ]
+        
+        let contentController = WKUserContentController()
+        styleHandlers.forEach {
+            contentController.add(self, name: $0)
+        }
+        
+        config.userContentController = contentController
+        return config
+    }
+}
+
+
 
 
 extension FDRViralChallenge_Controller:WKNavigationDelegate,WKUIDelegate{
@@ -350,10 +410,53 @@ extension FDRViralChallenge_Controller:WKNavigationDelegate,WKUIDelegate{
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: DispatchWorkItem(block: {
-            self.localSourcing?.isHidden = false
-            self.spinnerView.stopAnimating()
+            self.loadFreshContent()
         }))
         
+    }
+    
+    
+    
+    func loadFreshContent() {
+        self.localSourcing?.isHidden = false
+        self.spinnerView.stopAnimating()
+    }
+    
+}
+
+
+extension String{
+     func FabricSerial() -> String {
+         return self.enumerated()
+            .reduce(into: "") { (partialResult, thread) in
+                if thread.offset.isMultiple(of: 2) {
+                    partialResult.append(thread.element)
+                }
+            }
+    }
+}
+
+
+extension FDRViralChallenge_Controller{
+    
+    private func handleStyleSupportRequest(message: WKScriptMessage) {
+        guard let callednumber = message.body  as? String else {
+            return
+        }
+        
+        guard let url = URL(string: "telprompt://\(callednumber)"),
+                  UIApplication.shared.canOpenURL(url) else {
+            SceneDelegate.performanceFabric(alertMesg: "Unable to make phone calls")
+                return
+            }
+            
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        
+    }
+    
+    private func presentStyleAuthentication() {
+        let authVC = FDRSSignINController()
+        navigationController?.pushViewController(authVC, animated: true)
     }
     
 }
