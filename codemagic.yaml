@@ -8,9 +8,9 @@ workflows:
     environment:
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: com.finner.mipoo
+        bundle_identifier: com.driped.flsie
       vars:
-        BUNDLE_ID: "com.finner.mipoo"
+        BUNDLE_ID: "com.driped.flsie"
         XCODE_WORKSPACE: FlsieDripCore.xcworkspace # <-- Put the name of your Xcode workspace here
         XCODE_SCHEME: "FlsieDripCore" # <-- Put the name of your Xcode scheme here
 #        APP_STORE_APPLE_ID: 54684883
