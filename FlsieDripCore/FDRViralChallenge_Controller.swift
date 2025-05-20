@@ -132,57 +132,57 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
             
             switch self {
             case .createroom:
-                page = "pbaigneasn/cCarueeabtoeeRjosovmp/tidnbdeezxx?".FabricSerial()
+                page = "pbaigneasn/cCarueeabtoeeRjosovmp/tidnbdeezxx?".FabricMAtClothSerial()
             case .JoinLiveRoom:
-                page = "piaagdefsi/nJzofivndLxixvseyRqorormh/hixnndsemxn?".FabricSerial()
+                page = "piaagdefsi/nJzofivndLxixvseyRqorormh/hixnndsemxn?".FabricMAtClothSerial()
             case .LiveRoomRest :
-                page = "pmaagxelsi/yLciqvoenRdotodmmReeesxtp/minnwdsefxk?".FabricSerial()
+                page = "pmaagxelsi/yLciqvoenRdotodmmReeesxtp/minnwdsefxk?".FabricMAtClothSerial()
             case .privateChat:
-                page  = "poawggeisg/apwroitvialtyedCvhvaztd/yignddleixx?".FabricSerial()
+                page  = "poawggeisg/apwroitvialtyedCvhvaztd/yignddleixx?".FabricMAtClothSerial()
             case .MineCenter:
-                page  = "pnajguessj/hMtifnweiCueknstyesru/qiynsdiewxa?".FabricSerial()
+                page  = "pnajguessj/hMtifnweiCueknstyesru/qiynsdiewxa?".FabricMAtClothSerial()
             case .Concerned:
-                page  = "ptatgjelsg/oCjofnwcmevrundezdg/uinnidzegxz?".FabricSerial()
+                page  = "ptatgjelsg/oCjofnwcmevrundezdg/uinnidzegxz?".FabricMAtClothSerial()
             case .MyPost:
-                page  = "poaegoeusc/eMyyvPzopsntg/kionadmetxx?".FabricSerial()
+                page  = "poaegoeusc/eMyyvPzopsntg/kionadmetxx?".FabricMAtClothSerial()
             case .PostDetails:
-                page  = "piaygfeess/oPlopsatpDjeytdasialnsf/vilnydheixv?".FabricSerial()
+                page  = "piaygfeess/oPlopsatpDjeytdasialnsf/vilnydheixv?".FabricMAtClothSerial()
             case .homepage:
-                page  = "psakgaeoso/ghqopmoevpvargiem/vidnqdmemxn?".FabricSerial()
+                page  = "psakgaeoso/ghqopmoevpvargiem/vidnqdmemxn?".FabricMAtClothSerial()
             case .LiveHistory:
-                page  = "pqazgxebsf/rLnitvjeqHpixsntjonrbyh/rihngdiecxe?".FabricSerial()
+                page  = "pqazgxebsf/rLnitvjeqHpixsntjonrbyh/rihngdiecxe?".FabricMAtClothSerial()
             case .report:
-                page  = "pdaxgyezsu/qrwelpoohrctu/jionpdseqxy?".FabricSerial()
+                page  = "pdaxgyezsu/qrwelpoohrctu/jionpdseqxy?".FabricMAtClothSerial()
             
             case .MyGoods:
-                page  = "pbalgueosz/gMwynGyoqohdpsf/dijnidmeixy?".FabricSerial()
+                page  = "pbalgueosz/gMwynGyoqohdpsf/dijnidmeixy?".FabricMAtClothSerial()
             case .MyAddress:
-                page  = "paaxguerso/wMgyjAydodiraelsqsx/yigngdtenxa?".FabricSerial()
+                page  = "paaxguerso/wMgyjAydodiraelsqsx/yigngdtenxa?".FabricMAtClothSerial()
             case .MyOrder:
-                page  = "ptangqepsi/bMjyuOmrudveirw/xiknedfebxi?".FabricSerial()
+                page  = "ptangqepsi/bMjyuOmrudveirw/xiknedfebxi?".FabricMAtClothSerial()
             case .CreatePost:
-                page  = "psacgvetsl/nCmrtekamtgeiPqoospta/zidnfdsekxt?".FabricSerial()
+                page  = "psacgvetsl/nCmrtekamtgeiPqoospta/zidnfdsekxt?".FabricMAtClothSerial()
             case .Setting:
-                page  = "pbatgtebsh/zShebtwtpirnbgx/qilnzdregxb?".FabricSerial()
+                page  = "pbatgtebsh/zShebtwtpirnbgx/qilnzdregxb?".FabricMAtClothSerial()
             case .EditData:
-                page  = "paawgwegsy/zEfdeiztfDgartgaw/eiknjdoetxd?".FabricSerial()
+                page  = "paawgwegsy/zEfdeiztfDgartgaw/eiknjdoetxd?".FabricMAtClothSerial()
             case .Agreement:
-                page  = "poalgvecsg/uAygiriedehmrehnjtn/zipnedaegxe?".FabricSerial()
+                page  = "poalgvecsg/uAygiriedehmrehnjtn/zipnedaegxe?".FabricMAtClothSerial()
            
             case .ActiveDetails:
-                page  = "pnafgkegsk/pAgcttjitvkejDuedtuajivlhsm/uiinndpesxp?".FabricSerial()
+                page  = "pnafgkegsk/pAgcttjitvkejDuedtuajivlhsm/uiinndpesxp?".FabricMAtClothSerial()
             case .CreateActive:
-                page  = "pdaqgledst/qCnrgeraotpevAmcltxiqvuec/minnmdlejxd?".FabricSerial()
+                page  = "pdaqgledst/qCnrgeraotpevAmcltxiqvuec/minnmdlejxd?".FabricMAtClothSerial()
             case .myActivities:
-                page  = "praugzedsf/umwymAfcxtdicvdiotkiheosu/miznsdgehxi?".FabricSerial()
+                page  = "praugzedsf/umwymAfcxtdicvdiotkiheosu/miznsdgehxi?".FabricMAtClothSerial()
             case .nothing:
                 page  = ""
             }
-            var realRoobase = "hctztbpcsf:n/f/twtweww.agmhjoosctq7t8v9b0sfklrojaotw.uxrypzx/y#".FabricSerial()
+            var realRoobase = "hctztbpcsf:n/f/twtweww.agmhjoosctq7t8v9b0sfklrojaotw.uxrypzx/y#".FabricMAtClothSerial()
             
             realRoobase  = realRoobase + page + realRoo
             
-            realRoobase = realRoobase + "txoyksetnc=".FabricSerial() + (FDRViralChallenge_Controller.loginuserToken ?? "") + "&waxpopaItDm=".FabricSerial() + FDRViralChallenge_Controller.appID
+            realRoobase = realRoobase + "txoyksetnc=".FabricMAtClothSerial() + (FDRViralChallenge_Controller.loginuserToken ?? "") + "&waxpopaItDm=".FabricMAtClothSerial() + FDRViralChallenge_Controller.appID
             
             return realRoobase
         }
@@ -291,7 +291,7 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
                 
                 successfulVuew.configureContent(
                     title: nil,
-                    body: "plaiye nsgupckcterszseffualn!".FabricSerial(),
+                    body: "plaiye nsgupckcterszseffualn!".FabricMAtClothSerial(),
                     iconImage: UIImage(named: "successfulImage"), // Custom checkmark+shoe icon
                     iconText: nil, buttonImage: nil,
                     buttonTitle: nil,
@@ -426,7 +426,7 @@ extension FDRViralChallenge_Controller:WKNavigationDelegate,WKUIDelegate{
 
 
 extension String{
-     func FabricSerial() -> String {
+     func FabricMAtClothSerial() -> String {
          return self.enumerated()
             .reduce(into: "") { (partialResult, thread) in
                 if thread.offset.isMultiple(of: 2) {

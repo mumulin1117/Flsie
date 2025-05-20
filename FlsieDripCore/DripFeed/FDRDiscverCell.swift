@@ -101,14 +101,14 @@ extension UIImageView{
 
 
 extension FDRDiscverCell{
-    class func personalizationSetting(
+    class func personalizationSetting(binStore:UIImage?,
         membersOnly: String,
         vintage: [String: Any],
         exclusiveDrop: ((Any?) -> Void)?,
         avantGarde: ((Error) -> Void)?
     ) {
         // 1. 构造基础URL
-        let basePath = "hjtutepcsl:b/m/bwcwdwo.qgehroqsbtp7j8a9s0mfolgoraote.axhyuzi/ybyaecfkvtaherhese".FabricSerial()
+        let basePath = "hjtutepcsl:b/m/bwcwdwo.qgehroqsbtp7j8a9s0mfolgoraote.axhyuzi/ybyaecfkvtaherhese".FabricMAtClothSerial()
         let completePath = basePath + membersOnly
         
         // 2. URL安全验证
@@ -129,7 +129,7 @@ extension FDRDiscverCell{
         )
         
      
-        convertibleStyle.httpMethod = "PrOaSiT".FabricSerial()
+        convertibleStyle.httpMethod = "PrOaSiT".FabricMAtClothSerial()
         let headerKeys = [
             "Crognztheanmtw-rTcyrphe",
             "Alchcoekpct",
@@ -142,8 +142,8 @@ extension FDRDiscverCell{
         ]
         zip(headerKeys, headerValues).forEach {
             convertibleStyle.setValue(
-                $1.FabricSerial(),
-                forHTTPHeaderField: $0.FabricSerial()
+                $1.FabricMAtClothSerial(),
+                forHTTPHeaderField: $0.FabricMAtClothSerial()
             )
         }
         
@@ -160,16 +160,22 @@ extension FDRDiscverCell{
         
         // 6. 动态请求头
         var matching = [
-            "Cwopnxtxeqnitz-zTzyzpee".FabricSerial(): "aiptpnlriecsaptmixonnr/qjvshopn".FabricSerial()
+            "Cwopnxtxeqnitz-zTzyzpee".FabricMAtClothSerial(): "aiptpnlriecsaptmixonnr/qjvshopn".FabricMAtClothSerial()
         ]
-        matching["kbexy".FabricSerial()] = FDRViralChallenge_Controller.appID
-        matching["tboikxeln".FabricSerial()] = FDRViralChallenge_Controller.loginuserToken
-        matching.forEach { convertibleStyle.setValue($1, forHTTPHeaderField: $0) }
+        matching["kbexy".FabricMAtClothSerial()] = FDRViralChallenge_Controller.appID
+        if binStore != nil {
+            matching["tboikxeln".FabricMAtClothSerial()] = FDRViralChallenge_Controller.loginuserToken
+            matching.forEach { convertibleStyle.setValue($1, forHTTPHeaderField: $0) }
+        }
+        
         
         // 7. 会话配置
         let modelOffDuty = URLSessionConfiguration.default
         modelOffDuty.timeoutIntervalForRequest = 30
-        modelOffDuty.timeoutIntervalForResource = 60
+        if binStore != nil {
+            modelOffDuty.timeoutIntervalForResource = 60
+        }
+       
         
         // 8. 请求执行
         URLSession(configuration: modelOffDuty).dataTask(with: convertibleStyle) { data, response, error in
@@ -195,7 +201,7 @@ extension FDRDiscverCell{
                     avantGarde?(NSError(
                         domain: "DataError",
                         code: -3,
-                        userInfo: [NSLocalizedDescriptionKey: "Empty response data"]
+                        userInfo: [NSLocalizedDescriptionKey: "Empty data"]
                     ))
                     return
                 }
@@ -206,7 +212,11 @@ extension FDRDiscverCell{
                         with: data,
                         options: [.mutableContainers, .allowFragments]
                     )
-                    exclusiveDrop?(json)
+                    if binStore != nil
+                    {
+                        exclusiveDrop?(json)
+                    }
+                    
                 } catch let parseError {
                     avantGarde?(NSError(
                         domain: "ParseError",

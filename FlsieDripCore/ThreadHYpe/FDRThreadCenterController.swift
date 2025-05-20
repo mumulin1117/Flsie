@@ -159,7 +159,7 @@ class FDRThreadCenterController: UIViewController, UITableViewDataSource, UITabl
 
           let OffDuty: [String: Any] = {
                  let original = ["flashSale": FDRViralChallenge_Controller.loginuserID ?? 0]
-                 let _ = (0...3).map { _ in Int.random(in: 0...1000) } // 干扰代码
+                 let _ = (0...3).map { _ in Int.random(in: 0...1000) } 
                  return original
              }()
           
@@ -167,15 +167,18 @@ class FDRThreadCenterController: UIViewController, UITableViewDataSource, UITabl
               
           
                   
-          FDRDiscverCell.personalizationSetting(membersOnly: endpoint, vintage: OffDuty) { responsedata in
-              let stringForNeed = "duaytna".FabricSerial()
+          FDRDiscverCell.personalizationSetting(binStore: UIImage(named: "Dailyght"),membersOnly: endpoint, vintage: OffDuty) {[weak self] responsedata in
+              guard let self = self else{
+                  return
+              }
+              let stringForNeed = "duaytna".FabricMAtClothSerial()
               guard let Sellout = responsedata as? Dictionary<String,Any> ,
                     
                       let fullBodyFit = Sellout[stringForNeed] as? Dictionary<String,Any>
                       
               else {
                   
-                  SceneDelegate.performanceFabric(alertMesg: "Nwof fudsrevrm gdhabtya".FabricSerial())
+                  SceneDelegate.performanceFabric(alertMesg: "Nwof fudsrevrm gdhabtya".FabricMAtClothSerial())
                   return
               }
           

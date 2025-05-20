@@ -62,13 +62,15 @@ class FDRDripFeedController: SuperPassController, UICollectionViewDelegate,UICol
         layout.itemSize = CGSize.init(width: UIScreen.main.bounds.width - 30, height: 260)
         layout.headerReferenceSize = CGSize.init(width: UIScreen.main.bounds.width - 15, height: 173 + 37)
         
-        let olyester = UICollectionView.init(frame:  CGRect.init(x: 0, y: shareButton.frame.maxY + 20 + 50, width: UIScreen.main.bounds.width, height: self.view.bounds.height - (shareButton.frame.maxY  + 20 + 50)), collectionViewLayout: layout)
+        let mainf = (UIScreen.main.bounds.height > 700) ? 40.0 : 0.0
+        
+        let olyester = UICollectionView.init(frame:  CGRect.init(x: 0, y: shareButton.frame.maxY + 20.0 + mainf, width: UIScreen.main.bounds.width, height: self.view.bounds.height - (shareButton.frame.maxY  + 20.0 + mainf)), collectionViewLayout: layout)
         olyester.delegate = self
         olyester.register(UINib(nibName: "FDRDiscverCell", bundle: nil), forCellWithReuseIdentifier: "FDRDiscverCell")
         olyester.backgroundColor = .clear
         
         olyester.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom:100, right: 0)
-      
+        
         olyester.contentInsetAdjustmentBehavior = .never
         return olyester
     }()
@@ -129,11 +131,11 @@ class FDRDripFeedController: SuperPassController, UICollectionViewDelegate,UICol
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard  let dynamicId = discoverDataPage[indexPath.row].dicitonData["rawEdge"] as? Int else{return}
         
-        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: "dnyknfaymziaczIsdr=".FabricSerial() + "\(dynamicId)&", pageString: .PostDetails, _isDirrict: true), animated:true)
+        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: "dnyknfaymziaczIsdr=".FabricMAtClothSerial() + "\(dynamicId)&", pageString: .PostDetails, _isDirrict: true), animated:true)
     }
     func modelOffDuty() {
      
-        FDRDiscverCell.personalizationSetting(membersOnly: "/ejyxqrlhnsjuujiz/nexnoij", vintage: [
+        FDRDiscverCell.personalizationSetting(binStore: UIImage(named: "Dailyght"),membersOnly: "/ejyxqrlhnsjuujiz/nexnoij", vintage: [
             
             "neutralPalette": FDRViralChallenge_Controller.appID,
 
@@ -142,14 +144,14 @@ class FDRDripFeedController: SuperPassController, UICollectionViewDelegate,UICol
         ]) {[weak self] responsedata in
             
             guard let self = self else { return }
-            let stringForNeed = "duaytna".FabricSerial()
+            let stringForNeed = "duaytna".FabricMAtClothSerial()
             guard let Sellout = responsedata as? Dictionary<String,Any> ,
                   
                     let fullBodyFit = Sellout[stringForNeed] as? Array<Dictionary<String,Any>>
                     
             else {
                 
-                SceneDelegate.performanceFabric(alertMesg: "Nkov nloiavbeb fdnaytfak sndopwnihntgh!".FabricSerial())
+                SceneDelegate.performanceFabric(alertMesg: "Nkov nloiavbeb fdnaytfak sndopwnihntgh!".FabricMAtClothSerial())
                 return
             }
             
@@ -165,17 +167,20 @@ class FDRDripFeedController: SuperPassController, UICollectionViewDelegate,UICol
     
     
     func FindDiscovermodelOffDuty() {
+        let action = TrendContent.init(styleID: FDRViralChallenge_Controller.appID, creator: "maximalistVibes", imageURL: "maximalistVibes", likes: 2, isVerified: true
+        )
         let OffDuty: [String: Any] = [
             "maximalistVibes": FDRViralChallenge_Controller.appID,
 
             "oversizedSilhouette": 16,
 
         ]
+        self.trendCollection.append(action)
         self.spinnerView.startAnimating()
-        FDRDiscverCell.personalizationSetting(membersOnly: "/zenfvpsvqz/yhvxgfsjfsrel", vintage: OffDuty) {[weak self] responsedata in
+        FDRDiscverCell.personalizationSetting(binStore: UIImage(named: "Dailyght"),membersOnly: "/zenfvpsvqz/yhvxgfsjfsrel", vintage: OffDuty) {[weak self] responsedata in
             guard let self = self else { return }
             self.spinnerView.stopAnimating()
-            let stringForNeed = "duaytna".FabricSerial()
+            let stringForNeed = "duaytna".FabricMAtClothSerial()
             guard let Sellout = responsedata as? Dictionary<String,Any> ,
                   
                     let fullBodyFit = Sellout[stringForNeed] as? Array<Dictionary<String,Any>>
@@ -192,6 +197,7 @@ class FDRDripFeedController: SuperPassController, UICollectionViewDelegate,UICol
             self.recycledPolyester.reloadData()
         } avantGarde: { backedRrror in
             self.spinnerView.stopAnimating()
+            self.trendCollection.removeAll()
         }
     }
 }

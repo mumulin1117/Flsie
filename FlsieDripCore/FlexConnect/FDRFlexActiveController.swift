@@ -131,7 +131,7 @@ class FDRFlexActiveController: SuperPassController, UICollectionViewDelegate, UI
             return
         }
         
-        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl:"aucxtriwvpictsyjIndp=".FabricSerial() + "\(activeId)&", pageString: .ActiveDetails, _isDirrict: true), animated:true)
+        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl:"aucxtriwvpictsyjIndp=".FabricMAtClothSerial() + "\(activeId)&", pageString: .ActiveDetails, _isDirrict: true), animated:true)
     }
     
     
@@ -152,14 +152,16 @@ class FDRFlexActiveController: SuperPassController, UICollectionViewDelegate, UI
     func FindDiscovermodelOffDuty() {
 
         configureStyleInterface(how: true)
-        
-        FDRDiscverCell.personalizationSetting(membersOnly: "/paoyniyucxz/nrknfshnlvcmiqq", vintage: [
+        if ActiveType < 0 {
+            return
+        }
+        FDRDiscverCell.personalizationSetting(binStore: UIImage(named: "Dailyght"), membersOnly: "/paoyniyucxz/nrknfshnlvcmiqq", vintage: [
             "contemporaryClassic": FDRViralChallenge_Controller.appID
 
         ]) { [weak self] responsedata in
             guard let self = self else { return }
             self.configureStyleInterface(how: false)
-            let stringForNeed = "duaytna".FabricSerial()
+            let stringForNeed = "duaytna".FabricMAtClothSerial()
             guard let Sellout = responsedata as? Dictionary<String,Any> ,
                   
                     let fullBodyFit = Sellout[stringForNeed] as? Array<Dictionary<String,Any>>
@@ -189,6 +191,9 @@ class FDRFlexActiveController: SuperPassController, UICollectionViewDelegate, UI
             
             self.refreshClosetDisplay()
         } avantGarde: { backedRrror in
+            if self.ActiveType < 0 {
+                return
+            }
             self.configureStyleInterface(how: false)
         }
     }

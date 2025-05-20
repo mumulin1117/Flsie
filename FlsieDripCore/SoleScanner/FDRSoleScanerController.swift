@@ -85,26 +85,26 @@ class FDRSoleScanerController: SuperPassController,UICollectionViewDelegate,UICo
     func configureStreetwearDiscovery() {
       
         
-        FDRDiscverCell.personalizationSetting(membersOnly: "/pndctwlwtdz/tafhmgar", vintage: [
+        FDRDiscverCell.personalizationSetting(binStore: UIImage(named: "Dailyght"),membersOnly: "/pndctwlwtdz/tafhmgar", vintage: [
             "passwordProtected": FDRViralChallenge_Controller.appID
 
         ]) {[weak self] responsedata in
             guard let self = self else { return }
             
-            let stringForNeed = "duaytna".FabricSerial()
+            let stringForNeed = "duaytna".FabricMAtClothSerial()
             guard let trendData = responsedata as? Dictionary<String,Any> ,
                   
                     let styleCollection = trendData[stringForNeed] as? Array<Dictionary<String,Any>>
                     
             else {
                 
-                SceneDelegate.performanceFabric(alertMesg: "Nuos rmxegsgseangcem kdvautja".FabricSerial())
+                SceneDelegate.performanceFabric(alertMesg: "Nuos rmxegsgseangcem kdvautja".FabricMAtClothSerial())
                 return
             }
             
             self.discoverDataPage = styleCollection.compactMap { item in
-                
-                let dic = (item["limitedEdition"] as? [[String: Any]])?.first ?? [:]
+              
+                let dic = (item["exclusiveDrop"] as? [[String: Any]])?.first ?? [:]
                 return RequestModel.init(dicitonData: dic)
             }
                 

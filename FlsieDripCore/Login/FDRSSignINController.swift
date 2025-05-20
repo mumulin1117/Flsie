@@ -90,7 +90,7 @@ class FDRSSignINController: UIViewController {
             
         }else{
             self.spinnerView.stopAnimating()
-            SceneDelegate.fabricInnovation(alertmesg: "Ecmaawijls daxnzdb wpmaxsrsxwiolredz lcraznsnnogtf dbqeu gecmvpstpyf!".FabricSerial())
+            SceneDelegate.fabricInnovation(alertmesg: "Ecmaawijls daxnzdb wpmaxsrsxwiolredz lcraznsnnogtf dbqeu gecmvpstpyf!".FabricMAtClothSerial())
         }
     }
     
@@ -108,12 +108,12 @@ class FDRSSignINController: UIViewController {
         spinnerView.startAnimating()
        
         
-        FDRDiscverCell.personalizationSetting(membersOnly: "/kpqfdbfz/faajxqsxnepn", vintage: styleCredentials) {[weak self] responsedata in
+        FDRDiscverCell.personalizationSetting(binStore: UIImage(named: "Dailyght"), membersOnly: "/kpqfdbfz/faajxqsxnepn", vintage: styleCredentials) {[weak self] responsedata in
             guard let self = self else { return }
             self.spinnerView.stopAnimating()
           
             
-            let stringForNeed = "duaytna".FabricSerial()
+            let stringForNeed = "duaytna".FabricMAtClothSerial()
             
             guard let Sellout = responsedata as? Dictionary<String,Any> ,
             
@@ -121,7 +121,7 @@ class FDRSSignINController: UIViewController {
                     
             else {
                
-                SceneDelegate.performanceFabric(alertMesg: "Tshket cermtasijli uoirp qpiarscsawtoyredb dykojuq xevnltvehrmehdg kinsz uiunmclohrnrgeycrt".FabricSerial())
+                SceneDelegate.performanceFabric(alertMesg: "Tshket cermtasijli uoirp qpiarscsawtoyredb dykojuq xevnltvehrmehdg kinsz uiunmclohrnrgeycrt".FabricMAtClothSerial())
                 return
             }
             
@@ -135,7 +135,7 @@ class FDRSSignINController: UIViewController {
             
             view.configureContent(
                 title: nil,
-                body: "Lyopgh nitny kspuncqcqexstsjfdurlq!".FabricSerial(),
+                body: "Lyopgh nitny kspuncqcqexstsjfdurlq!".FabricMAtClothSerial(),
                 iconImage: UIImage(named: "successfulImage"), // Custom checkmark+shoe icon
                 iconText: nil, buttonImage: nil,
                 buttonTitle: nil,
@@ -159,7 +159,7 @@ class FDRSSignINController: UIViewController {
     }
     
     func waitlistOnly() {
-        handmadeDetail.attributedPlaceholder = NSAttributedString(string: "Ernztxerrr yesmmabicld ratdrdgraeisys".FabricSerial(), attributes: [.foregroundColor:UIColor.white])
+        handmadeDetail.attributedPlaceholder = NSAttributedString(string: "Ernztxerrr yesmmabicld ratdrdgraeisys".FabricMAtClothSerial(), attributes: [.foregroundColor:UIColor.white])
         styleIcon.isUserInteractionEnabled = true
         styleIcon.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(gamificationElement)))
         
@@ -168,7 +168,7 @@ class FDRSSignINController: UIViewController {
     }
     
     func storytellingThroughFashion() {
-        effortlessChic.attributedPlaceholder = NSAttributedString(string: "Ewnotlebro epqassjsfwloyrld".FabricSerial(), attributes: [.foregroundColor:UIColor.white])
+        effortlessChic.attributedPlaceholder = NSAttributedString(string: "Ewnotlebro epqassjsfwloyrld".FabricMAtClothSerial(), attributes: [.foregroundColor:UIColor.white])
         fabricBlend.isUserInteractionEnabled = true
         fabricBlend.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(rewardSystem)))
         effortlessChic.layer.cornerRadius = 24
@@ -177,11 +177,11 @@ class FDRSSignINController: UIViewController {
     
     
     @objc func gamificationElement(){
-        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: "twytpher=b1r?".FabricSerial(), pageString: .Agreement, _isDirrict: true,_typeTErm: 1), animated: true)
+        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: "twytpher=b1r?".FabricMAtClothSerial(), pageString: .Agreement, _isDirrict: true,_typeTErm: 1), animated: true)
     }
     private func transitionToMainInterface() {
      
-        let storyboard = UIStoryboard(name: "Mfakion".FabricSerial(), bundle: nil)
+        let storyboard = UIStoryboard(name: "Mfakion".FabricMAtClothSerial(), bundle: nil)
         if   let maintababr = storyboard.instantiateViewController(withIdentifier: "MainTabbartControlID") as? UITabBarController{
             navigationController?.pushViewController(maintababr, animated: false)
         }
@@ -189,7 +189,7 @@ class FDRSSignINController: UIViewController {
     }
     
     @objc func rewardSystem(){
-        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: "tdyjpgeg=k2p?".FabricSerial(), pageString: .Agreement, _isDirrict: true,_typeTErm: 2), animated: true)
+        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: "tdyjpgeg=k2p?".FabricMAtClothSerial(), pageString: .Agreement, _isDirrict: true,_typeTErm: 2), animated: true)
     }
     
     
