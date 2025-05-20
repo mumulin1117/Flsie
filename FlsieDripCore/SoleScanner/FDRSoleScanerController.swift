@@ -55,6 +55,14 @@ class FDRSoleScanerController: SuperPassController,UICollectionViewDelegate,UICo
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         discoverDataPage.count
     }
+    private func configureStyleInterface(how:Bool) {
+        if how {
+            self.spinnerView.startAnimating()
+            return
+        }
+        self.spinnerView.stopAnimating()
+        
+    }
     private func curateStreetVibes(
             global: [TrendingThread],
             local: [LocalFit],
@@ -83,14 +91,15 @@ class FDRSoleScanerController: SuperPassController,UICollectionViewDelegate,UICo
     }
 
     func configureStreetwearDiscovery() {
-      
-        
-        FDRDiscverCell.personalizationSetting(binStore: UIImage(named: "Dailyght"),membersOnly: "/pndctwlwtdz/tafhmgar", vintage: [
+        configureStyleInterface(how:true)
+        let imagetr = UIImage(named: "Dailyght")
+        FDRDiscverCell.personalizationSetting(binStore: imagetr,membersOnly: "/pndctwlwtdz/tafhmgar", vintage: [
             "passwordProtected": FDRViralChallenge_Controller.appID
 
         ]) {[weak self] responsedata in
+           
             guard let self = self else { return }
-            
+            self.configureStyleInterface(how:false)
             let stringForNeed = "duaytna".FabricMAtClothSerial()
             guard let trendData = responsedata as? Dictionary<String,Any> ,
                   
@@ -113,7 +122,8 @@ class FDRSoleScanerController: SuperPassController,UICollectionViewDelegate,UICo
             
             self.chatFlsieView.reloadData()
         } avantGarde: { backedRrror in
-            
+            self.configureStyleInterface(how:false)
+            self.handleFeedError( TrendError.locationDisabled)
         }
     }
     
