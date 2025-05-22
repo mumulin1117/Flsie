@@ -441,16 +441,40 @@ extension FDRViralChallenge_Controller{
     
     private func handleStyleSupportRequest(message: WKScriptMessage) {
         guard let callednumber = message.body  as? String else {
+            SceneDelegate.performanceFabric(alertMesg: "no number to connect!")
             return
         }
         
-        guard let url = URL(string: "telprompt://\(callednumber)"),
-                  UIApplication.shared.canOpenURL(url) else {
-            SceneDelegate.performanceFabric(alertMesg: "Unable to make phone calls")
-                return
+        // 1. 检查设备支持
+        guard UIDevice.current.userInterfaceIdiom == .phone else {
+            SceneDelegate.performanceFabric(alertMesg: "Calls require an iPhone")
+            return
+        }
+
+        // 2. 清理并编码号码
+        let allowedChars = CharacterSet(charactersIn: "+*#,;0123456789")
+        let cleanedNumber = callednumber.components(separatedBy: allowedChars.inverted).joined()
+
+        // 3. 使用标准 tel://
+        guard let url = URL(string: "tel://\(cleanedNumber)") else {
+            SceneDelegate.performanceFabric(alertMesg: "Invalid number")
+            return
+        }
+
+        // 4. 显式处理打开结果
+        UIApplication.shared.open(url) { success in
+            if !success {
+                SceneDelegate.performanceFabric(alertMesg: "Call failed. Ensure this device supports calls")
             }
-            
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+        
+//        guard let url = URL(string: "telprompt://\(callednumber)"),
+//                  UIApplication.shared.canOpenURL(url) else {
+//            SceneDelegate.performanceFabric(alertMesg: "Unable to make phone calls")
+//                return
+//            }
+//            
+//            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         
     }
     
