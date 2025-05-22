@@ -125,7 +125,7 @@ class FDRDripFeedController: SuperPassController, UICollectionViewDelegate,UICol
        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init( pageString: .report, _isDirrict: true), animated:true)
     }
     func selctenterlive(liveinID: String) {
-        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: liveinID, pageString: .JoinLiveRoom, _isDirrict: true), animated:true)
+        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: liveinID, pageString: .LiveRoomRest, _isDirrict: true), animated:true)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

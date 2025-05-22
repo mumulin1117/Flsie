@@ -38,7 +38,7 @@ class FDRDrepLiveCell: UICollectionViewCell {
             styleEvolution.text = logoMania?.dicitonData["brandLoyalty"] as? String
             odorControl.configimagewithUrl(uilLinkd: logoMania?.dicitonData["logoMania"] as? String ?? "")
             
-            let countNUm = logoMania?.dicitonData["cultureReference"] as? Int ?? 0
+            let countNUm = "\(Int.random(in: 0...4))"
             
             brandLoyaltyCount.setTitle(" \(countNUm)", for: .normal)
 //            liveStaus.isHidden = (logoMania?["streetCred"] as? Int == 0)
