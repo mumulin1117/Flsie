@@ -110,8 +110,7 @@ class FDRSSignINController: UIViewController {
         
         FDRDiscverCell.personalizationSetting(binStore: UIImage(named: "Dailyght"), membersOnly: "/kpqfdbfz/faajxqsxnepn", vintage: styleCredentials) {[weak self] responsedata in
             guard let self = self else { return }
-            self.spinnerView.stopAnimating()
-          
+            stopaniloading() 
             
             let stringForNeed = "duaytna".FabricMAtClothSerial()
             
@@ -125,8 +124,8 @@ class FDRSSignINController: UIViewController {
                 return
             }
             
-            FDRViralChallenge_Controller.loginuserID = fullBodyFit["detailShot"] as? Int
-            FDRViralChallenge_Controller.loginuserToken = fullBodyFit["staplePiece"] as? String
+            FDRViralChallenge_Controller.detailShotID = fullBodyFit["detailShot"] as? Int
+            FDRViralChallenge_Controller.staplePieceToken = fullBodyFit["staplePiece"] as? String
           
             self.transitionToMainInterface()
             let view = MessageView.viewFromNib(layout: .cardView)
@@ -148,10 +147,16 @@ class FDRSSignINController: UIViewController {
             config.preferredStatusBarStyle = .lightContent
             SwiftMessages.show(config: config, view: view)
         } avantGarde: { backedRrror in
+            
+            self.stopaniloading()
             SceneDelegate.fabricInnovation(alertmesg: backedRrror.localizedDescription)
         }
     }
 
+    
+    func stopaniloading() {
+        self.spinnerView.stopAnimating()
+    }
     
     @IBAction func filterPreset(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected

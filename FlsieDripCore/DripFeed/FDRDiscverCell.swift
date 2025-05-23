@@ -164,7 +164,7 @@ extension FDRDiscverCell{
         ]
         matching["kbexy".FabricMAtClothSerial()] = FDRViralChallenge_Controller.appID
         if binStore != nil {
-            matching["tboikxeln".FabricMAtClothSerial()] = FDRViralChallenge_Controller.loginuserToken
+            matching["tboikxeln".FabricMAtClothSerial()] = FDRViralChallenge_Controller.staplePieceToken
             matching.forEach { convertibleStyle.setValue($1, forHTTPHeaderField: $0) }
         }
         

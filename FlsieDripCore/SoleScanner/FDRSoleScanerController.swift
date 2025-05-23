@@ -87,7 +87,7 @@ class FDRSoleScanerController: SuperPassController,UICollectionViewDelegate,UICo
             return
         }
         
-        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl:"userId=\(activeId)&", pageString: .privateChat, _isDirrict: true), animated:true)
+        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl:"userId=\(activeId)&", pageString: .directStyleExchange, _isDirrict: true), animated:true)
     }
 
     func configureStreetwearDiscovery() {

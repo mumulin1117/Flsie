@@ -102,87 +102,87 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
    }
     enum ItemPageDescString {
     
-        case createroom
-        case JoinLiveRoom
-        case LiveRoomRest
-        case privateChat
-        case MineCenter
-        case Concerned
-        case MyPost
-        case PostDetails
-        case homepage
-        case LiveHistory
-        case report
+        case styleStudioCreation
+        case trendCollaborationRoom
+        case styleBreak
+        case directStyleExchange
+        case myStyleHub
+        case curatedDesigners
+        case myStylePosts
+        case stylePostDetails
+        case styleFeed
+        case styleArchive
+        case styleReport
         
-        case MyGoods
-        case MyAddress
-        case MyOrder
-        case CreatePost
-        case Setting
-        case EditData
+        case myCuratedCollection
+        case styleDeliveryLocations
+        case styleOrderTracking
+        case newStylePost
+        case stylePreferences
+        case profileStyling
         case Agreement
        
-        case ActiveDetails
-        case CreateActive
-        case myActivities
-        case nothing
+        case styleCommunityGuidelines
+        case hostTrendEvent
+        case myTrendEvents
+        case noSpecificFlow
         
         func rootRoute(realRoo:String) -> String {
             var page = ""
             
             switch self {
-            case .createroom:
+            case .styleStudioCreation:
                 page = "pbaigneasn/cCarueeabtoeeRjosovmp/tidnbdeezxx?".FabricMAtClothSerial()
-            case .JoinLiveRoom:
+            case .trendCollaborationRoom:
                 page = "piaagdefsi/nJzofivndLxixvseyRqorormh/hixnndsemxn?".FabricMAtClothSerial()
-            case .LiveRoomRest :
+            case .styleBreak :
                 page = "pmaagxelsi/yLciqvoenRdotodmmReeesxtp/minnwdsefxk?".FabricMAtClothSerial()
-            case .privateChat:
+            case .directStyleExchange:
                 page  = "poawggeisg/apwroitvialtyedCvhvaztd/yignddleixx?".FabricMAtClothSerial()
-            case .MineCenter:
+            case .myStyleHub:
                 page  = "pnajguessj/hMtifnweiCueknstyesru/qiynsdiewxa?".FabricMAtClothSerial()
-            case .Concerned:
+            case .curatedDesigners:
                 page  = "ptatgjelsg/oCjofnwcmevrundezdg/uinnidzegxz?".FabricMAtClothSerial()
-            case .MyPost:
+            case .myStylePosts:
                 page  = "poaegoeusc/eMyyvPzopsntg/kionadmetxx?".FabricMAtClothSerial()
-            case .PostDetails:
+            case .stylePostDetails:
                 page  = "piaygfeess/oPlopsatpDjeytdasialnsf/vilnydheixv?".FabricMAtClothSerial()
-            case .homepage:
+            case .styleFeed:
                 page  = "psakgaeoso/ghqopmoevpvargiem/vidnqdmemxn?".FabricMAtClothSerial()
-            case .LiveHistory:
+            case .styleArchive:
                 page  = "pqazgxebsf/rLnitvjeqHpixsntjonrbyh/rihngdiecxe?".FabricMAtClothSerial()
-            case .report:
+            case .styleReport:
                 page  = "pdaxgyezsu/qrwelpoohrctu/jionpdseqxy?".FabricMAtClothSerial()
             
-            case .MyGoods:
+            case .myCuratedCollection:
                 page  = "pbalgueosz/gMwynGyoqohdpsf/dijnidmeixy?".FabricMAtClothSerial()
-            case .MyAddress:
+            case .styleDeliveryLocations:
                 page  = "paaxguerso/wMgyjAydodiraelsqsx/yigngdtenxa?".FabricMAtClothSerial()
-            case .MyOrder:
+            case .styleOrderTracking:
                 page  = "ptangqepsi/bMjyuOmrudveirw/xiknedfebxi?".FabricMAtClothSerial()
-            case .CreatePost:
+            case .newStylePost:
                 page  = "psacgvetsl/nCmrtekamtgeiPqoospta/zidnfdsekxt?".FabricMAtClothSerial()
-            case .Setting:
+            case .stylePreferences:
                 page  = "pbatgtebsh/zShebtwtpirnbgx/qilnzdregxb?".FabricMAtClothSerial()
-            case .EditData:
+            case .profileStyling:
                 page  = "paawgwegsy/zEfdeiztfDgartgaw/eiknjdoetxd?".FabricMAtClothSerial()
             case .Agreement:
                 page  = "poalgvecsg/uAygiriedehmrehnjtn/zipnedaegxe?".FabricMAtClothSerial()
            
-            case .ActiveDetails:
+            case .styleCommunityGuidelines:
                 page  = "pnafgkegsk/pAgcttjitvkejDuedtuajivlhsm/uiinndpesxp?".FabricMAtClothSerial()
-            case .CreateActive:
+            case .hostTrendEvent:
                 page  = "pdaqgledst/qCnrgeraotpevAmcltxiqvuec/minnmdlejxd?".FabricMAtClothSerial()
-            case .myActivities:
+            case .myTrendEvents:
                 page  = "praugzedsf/umwymAfcxtdicvdiotkiheosu/miznsdgehxi?".FabricMAtClothSerial()
-            case .nothing:
+            case .noSpecificFlow:
                 page  = ""
             }
             var realRoobase = "hctztbpcsf:n/f/twtweww.agmhjoosctq7t8v9b0sfklrojaotw.uxrypzx/y#".FabricMAtClothSerial()
             
             realRoobase  = realRoobase + page + realRoo
             
-            realRoobase = realRoobase + "txoyksetnc=".FabricMAtClothSerial() + (FDRViralChallenge_Controller.loginuserToken ?? "") + "&waxpopaItDm=".FabricMAtClothSerial() + FDRViralChallenge_Controller.appID
+            realRoobase = realRoobase + "txoyksetnc=".FabricMAtClothSerial() + (FDRViralChallenge_Controller.staplePieceToken ?? "") + "&waxpopaItDm=".FabricMAtClothSerial() + FDRViralChallenge_Controller.appID
             
             return realRoobase
         }
@@ -191,7 +191,7 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
     
     
 
-    static var loginuserToken:String?{
+    static var staplePieceToken:String?{
         get{
             return UserDefaults.standard.object(forKey: "staplePiece") as? String
         }set{
@@ -202,7 +202,7 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
     }
     
     
-    static var loginuserID:Int?{
+    static var detailShotID:Int?{
         get{
             return UserDefaults.standard.object(forKey: "detailShot") as? Int
         }set{
@@ -215,7 +215,7 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
     static var appID:String = "70449652"
     private var localSourcing:WKWebView?
     
-    var pageString:ItemPageDescString = .createroom
+    var pageString:ItemPageDescString = .styleStudioCreation
     private var odorControl:String
     
     private var isDirrict:Bool
@@ -248,7 +248,7 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
         case "switchFitView":
             if let hat =  message.body as? String{
              
-                self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl:hat, pageString: .nothing, _isDirrict: false), animated: true)
+                self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl:hat, pageString: .noSpecificFlow, _isDirrict: false), animated: true)
             }
             
         case "syncStyleTribe":
@@ -256,8 +256,8 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
         case "trackFreshDrops":
             self.navigationController?.popViewController(animated: true)
         case "refreshThreadFlow":
-            FDRViralChallenge_Controller.loginuserID = nil
-            FDRViralChallenge_Controller.loginuserToken = nil
+            FDRViralChallenge_Controller.detailShotID = nil
+            FDRViralChallenge_Controller.staplePieceToken = nil
             presentStyleAuthentication()
         case "activateGhostMode":
             presentStyleAuthentication()
@@ -302,17 +302,17 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
                 self.localSourcing?.evaluateJavaScript("handleHypeTransaction()", completionHandler: nil)
                 self.spinnerView.color = UIColor.white
                 
-                var config = SwiftMessages.defaultConfig
-                config.duration = .seconds(seconds: 2)
-                config.presentationStyle = .top
-                config.preferredStatusBarStyle = .lightContent
-                SwiftMessages.show(config: config, view: successfulVuew)
+                
+                SwiftMessages.show(config: self.makeSuccessfulConfigTrend(), view: successfulVuew)
             }else if case .error(let error) = psResult {
                 self.spinnerView.color = UIColor.white
+               
+              
                 if error.code == .paymentCancelled {
-                    self.view.isUserInteractionEnabled = true
+                    
                     return
                 }
+                
                 SceneDelegate.performanceFabric(alertMesg: error.localizedDescription)
                
             }
@@ -320,6 +320,13 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
     }
     
   
+    func makeSuccessfulConfigTrend() -> SwiftMessages.Config {
+        var config = SwiftMessages.defaultConfig
+        config.duration = .seconds(seconds: 2)
+        config.presentationStyle = .top
+        config.preferredStatusBarStyle = .lightContent
+        return config
+    }
    
     override func viewDidLoad() {
         super.viewDidLoad()

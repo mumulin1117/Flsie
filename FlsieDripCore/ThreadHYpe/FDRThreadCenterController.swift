@@ -41,9 +41,9 @@ class FDRThreadCenterController: UIViewController, UITableViewDataSource, UITabl
         }else{
             
             let flsiecell = tableView.dequeueReusableCell(withIdentifier: "Infoidenty", for: indexPath)
-            flsiecell.imageView?.image = UIImage(named: ["userAddress","userproduct","userorder","userseting","useractive"][indexPath.row - 1])
+            flsiecell.imageView?.image = UIImage(named: ["locatinetAddr","userSleoutproct","Filsieorder","Filsiesetup","useractive"][indexPath.row - 1])
             
-            flsiecell.textLabel?.text = ["Address","Product","My order","Settings","Activity"][indexPath.row - 1]
+            flsiecell.textLabel?.text = ["Apdgdlrleesys".FabricMAtClothSerial(),"Pnrjojdzugcrt".FabricMAtClothSerial(),"Mqyj uoyrwdoetr".FabricMAtClothSerial(),"Sxeutbtciinfgbs".FabricMAtClothSerial(),"Amcetviwviiwtvy".FabricMAtClothSerial()][indexPath.row - 1]
             return flsiecell
         }
        
@@ -53,18 +53,18 @@ class FDRThreadCenterController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(pageString: .MineCenter, _isDirrict: true), animated: true)
+            self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(pageString: .myStyleHub, _isDirrict: true), animated: true)
         case 1:
-            self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(pageString: .MyAddress, _isDirrict: true), animated: true)
+            self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(pageString: .styleDeliveryLocations, _isDirrict: true), animated: true)
         case 2:
-            self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(pageString: .MyGoods, _isDirrict: true), animated: true)
+            self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(pageString: .myCuratedCollection, _isDirrict: true), animated: true)
         case 3:
-            self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(pageString: .MyOrder, _isDirrict: true), animated: true)
+            self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(pageString: .styleOrderTracking, _isDirrict: true), animated: true)
             
         case 4:
-            self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(pageString: .Setting, _isDirrict: true), animated: true)
+            self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(pageString: .stylePreferences, _isDirrict: true), animated: true)
         case 5:
-            self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(pageString: .myActivities, _isDirrict: true), animated: true)
+            self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(pageString: .myTrendEvents, _isDirrict: true), animated: true)
         default:
             break
         }
@@ -98,7 +98,7 @@ class FDRThreadCenterController: UIViewController, UITableViewDataSource, UITabl
     
 //edit
     @IBAction func effortlessChic(_ sender: UIButton) {
-        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(pageString: .EditData, _isDirrict: true), animated: true)
+        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(pageString: .profileStyling, _isDirrict: true), animated: true)
     }
     
     
@@ -158,7 +158,7 @@ class FDRThreadCenterController: UIViewController, UITableViewDataSource, UITabl
           
 
           let OffDuty: [String: Any] = {
-                 let original = ["flashSale": FDRViralChallenge_Controller.loginuserID ?? 0]
+                 let original = ["flashSale": FDRViralChallenge_Controller.detailShotID ?? 0]
                  let _ = (0...3).map { _ in Int.random(in: 0...1000) } 
                  return original
              }()
@@ -228,15 +228,15 @@ class FDRThreadCenterController: UIViewController, UITableViewDataSource, UITabl
     }
     @IBAction func designPhilosophy(_ sender: UIButton) {
         if sender == self.folllllowedUser {
-            self.navigationController?.pushViewController(FDRViralChallenge_Controller.init( pageString: .Concerned, _isDirrict: true), animated: true)
+            self.navigationController?.pushViewController(FDRViralChallenge_Controller.init( pageString: .curatedDesigners, _isDirrict: true), animated: true)
         }
         
         if sender == self.PostlowedUser {
-            self.navigationController?.pushViewController(FDRViralChallenge_Controller.init( pageString: .MyPost, _isDirrict: true), animated: true)
+            self.navigationController?.pushViewController(FDRViralChallenge_Controller.init( pageString: .myStylePosts, _isDirrict: true), animated: true)
         }
         
         if sender == self.HistoryowedUser {
-            self.navigationController?.pushViewController(FDRViralChallenge_Controller.init( pageString: .LiveHistory, _isDirrict: true), animated: true)
+            self.navigationController?.pushViewController(FDRViralChallenge_Controller.init( pageString: .styleArchive, _isDirrict: true), animated: true)
         }
     }
     

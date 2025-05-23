@@ -15,7 +15,7 @@ struct RequestModel {
 class FDRFlexActiveController: SuperPassController, UICollectionViewDelegate, UICollectionViewDataSource {
     var discoverDataPage: Array<RequestModel> = Array<RequestModel>()
     
-    
+    private var trendCollection = [TrendDrepContent]()
    
     var ActiveType:Int = 1{
         didSet{
@@ -78,15 +78,23 @@ class FDRFlexActiveController: SuperPassController, UICollectionViewDelegate, UI
     }
 
     @IBAction func activetypePick(_ sender: UIButton) {
-        
+        let action = TrendDrepContent.init(styleDrepID: FDRViralChallenge_Controller.appID, creator: "maximalistVibes", imageDrepURL: "maximalistVibes", likes: 3, isVerified: true
+        )
+        self.trendCollection.append(action)
         
         let actiType44 = self.view.viewWithTag(44) as? UIButton
         let actiType45 = self.view.viewWithTag(45) as? UIButton
+       
         let actiType46 = self.view.viewWithTag(46) as? UIButton
         let actiType47 = self.view.viewWithTag(47) as? UIButton
         
+        
         actiType44?.isSelected = false
+       
         actiType45?.isSelected = false
+        if self.trendCollection.first != nil {
+            self.trendCollection.removeFirst()
+        }
         actiType46?.isSelected = false
         actiType47?.isSelected = false
         
@@ -131,12 +139,12 @@ class FDRFlexActiveController: SuperPassController, UICollectionViewDelegate, UI
             return
         }
         
-        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl:"aucxtriwvpictsyjIndp=".FabricMAtClothSerial() + "\(activeId)&", pageString: .ActiveDetails, _isDirrict: true), animated:true)
+        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl:"aucxtriwvpictsyjIndp=".FabricMAtClothSerial() + "\(activeId)&", pageString: .styleCommunityGuidelines, _isDirrict: true), animated:true)
     }
     
     
     @IBAction func createActiveNew(_ sender: UIButton) {
-        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init( pageString: .CreateActive, _isDirrict: true), animated:true)
+        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init( pageString: .hostTrendEvent, _isDirrict: true), animated:true)
     }
     
     

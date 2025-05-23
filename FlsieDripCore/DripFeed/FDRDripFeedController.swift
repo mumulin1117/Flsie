@@ -21,19 +21,19 @@ class SuperPassController: UIViewController {
         spinnerView.center = self.view.center
     }
 }
-
+struct TrendDrepContent {
+    let styleDrepID: String
+    let creator: String
+    let imageDrepURL: String
+    let likes: Int
+    let isVerified: Bool
+}
 class FDRDripFeedController: SuperPassController, UICollectionViewDelegate,UICollectionViewDataSource, Didselctedliveuser {
    
-    struct TrendContent {
-        let styleID: String
-        let creator: String
-        let imageURL: String
-        let likes: Int
-        let isVerified: Bool
-    }
+   
     var discoverDataPage: Array<RequestModel> = Array<RequestModel>()
   
-    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var shareDrepButton: UIButton!
     
     var liveHeader: FDRDripFeedTopheader?
     
@@ -52,7 +52,7 @@ class FDRDripFeedController: SuperPassController, UICollectionViewDelegate,UICol
         self.view.addSubview(self.recycledPolyester)
 
     }
-    private var trendCollection = [TrendContent]()
+    private var trendCollection = [TrendDrepContent]()
     private lazy var recycledPolyester: UICollectionView = {
         
         let layout = UICollectionViewFlowLayout()
@@ -64,7 +64,7 @@ class FDRDripFeedController: SuperPassController, UICollectionViewDelegate,UICol
         
         let mainf = (UIScreen.main.bounds.height > 700) ? 40.0 : 0.0
         
-        let olyester = UICollectionView.init(frame:  CGRect.init(x: 0, y: shareButton.frame.maxY + 20.0 + mainf, width: UIScreen.main.bounds.width, height: self.view.bounds.height - (shareButton.frame.maxY  + 20.0 + mainf)), collectionViewLayout: layout)
+        let olyester = UICollectionView.init(frame:  CGRect.init(x: 0, y: shareDrepButton.frame.maxY + 20.0 + mainf, width: UIScreen.main.bounds.width, height: self.view.bounds.height - (shareDrepButton.frame.maxY  + 20.0 + mainf)), collectionViewLayout: layout)
         olyester.delegate = self
         olyester.register(UINib(nibName: "FDRDiscverCell", bundle: nil), forCellWithReuseIdentifier: "FDRDiscverCell")
         olyester.backgroundColor = .clear
@@ -84,7 +84,7 @@ class FDRDripFeedController: SuperPassController, UICollectionViewDelegate,UICol
     
     private let refreshController = UIRefreshControl()
     @IBAction func customPatch(_ sender: UIButton) {
-        self.navigationController?.pushViewController( FDRViralChallenge_Controller.init(pageString: .createroom, _isDirrict: true), animated: true)
+        self.navigationController?.pushViewController( FDRViralChallenge_Controller.init(pageString: .styleStudioCreation, _isDirrict: true), animated: true)
     }
     
     
@@ -94,7 +94,7 @@ class FDRDripFeedController: SuperPassController, UICollectionViewDelegate,UICol
     
     @IBAction func forCreateNew(_ sender: UIButton) {
         
-        self.navigationController?.pushViewController( FDRViralChallenge_Controller.init(pageString: .CreatePost, _isDirrict: true), animated: true)
+        self.navigationController?.pushViewController( FDRViralChallenge_Controller.init(pageString: .newStylePost, _isDirrict: true), animated: true)
     }
     
     
@@ -122,19 +122,21 @@ class FDRDripFeedController: SuperPassController, UICollectionViewDelegate,UICol
     }
     
    @objc func notifyUserpost()  {
-       self.navigationController?.pushViewController(FDRViralChallenge_Controller.init( pageString: .report, _isDirrict: true), animated:true)
+       self.navigationController?.pushViewController(FDRViralChallenge_Controller.init( pageString: .styleReport, _isDirrict: true), animated:true)
     }
     func selctenterlive(liveinID: String) {
-        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: liveinID, pageString: .LiveRoomRest, _isDirrict: true), animated:true)
+        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: liveinID, pageString: .styleBreak, _isDirrict: true), animated:true)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard  let dynamicId = discoverDataPage[indexPath.row].dicitonData["rawEdge"] as? Int else{return}
         
-        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: "dnyknfaymziaczIsdr=".FabricMAtClothSerial() + "\(dynamicId)&", pageString: .PostDetails, _isDirrict: true), animated:true)
+        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: "dnyknfaymziaczIsdr=".FabricMAtClothSerial() + "\(dynamicId)&", pageString: .stylePostDetails, _isDirrict: true), animated:true)
     }
     func modelOffDuty() {
-     
+        let action = TrendDrepContent.init(styleDrepID: FDRViralChallenge_Controller.appID, creator: "maximalistVibes", imageDrepURL: "maximalistVibes", likes: 3, isVerified: true
+        )
+        self.trendCollection.append(action)
         FDRDiscverCell.personalizationSetting(binStore: UIImage(named: "Dailyght"),membersOnly: "/ejyxqrlhnsjuujiz/nexnoij", vintage: [
             
             "neutralPalette": FDRViralChallenge_Controller.appID,
@@ -150,7 +152,9 @@ class FDRDripFeedController: SuperPassController, UICollectionViewDelegate,UICol
                     let fullBodyFit = Sellout[stringForNeed] as? Array<Dictionary<String,Any>>
                     
             else {
-                
+                if self.trendCollection.first != nil {
+                    self.trendCollection.removeFirst()
+                }
                 SceneDelegate.performanceFabric(alertMesg: "Nkov nloiavbeb fdnaytfak sndopwnihntgh!".FabricMAtClothSerial())
                 return
             }
@@ -161,13 +165,15 @@ class FDRDripFeedController: SuperPassController, UICollectionViewDelegate,UICol
             
             
         } avantGarde: { backedRrror in
-            
+            if self.trendCollection.first != nil {
+                self.trendCollection.removeFirst()
+            }
         }
     }
     
     
     func FindDiscovermodelOffDuty() {
-        let action = TrendContent.init(styleID: FDRViralChallenge_Controller.appID, creator: "maximalistVibes", imageURL: "maximalistVibes", likes: 2, isVerified: true
+        let action = TrendDrepContent.init(styleDrepID: FDRViralChallenge_Controller.appID, creator: "maximalistVibes", imageDrepURL: "maximalistVibes", likes: 2, isVerified: true
         )
         let OffDuty: [String: Any] = [
             "maximalistVibes": FDRViralChallenge_Controller.appID,
@@ -197,6 +203,9 @@ class FDRDripFeedController: SuperPassController, UICollectionViewDelegate,UICol
             self.recycledPolyester.reloadData()
         } avantGarde: { backedRrror in
             self.spinnerView.stopAnimating()
+            if self.trendCollection.first != nil {
+                self.trendCollection.removeFirst()
+            }
             self.trendCollection.removeAll()
         }
     }

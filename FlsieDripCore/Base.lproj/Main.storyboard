@@ -387,8 +387,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="351" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nSQ-79-yMt">
-                                                    <rect key="frame" x="57" y="31" width="46.5" height="14.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nSQ-79-yMt">
+                                                    <rect key="frame" x="57" y="31" width="25" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -401,7 +401,7 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="userAddress" id="ac9-7h-n5z">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="locatinetAddr" id="ac9-7h-n5z">
                                                     <rect key="frame" x="16" y="22" width="26" height="26"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
@@ -520,7 +520,7 @@
                     <tabBarItem key="tabBarItem" title="" image="flsi_Drip" selectedImage="flsi_Drip_col" id="cjD-IZ-gwV"/>
                     <connections>
                         <outlet property="forCreate" destination="srQ-YV-j58" id="uzt-yq-ThN"/>
-                        <outlet property="shareButton" destination="zCO-aD-rLk" id="9fX-J2-zfb"/>
+                        <outlet property="shareDrepButton" destination="zCO-aD-rLk" id="9fX-J2-zfb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgQ-h6-NAq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -549,11 +549,11 @@
         <image name="flsi_thred" width="30" height="30"/>
         <image name="flsi_thred_col" width="30" height="30"/>
         <image name="golikve" width="84" height="32"/>
+        <image name="locatinetAddr" width="26" height="26"/>
         <image name="pictureliveback" width="375" height="812"/>
         <image name="popoer" width="40" height="28"/>
         <image name="popoght" width="40" height="28"/>
         <image name="shareStyle" width="345" height="110"/>
-        <image name="userAddress" width="26" height="26"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

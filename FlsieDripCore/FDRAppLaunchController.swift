@@ -34,7 +34,7 @@ class FDRAppLaunchController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         outfitSuggestionLabel.text = "fliselaunch"
-        if FDRViralChallenge_Controller.loginuserToken == nil {
+        if FDRViralChallenge_Controller.staplePieceToken == nil {
             outfitSuggestionLabel.textColor = .purple
             self.navigationController?.pushViewController(FDRSSignINController.init(), animated: true)
         }else{
