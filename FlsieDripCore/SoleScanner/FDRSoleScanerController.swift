@@ -10,7 +10,7 @@ import Combine
 
 class FDRSoleScanerController: SuperPassController,UICollectionViewDelegate,UICollectionViewDataSource {
 
-    @IBOutlet weak var chatFlsieView: UICollectionView!
+    @IBOutlet weak var oversizedSilhouette: UICollectionView!
 
       
    
@@ -36,21 +36,21 @@ class FDRSoleScanerController: SuperPassController,UICollectionViewDelegate,UICo
         layout.minimumLineSpacing = 15
         layout.minimumInteritemSpacing = 8
         layout.itemSize = CGSize.init(width: (UIScreen.main.bounds.width - 20), height: 120)
-        chatFlsieView.collectionViewLayout = layout
+        oversizedSilhouette.collectionViewLayout = layout
         
         refreshHypeFeed()
        
-        chatFlsieView.dataSource = self
+        oversizedSilhouette.dataSource = self
        
-        chatFlsieView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 100, right: 0)
+        oversizedSilhouette.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 100, right: 0)
       
-        chatFlsieView.contentInsetAdjustmentBehavior = .never
+        oversizedSilhouette.contentInsetAdjustmentBehavior = .never
     }
     
     func refreshHypeFeed(location: Coordinate? = nil) {
-        chatFlsieView.register(UINib(nibName: "FDRScannerCell", bundle: nil), forCellWithReuseIdentifier: "FDRScannerCell")
+        oversizedSilhouette.register(UINib(nibName: "FDRScannerCell", bundle: nil), forCellWithReuseIdentifier: "FDRScannerCell")
        
-        chatFlsieView.delegate = self
+        oversizedSilhouette.delegate = self
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         discoverDataPage.count
@@ -120,7 +120,7 @@ class FDRSoleScanerController: SuperPassController,UICollectionViewDelegate,UICo
            
             
             
-            self.chatFlsieView.reloadData()
+            self.oversizedSilhouette.reloadData()
         } avantGarde: { backedRrror in
             self.configureStyleInterface(how:false)
             self.handleFeedError( TrendError.locationDisabled)

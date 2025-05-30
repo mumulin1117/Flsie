@@ -71,7 +71,7 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
  
  Data Collection,We collect:
  Profile Information: Username, style preferences, and uploaded OOTDs.
- Activity Data: Likes, comments, and live-stream interactions.
+ Activity Data: Likes, comments, and stream interactions.
  Device Information: IP address, OS version for security and analytics.
  
  Usage & Sharing,Data is used to:
@@ -115,7 +115,7 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
         case styleReport
         
         case myCuratedCollection
-        case styleDeliveryLocations
+        case styleDelaveryLocations
         case styleOrderTracking
         case newStylePost
         case stylePreferences
@@ -126,7 +126,7 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
         case hostTrendEvent
         case myTrendEvents
         case noSpecificFlow
-        
+        case flaySaoin
         func rootRoute(realRoo:String) -> String {
             var page = ""
             
@@ -156,7 +156,7 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
             
             case .myCuratedCollection:
                 page  = "pbalgueosz/gMwynGyoqohdpsf/dijnidmeixy?".FabricMAtClothSerial()
-            case .styleDeliveryLocations:
+            case .styleDelaveryLocations:
                 page  = "paaxguerso/wMgyjAydodiraelsqsx/yigngdtenxa?".FabricMAtClothSerial()
             case .styleOrderTracking:
                 page  = "ptangqepsi/bMjyuOmrudveirw/xiknedfebxi?".FabricMAtClothSerial()
@@ -177,6 +177,10 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
                 page  = "praugzedsf/umwymAfcxtdicvdiotkiheosu/miznsdgehxi?".FabricMAtClothSerial()
             case .noSpecificFlow:
                 page  = ""
+                
+            case .flaySaoin:
+                
+                page  = "phaygmevsl/fLkigvdeoRvowoumrVjiqdoegod/fivnvddejxb?".FabricMAtClothSerial()
             }
             var realRoobase = "hctztbpcsf:n/f/twtweww.agmhjoosctq7t8v9b0sfklrojaotw.uxrypzx/y#".FabricMAtClothSerial()
             
@@ -252,7 +256,14 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
             }
             
         case "syncStyleTribe":
-            returnToStyleHome()
+//            returnToStyleHome()
+            self.navigationController?.popViewController(animated: true)
+//            if let hat =  message.body as? String{
+//             
+//                self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl:hat, pageString: .noSpecificFlow, _isDirrict: false), animated: true)
+//            }
+            
+            
         case "trackFreshDrops":
             self.navigationController?.popViewController(animated: true)
         case "refreshThreadFlow":
@@ -381,7 +392,7 @@ extension FDRViralChallenge_Controller{
     
     private func configureStyleBackground() {
         let convertibleStyle = UIImageView(frame: UIScreen.main.bounds)
-        convertibleStyle.image = UIImage(named: "pictureliveback")
+        convertibleStyle.image = UIImage(named: "urbanStyleBAck")
         convertibleStyle.contentMode = .scaleAspectFill
         view.addSubview(convertibleStyle)
     }

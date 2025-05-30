@@ -1,5 +1,5 @@
 //
-//  FDRDrepLiveCell.swift
+//  FDRDrepStreetwearCell.swift
 //  FlsieDripCore
 //
 //  Created by FlsieDripCore on 2025/5/14.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FDRDrepLiveCell: UICollectionViewCell {
+class FDRDrepStreetwearCell: UICollectionViewCell {
  
     
     @IBOutlet weak var odorControl: UIImageView!
@@ -19,7 +19,7 @@ class FDRDrepLiveCell: UICollectionViewCell {
     
     
 
-    @IBOutlet weak var liveStaus: UIImageView!
+    @IBOutlet weak var nectionStaus: UIImageView!
     
     
     
@@ -35,13 +35,18 @@ class FDRDrepLiveCell: UICollectionViewCell {
     }
     var logoMania:RequestModel?{
         didSet{
+            
+            
             styleEvolution.text = logoMania?.dicitonData["brandLoyalty"] as? String
             odorControl.configimagewithUrl(uilLinkd: logoMania?.dicitonData["logoMania"] as? String ?? "")
-            
-            let countNUm = "\(Int.random(in: 0...4))"
+            let statuts = (logoMania?.dicitonData["streetCred"] as? Int ?? 0)
+            let countNUm =  (statuts == -1) ? "\(Int.random(in: 0...4))" : "0"
             
             brandLoyaltyCount.setTitle(" \(countNUm)", for: .normal)
-//            liveStaus.isHidden = (logoMania?["streetCred"] as? Int == 0)
+            
+            
+            nectionStaus.isHidden = (statuts != -1)
+            
         }
     }
 }

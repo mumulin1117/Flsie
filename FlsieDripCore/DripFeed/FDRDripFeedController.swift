@@ -28,14 +28,14 @@ struct TrendDrepContent {
     let likes: Int
     let isVerified: Bool
 }
-class FDRDripFeedController: SuperPassController, UICollectionViewDelegate,UICollectionViewDataSource, Didselctedliveuser {
+class FDRDripFeedController: SuperPassController, UICollectionViewDelegate,UICollectionViewDataSource, DidselctedFituser {
    
    
     var discoverDataPage: Array<RequestModel> = Array<RequestModel>()
   
     @IBOutlet weak var shareDrepButton: UIButton!
     
-    var liveHeader: FDRDripFeedTopheader?
+    var adjustableFeature: FDRDripFeedTopheader?
     
 
     @IBOutlet weak var forCreate: UIButton!
@@ -102,8 +102,8 @@ class FDRDripFeedController: SuperPassController, UICollectionViewDelegate,UICol
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader &&  indexPath.section == 0{
             let topheader = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "FDRDripFeedTopheader", for: indexPath) as! FDRDripFeedTopheader
-            liveHeader  = topheader
-            liveHeader?.delegate = self
+            adjustableFeature  = topheader
+            adjustableFeature?.delegate = self
             return topheader
             
         }
@@ -124,8 +124,13 @@ class FDRDripFeedController: SuperPassController, UICollectionViewDelegate,UICol
    @objc func notifyUserpost()  {
        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init( pageString: .styleReport, _isDirrict: true), animated:true)
     }
-    func selctenterlive(liveinID: String) {
-        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: liveinID, pageString: .styleBreak, _isDirrict: true), animated:true)
+    func selctenterlFit(fit: String,stauiins:Int) { //
+        if stauiins == -1 {
+            self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: fit, pageString: .flaySaoin, _isDirrict: true), animated:true)
+        }else{
+            self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl: fit, pageString: .styleBreak, _isDirrict: true), animated:true)
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -159,7 +164,7 @@ class FDRDripFeedController: SuperPassController, UICollectionViewDelegate,UICol
                 return
             }
             
-            self.liveHeader?.livePage = fullBodyFit.compactMap({ dic in
+            self.adjustableFeature?.nicheAestheticCa = fullBodyFit.compactMap({ dic in
                 return RequestModel.init(dicitonData: dic)
             })
             

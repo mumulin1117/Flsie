@@ -6,35 +6,36 @@
 //
 
 import UIKit
-protocol Didselctedliveuser {
-    func selctenterlive(liveinID:String)
+protocol DidselctedFituser {
+    func selctenterlFit(fit:String,stauiins:Int)
 }
 class FDRDripFeedTopheader: UICollectionReusableView, UICollectionViewDelegate,UICollectionViewDataSource {
-    var delegate:Didselctedliveuser?
+    var delegate:DidselctedFituser?
     
 
-      var livePage:Array<RequestModel> = Array<RequestModel>(){
+      var nicheAestheticCa:Array<RequestModel> = Array<RequestModel>(){
         didSet{
             recycledPolyester.reloadData()
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        livePage.count
+        nicheAestheticCa.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let flsie = collectionView.dequeueReusableCell(withReuseIdentifier: "FDRDrepLiveCell", for: indexPath) as! FDRDrepLiveCell
-        flsie.logoMania = livePage[indexPath.row]
+        let flsie = collectionView.dequeueReusableCell(withReuseIdentifier: "FDRDrepStreetwearCell", for: indexPath) as! FDRDrepStreetwearCell
+        flsie.logoMania = nicheAestheticCa[indexPath.row]
         return flsie
     }
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if self.delegate != nil, let liveidFashion = livePage[indexPath.row].dicitonData["boldPrint"] as? Int,let avatoruserID = livePage[indexPath.row].dicitonData["graphicTee"] as? Int {
+        if self.delegate != nil, let idFashion = nicheAestheticCa[indexPath.row].dicitonData["boldPrint"] as? Int,let avatoruserID = nicheAestheticCa[indexPath.row].dicitonData["graphicTee"] as? Int {
             
-           let passConnectID = "liveId=\(liveidFashion)&"
-            self.delegate?.selctenterlive(liveinID: passConnectID)
+            let streetCred = nicheAestheticCa[indexPath.row].dicitonData["streetCred"] as? Int ?? 0
+            let passConnectID = "lxiqvyexIjdy=".FabricMAtClothSerial()  + "\(idFashion)&"
+            self.delegate?.selctenterlFit(fit: passConnectID, stauiins: streetCred)
         }
     }
 
@@ -48,7 +49,7 @@ class FDRDripFeedTopheader: UICollectionReusableView, UICollectionViewDelegate,U
         layout.headerReferenceSize = CGSize.zero
         layout.scrollDirection = .horizontal
         let olyester = UICollectionView.init(frame: CGRect(x: 15, y: 0, width: UIScreen.main.bounds.width - 15, height: 170), collectionViewLayout: layout)
-        olyester.register(UINib(nibName: "FDRDrepLiveCell", bundle: nil), forCellWithReuseIdentifier: "FDRDrepLiveCell")
+        olyester.register(UINib(nibName: "FDRDrepStreetwearCell", bundle: nil), forCellWithReuseIdentifier: "FDRDrepStreetwearCell")
         olyester.delegate = self
         olyester.dataSource = self
         olyester.backgroundColor = .clear

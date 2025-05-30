@@ -55,7 +55,7 @@ class FDRThreadCenterController: UIViewController, UITableViewDataSource, UITabl
         case 0:
             self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(pageString: .myStyleHub, _isDirrict: true), animated: true)
         case 1:
-            self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(pageString: .styleDeliveryLocations, _isDirrict: true), animated: true)
+            self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(pageString: .styleDelaveryLocations, _isDirrict: true), animated: true)
         case 2:
             self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(pageString: .myCuratedCollection, _isDirrict: true), animated: true)
         case 3:
