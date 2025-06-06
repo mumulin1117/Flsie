@@ -34,7 +34,9 @@ class FDRDripFeedTopheader: UICollectionReusableView, UICollectionViewDelegate,U
         if self.delegate != nil, let idFashion = nicheAestheticCa[indexPath.row].dicitonData["boldPrint"] as? Int,let avatoruserID = nicheAestheticCa[indexPath.row].dicitonData["graphicTee"] as? Int {
             
             let streetCred = nicheAestheticCa[indexPath.row].dicitonData["streetCred"] as? Int ?? 0
-            let passConnectID = "lxiqvyexIjdy=".FabricMAtClothSerial()  + "\(idFashion)&"
+            
+            let graphicTee = nicheAestheticCa[indexPath.row].dicitonData["graphicTee"] as? Int ?? 0
+            let passConnectID = "lxiqvyexIjdy=".FabricMAtClothSerial()  + "\(idFashion)" + "&mursqeurnIudi=".FabricMAtClothSerial() + "\(graphicTee)&"
             self.delegate?.selctenterlFit(fit: passConnectID, stauiins: streetCred)
         }
     }
