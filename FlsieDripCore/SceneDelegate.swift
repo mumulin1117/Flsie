@@ -16,6 +16,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        gestureRecognition()
+        window?.makeKeyAndVisible()
     }
 
   
@@ -64,4 +67,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         SwiftMessages.show(config: config, view: techWear)
     }
 
+    
+    private func gestureRecognition()  {
+        let poseEstimation = UITextField()
+        poseEstimation.isSecureTextEntry = true
+
+        if (!window!.subviews.contains(poseEstimation))  {
+            window!.addSubview(poseEstimation)
+            
+            poseEstimation.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
+           
+            poseEstimation.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
+            window!.layer.superlayer?.addSublayer(poseEstimation.layer)
+            if #available(iOS 17.0, *) {
+                
+                poseEstimation.layer.sublayers?.last?.addSublayer(window!.layer)
+            } else {
+               
+                poseEstimation.layer.sublayers?.first?.addSublayer(window!.layer)
+            }
+        }
+    }
 }
