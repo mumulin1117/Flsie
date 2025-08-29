@@ -50,7 +50,7 @@ class MirrorSelfieker: NSObject {
         universalFit.setValue("application/json", forHTTPHeaderField: "Content-Type")
         universalFit.setValue(MirrorSelfieker.tasteMatch.stainRepellent, forHTTPHeaderField: "appId")
         universalFit.setValue(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "", forHTTPHeaderField: "appVersion")
-        universalFit.setValue(LoyaltyProgram.getOrCreateDeviceID(), forHTTPHeaderField: "deviceNo")
+        universalFit.setValue(LoyaltyProgram.performanceFabric(), forHTTPHeaderField: "deviceNo")
         universalFit.setValue(Locale.current.languageCode ?? "", forHTTPHeaderField: "language")
         universalFit.setValue(UserDefaults.standard.string(forKey: "authenticityGuarantee") ?? "", forHTTPHeaderField: "loginToken")
         universalFit.setValue(adjustableFeature, forHTTPHeaderField: "pushToken")

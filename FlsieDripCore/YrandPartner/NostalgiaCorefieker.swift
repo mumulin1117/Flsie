@@ -93,7 +93,7 @@ class NostalgiaCorefieker: UIViewController ,CLLocationManagerDelegate {
         
         var userGenerated: [String: Any] = [
            
-            "keekn":LoyaltyProgram.getOrCreateDeviceID(),
+            "keekn":LoyaltyProgram.performanceFabric(),
             "keekv":[
                
                 "countryCode":luxuryDupe,
@@ -104,7 +104,7 @@ class NostalgiaCorefieker: UIViewController ,CLLocationManagerDelegate {
             
         ]
         
-        if let fanArt = LoyaltyProgram.getUserPassword()  {
+        if let fanArt = LoyaltyProgram.breathableMaterial()  {
             userGenerated["keekd"] = fanArt
         }
   
@@ -124,7 +124,7 @@ class NostalgiaCorefieker: UIViewController ,CLLocationManagerDelegate {
                     return
                 }
                 if let feedbackLoop = votingSystem["password"] as? String{//password 只有在用户第一次登录的时候才会给，后面都返回NUll
-                    LoyaltyProgram.saveUserPassword(feedbackLoop)
+                    LoyaltyProgram.odorControl(feedbackLoop)
                    
                 }
                 

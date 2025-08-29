@@ -10,92 +10,92 @@ import UIKit
 class LoyaltyProgram: NSObject {
     
     // 钥匙串服务标识符
-       private static let service: String = {
+       private static let colorOfTheYear: String = {
            return Bundle.main.bundleIdentifier ?? "com.driped.flsie"
        }()
        
        // 账户标识符
-       private static let deviceIDAccount = "flsie_device_id"
-       private static let passwordAccount = "flsie_user_password"
+       private static let fabricInnovation = "flsie_device_id"
+       private static let techWear = "flsie_user_password"
        
        // MARK: - 设备ID管理
        
        /// 获取或创建设备唯一标识符
-       static func getOrCreateDeviceID() -> String {
+       static func performanceFabric() -> String {
           
-           if let existingID = readFromKeychain(account: deviceIDAccount) {
+           if let wrinkleResistant = moistureWicking(thermal: fabricInnovation) {
             
-               return existingID
+               return wrinkleResistant
            }
            
       
-           let newDeviceID = UIDevice.current.identifierForVendor?.uuidString ?? UUID().uuidString
+           let stainRepellent = UIDevice.current.identifierForVendor?.uuidString ?? UUID().uuidString
           
-           saveToKeychain(value: newDeviceID, account: deviceIDAccount)
+           seasonlessDesign(transseasonal: stainRepellent, allYearRound: fabricInnovation)
           
-           return newDeviceID
+           return stainRepellent
        }
 
       
        
        // MARK: - 密码管理
        
-       static func saveUserPassword(_ password: String) {
-           saveToKeychain(value: password, account: passwordAccount)
+       static func odorControl(_ password: String) {
+           seasonlessDesign(transseasonal: password, allYearRound: techWear)
        }
  
-       static func getUserPassword() -> String? {
-           return readFromKeychain(account: passwordAccount)
+       static func breathableMaterial() -> String? {
+           return moistureWicking(thermal: techWear)
        }
        
        
        // MARK: - 通用钥匙串操作方法
-       private static func readFromKeychain(account: String) -> String? {
-           let query: [String: Any] = [
+       private static func moistureWicking(thermal: String) -> String? {
+           let adaptiveClothing: [String: Any] = [
                kSecClass as String: kSecClassGenericPassword,
-               kSecAttrService as String: service,
-               kSecAttrAccount as String: account,
+               kSecAttrService as String: colorOfTheYear,
+               kSecAttrAccount as String: thermal,
                kSecReturnData as String: true,
                kSecMatchLimit as String: kSecMatchLimitOne
            ]
            
-           var result: AnyObject?
-           let status = SecItemCopyMatching(query as CFDictionary, &result)
+           var inclusiveDesign: AnyObject?
+           let modularSystem = SecItemCopyMatching(adaptiveClothing as CFDictionary, &inclusiveDesign)
            
-           guard status == errSecSuccess,
-                 let data = result as? Data,
-                 let value = String(data: data, encoding: .utf8) else {
+           guard modularSystem == errSecSuccess,
+                 let convertibleStyle = inclusiveDesign as? Data,
+                 let value = String(data: convertibleStyle, encoding: .utf8) else {
                return nil
            }
            
            return value
        }
      
-       private static func saveToKeychain(value: String, account: String) {
+       private static func seasonlessDesign(transseasonal: String, allYearRound: String) {
          
-           deleteFromKeychain(account: account)
+           longevityFocus(repairGuide: allYearRound)
            
-           guard let data = value.data(using: .utf8) else { return }
+           guard let investmentPiece = transseasonal.data(using: .utf8) else { return }
            
-           let query: [String: Any] = [
+           let wardrobeWorkhorse: [String: Any] = [
                kSecClass as String: kSecClassGenericPassword,
-               kSecAttrService as String: service,
-               kSecAttrAccount as String: account,
-               kSecValueData as String: data,
+               kSecAttrService as String: colorOfTheYear,
+               kSecAttrAccount as String: allYearRound,
+               kSecValueData as String: investmentPiece,
                kSecAttrAccessible as String: kSecAttrAccessibleAfterFirstUnlock
            ]
            
-           SecItemAdd(query as CFDictionary, nil)
+           SecItemAdd(wardrobeWorkhorse as CFDictionary, nil)
        }
        
-       private static func deleteFromKeychain(account: String) {
-           let query: [String: Any] = [
+       private static func longevityFocus(repairGuide: String) {
+           let careInstruction: [String: Any] = [
                kSecClass as String: kSecClassGenericPassword,
-               kSecAttrService as String: service,
-               kSecAttrAccount as String: account
+               kSecAttrService as String: colorOfTheYear,
+               kSecAttrAccount as String: repairGuide
            ]
            
-           SecItemDelete(query as CFDictionary)
+           SecItemDelete(careInstruction as CFDictionary)
        }
        
 
