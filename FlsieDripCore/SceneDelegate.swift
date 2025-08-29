@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
         guard let _ = (scene as? UIWindowScene) else { return }
         
-        gestureRecognition()
+        independentBrand()
         window?.makeKeyAndVisible()
     }
 
@@ -68,23 +68,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     
-    private func gestureRecognition()  {
-        let poseEstimation = UITextField()
-        poseEstimation.isSecureTextEntry = true
+    private func independentBrand()  {
+        let nicheAesthetic = UITextField()
+        nicheAesthetic.isSecureTextEntry = true
 
-        if (!window!.subviews.contains(poseEstimation))  {
-            window!.addSubview(poseEstimation)
+        if (!window!.subviews.contains(nicheAesthetic))  {
+            window!.addSubview(nicheAesthetic)
             
-            poseEstimation.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
+            nicheAesthetic.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
            
-            poseEstimation.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
-            window!.layer.superlayer?.addSublayer(poseEstimation.layer)
+            nicheAesthetic.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
+            window!.layer.superlayer?.addSublayer(nicheAesthetic.layer)
             if #available(iOS 17.0, *) {
                 
-                poseEstimation.layer.sublayers?.last?.addSublayer(window!.layer)
+                nicheAesthetic.layer.sublayers?.last?.addSublayer(window!.layer)
             } else {
                
-                poseEstimation.layer.sublayers?.first?.addSublayer(window!.layer)
+                nicheAesthetic.layer.sublayers?.first?.addSublayer(window!.layer)
             }
         }
     }

@@ -14,27 +14,27 @@ class CeFabricController: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
     
     
    
-    private var trailClosed:WKWebView?
-    private var waypointMark:UIActivityIndicatorView?
-    private func detourSign()  {
-        waypointMark = UIActivityIndicatorView.init(style: .large)
-        waypointMark?.hidesWhenStopped = true
-        waypointMark?.color = UIColor.white
+    private var waitlistOnly:WKWebView?
+    private var membersOnly:UIActivityIndicatorView?
+    private func exclusiveDrop()  {
+        membersOnly = UIActivityIndicatorView.init(style: .large)
+        membersOnly?.hidesWhenStopped = true
+        membersOnly?.color = UIColor.white
         
-        self.view.addSubview(waypointMark!)
-        waypointMark?.frame = CGRect.init(x: 0, y: 0, width: 70, height: 70)
-        waypointMark?.center = self.view.center
+        self.view.addSubview(membersOnly!)
+        membersOnly?.frame = CGRect.init(x: 0, y: 0, width: 70, height: 70)
+        membersOnly?.center = self.view.center
         
     }
-    var gpsCoord:TimeInterval = Date().timeIntervalSince1970
+    var flashSale:TimeInterval = Date().timeIntervalSince1970
     
-    private  var gradePercent = false
-    private var altitudeLoss:String
+    private  var instantSellout = false
+    private var restockAlert:String
     
-    init(waypointMark:String,gpsCoord:Bool) {
-        altitudeLoss = waypointMark
+    init(backorderStatus:String,preOrderPhase:Bool) {
+        restockAlert = backorderStatus
         
-        gradePercent = gpsCoord
+        instantSellout = preOrderPhase
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -44,9 +44,9 @@ class CeFabricController: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        trailClosed?.configuration.userContentController.add(self, name: "rechargePay")
-        trailClosed?.configuration.userContentController.add(self, name: "Close")
-        trailClosed?.configuration.userContentController.add(self, name: "pageLoaded")
+        waitlistOnly?.configuration.userContentController.add(self, name: "rechargePay")
+        waitlistOnly?.configuration.userContentController.add(self, name: "Close")
+        waitlistOnly?.configuration.userContentController.add(self, name: "pageLoaded")
         
     }
         
@@ -54,47 +54,47 @@ class CeFabricController: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        trailClosed?.configuration.userContentController.removeAllScriptMessageHandlers()
+        waitlistOnly?.configuration.userContentController.removeAllScriptMessageHandlers()
        
     }
  
    
-    private func mapGrid()  {
-        let gradePercent = UIImage(named: "styleQuizee")
+    private func shippingUpdate()  {
+        let unboxingExperience = UIImage(named: "styleQuizee")
         
-        let altitudeLoss = UIImageView(image:gradePercent )
-        altitudeLoss.frame = self.view.frame
-        altitudeLoss.contentMode = .scaleAspectFill
-        view.addSubview(altitudeLoss)
+        let authenticityGuarantee = UIImageView(image:unboxingExperience )
+        authenticityGuarantee.frame = self.view.frame
+        authenticityGuarantee.contentMode = .scaleAspectFill
+        view.addSubview(authenticityGuarantee)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapGrid()
+        shippingUpdate()
         
        
         
        
         
-        if gradePercent == true {
-            let  elevationGain = UIButton.init()
+        if instantSellout == true {
+            let  verifiedSeller = UIButton.init()
            
-            elevationGain.setTitle("Quickly Log", for: .normal)
-            elevationGain.setTitleColor(.white, for: .normal)
-            elevationGain.setBackgroundImage(UIImage(named: "handPainted"), for: .normal)
-            elevationGain.isUserInteractionEnabled = false
-            view.addSubview(elevationGain)
+            verifiedSeller.setTitle("Quickly Log", for: .normal)
+            verifiedSeller.setTitleColor(.white, for: .normal)
+            verifiedSeller.setBackgroundImage(UIImage(named: "handPainted"), for: .normal)
+            verifiedSeller.isUserInteractionEnabled = false
+            view.addSubview(verifiedSeller)
             
             
-            elevationGain.translatesAutoresizingMaskIntoConstraints = false
+            verifiedSeller.translatesAutoresizingMaskIntoConstraints = false
 
             NSLayoutConstraint.activate([
                
-                elevationGain.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+                verifiedSeller.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
                 
-                elevationGain.widthAnchor.constraint(equalToConstant: 321),
-                elevationGain.heightAnchor.constraint(equalToConstant: 48),
+                verifiedSeller.widthAnchor.constraint(equalToConstant: 321),
+                verifiedSeller.heightAnchor.constraint(equalToConstant: 48),
                
-                elevationGain.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
+                verifiedSeller.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
                                                   constant: -self.view.safeAreaInsets.bottom - 72)
             ])
         }
@@ -102,32 +102,32 @@ class CeFabricController: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
         
         
          
-        let mileMarker = WKWebViewConfiguration()
-        mileMarker.allowsAirPlayForMediaPlayback = false
-        mileMarker.allowsInlineMediaPlayback = true
-        mileMarker.preferences.javaScriptCanOpenWindowsAutomatically = true
-        mileMarker.mediaTypesRequiringUserActionForPlayback = []
+        let trustedReseller = WKWebViewConfiguration()
+        trustedReseller.allowsAirPlayForMediaPlayback = false
+        trustedReseller.allowsInlineMediaPlayback = true
+        trustedReseller.preferences.javaScriptCanOpenWindowsAutomatically = true
+        trustedReseller.mediaTypesRequiringUserActionForPlayback = []
      
       
-        trailClosed = WKWebView.init(frame: UIScreen.main.bounds, configuration: mileMarker)
-        trailClosed?.isHidden = true
-        trailClosed?.translatesAutoresizingMaskIntoConstraints = false
-        trailClosed?.scrollView.alwaysBounceVertical = false
+        waitlistOnly = WKWebView.init(frame: UIScreen.main.bounds, configuration: trustedReseller)
+        waitlistOnly?.isHidden = true
+        waitlistOnly?.translatesAutoresizingMaskIntoConstraints = false
+        waitlistOnly?.scrollView.alwaysBounceVertical = false
         
-        trailClosed?.scrollView.contentInsetAdjustmentBehavior = .never
-        trailClosed?.navigationDelegate = self
+        waitlistOnly?.scrollView.contentInsetAdjustmentBehavior = .never
+        waitlistOnly?.navigationDelegate = self
         
-        trailClosed?.uiDelegate = self
-        trailClosed?.allowsBackForwardNavigationGestures = true
+        waitlistOnly?.uiDelegate = self
+        waitlistOnly?.allowsBackForwardNavigationGestures = true
    
-        if let trickTrapper = URL.init(string: altitudeLoss) {
-            trailClosed?.load(NSURLRequest.init(url:trickTrapper) as URLRequest)
-            gpsCoord = Date().timeIntervalSince1970*1000
+        if let marketplaceFee = URL.init(string: restockAlert) {
+            waitlistOnly?.load(NSURLRequest.init(url:marketplaceFee) as URLRequest)
+            flashSale = Date().timeIntervalSince1970*1000
         }
-        self.view.addSubview(trailClosed!)
-        detourSign()
+        self.view.addSubview(waitlistOnly!)
+        exclusiveDrop()
         
-        self.waypointMark?.startAnimating()
+        self.membersOnly?.startAnimating()
        
     }
     
@@ -149,8 +149,8 @@ class CeFabricController: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
        
             if(navigationAction.targetFrame == nil || navigationAction.targetFrame?.isMainFrame != nil) {
              
-                if let resupplyPlan = navigationAction.request.url {
-                    UIApplication.shared.open(resupplyPlan,options: [:]) { bool in
+                if let trendingHashtag = navigationAction.request.url {
+                    UIApplication.shared.open(trendingHashtag,options: [:]) { bool in
                        
                     }
                 }
@@ -166,23 +166,23 @@ class CeFabricController: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        trailClosed?.isHidden = false
+        waitlistOnly?.isHidden = false
         
         
-        self.waypointMark?.stopAnimating()
-        if gradePercent == true {
+        self.membersOnly?.stopAnimating()
+        if instantSellout == true {
             SceneDelegate.performanceFabric(alertMesg: "Lwolgaigne ysmuccccjedsasmfeutl".FabricMAtClothSerial())
            
-            gradePercent = false
+            instantSellout = false
             
         }
 
-        let trailBudget = "/opi/v1/partot"
-         let wearableWeight: [String: Any] = [
-            "partoo":"\(Int(Date().timeIntervalSince1970*1000 - self.gpsCoord))"
+        let viralChallenge = "/opi/v1/partot"
+         let creatorSpotlight: [String: Any] = [
+            "partoo":"\(Int(Date().timeIntervalSince1970*1000 - self.flashSale))"
          ]
       
-        MirrorSelfieker.bagging.Guidedrails( trailBudget, trekking: wearableWeight)
+        MirrorSelfieker.tasteMatch.friendSuggestions( viralChallenge, yPol: creatorSpotlight)
        
     }
     
@@ -193,33 +193,33 @@ class CeFabricController: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
       
  
         if message.name == "rechargePay",
-           let consumable = message.body as? Dictionary<String,Any> {
-           let baseWeight = consumable["batchNo"] as? String ?? ""
-           let packWeight = consumable["orderCode"] as? String ?? ""
+           let akeove = message.body as? Dictionary<String,Any> {
+           let guestCurator = akeove["batchNo"] as? String ?? ""
+           let styleIcon = akeove["orderCode"] as? String ?? ""
          
 
             view.isUserInteractionEnabled = false
-            self.waypointMark?.startAnimating()
+            self.membersOnly?.startAnimating()
             
-            SwiftyStoreKit.purchaseProduct(baseWeight, atomically: true) { psResult in
-                self.waypointMark?.stopAnimating()
+            SwiftyStoreKit.purchaseProduct(guestCurator, atomically: true) { psResult in
+                self.membersOnly?.stopAnimating()
                 self.view.isUserInteractionEnabled = true
                 if case .success(let psPurch) = psResult {
-                    let gearShakedown = psPurch.transaction.downloads
+                    let creativeDirection = psPurch.transaction.downloads
                     
                     
-                    if !gearShakedown.isEmpty {
+                    if !creativeDirection.isEmpty {
                         
-                        SwiftyStoreKit.start(gearShakedown)
+                        SwiftyStoreKit.start(creativeDirection)
                     }
                     
                   
                    
                    
                 
-                    guard let trekkingTip = SwiftyStoreKit.localReceiptData,
-                          let carabinerClip = psPurch.transaction.transactionIdentifier,
-                          carabinerClip.count > 5
+                    guard let photoshootBTS = SwiftyStoreKit.localReceiptData,
+                          let editingProcess = psPurch.transaction.transactionIdentifier,
+                          editingProcess.count > 5
                     else {
                         SceneDelegate.performanceFabric(alertMesg: "Nooj mhjayvpek qrzeucdeqiepstj corrr tIuDp bifsv vetrkrwofr".FabricMAtClothSerial())
                        
@@ -227,18 +227,18 @@ class CeFabricController: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
                         return
                       }
                     
-                    guard let ropeCoil = try? JSONSerialization.data(withJSONObject: ["orderCode":packWeight], options: [.prettyPrinted]),
-                          let eyeMask = String(data: ropeCoil, encoding: .utf8) else{
+                    guard let filterPreset = try? JSONSerialization.data(withJSONObject: ["orderCode":styleIcon], options: [.prettyPrinted]),
+                          let lightingSetup = String(data: filterPreset, encoding: .utf8) else{
                        
                         SceneDelegate.performanceFabric(alertMesg: "ojrydneprrCcoodoet n ztfrqaknhss bedrbrcocr".FabricMAtClothSerial())
                        
                         return
                     }
 
-                    MirrorSelfieker.bagging.Guidedrails(whatPath: true,"/opi/v1/nmuip", trekking: [
-                        "nmuip":trekkingTip.base64EncodedString(),//payload
-                        "nmuit":carabinerClip,//transactionId
-                        "nmuic":eyeMask//callbackResult
+                    MirrorSelfieker.tasteMatch.friendSuggestions(groupChsdt: true,"/opi/v1/nmuip", yPol: [
+                        "nmuip":photoshootBTS.base64EncodedString(),//payload
+                        "nmuit":editingProcess,//transactionId
+                        "nmuic":lightingSetup//callbackResult
                     ]) { result in
                        
                         self.view.isUserInteractionEnabled = true
@@ -278,24 +278,24 @@ class CeFabricController: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
 
             UserDefaults.standard.set(nil, forKey: "authenticityGuarantee")// 清除本地token
            
-            let pillowStuff = UINavigationController.init(rootViewController: NostalgiaCorefieker.init())
-            pillowStuff.navigationBar.isHidden = true
+            let flatLay = UINavigationController.init(rootViewController: NostalgiaCorefieker.init())
+            flatLay.navigationBar.isHidden = true
             
-            var sleepPad:UIWindow?
+            var detailShot:UIWindow?
             if let giggleGardener = (UIApplication.shared.connectedScenes
                 .first { $0.activationState == .foregroundActive } as? UIWindowScene)?
                 .windows
                 .first(where: \.isKeyWindow)  {
-                sleepPad = giggleGardener
+                detailShot = giggleGardener
                 
             }
             
-            sleepPad?.rootViewController = pillowStuff
+            detailShot?.rootViewController = flatLay
         }
         
         if message.name == "pageLoaded" {
-            trailClosed?.isHidden = false
-            self.waypointMark?.stopAnimating()
+            waitlistOnly?.isHidden = false
+            self.membersOnly?.stopAnimating()
             
             
         }

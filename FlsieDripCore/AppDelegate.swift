@@ -13,13 +13,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        restockAlert()
         SwiftyStoreKit.completeTransactions(atomically: true) { hike in
-            for toyStoreP in hike {
+            for veganLeather in hike {
                 
-                if toyStoreP.transaction.transactionState == .purchased ||
-                    toyStoreP.transaction.transactionState == .restored{
-                    if toyStoreP.needsFinishTransaction {
-                        SwiftyStoreKit.finishTransaction(toyStoreP.transaction)
+                if veganLeather.transaction.transactionState == .purchased ||
+                    veganLeather.transaction.transactionState == .restored{
+                    if veganLeather.needsFinishTransaction {
+                        SwiftyStoreKit.finishTransaction(veganLeather.transaction)
                     }
                 }
             }
@@ -37,13 +39,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         
         
-        let toiletPaper = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+        let ethicalProduction = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
         
-        UserDefaults.standard.set(toiletPaper, forKey: "photoshootBTS")
+        UserDefaults.standard.set(ethicalProduction, forKey: "heritageBddrand")
         
     }
     
-    func makeingnotiati()  {
+    func restockAlert()  {
         
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { catholeBury, _ in
