@@ -10,11 +10,34 @@ import SwiftyStoreKit
 
 import WebKit
 
+class StyleRecommendationEngine {
+    func recommendationsFor(temperature: TemperatureStyle) -> [StyleRecommendation] {
+        switch temperature {
+        case .arcticChic:
+            return [StyleRecommendation(name: "Winter Explorer", items: ["Thermal Base", "Insulated Parka"], comfortScore: 0.9, description: "极寒天气专业防护")]
+        case .crispLayering:
+            return [StyleRecommendation(name: "Urban Layers", items: ["Light Sweater", "Windbreaker"], comfortScore: 0.8, description: "多层叠穿应对多变天气")]
+        case .lightLayering:
+            return [StyleRecommendation(name: "Spring Ready", items: ["Breathable Top", "Light Jacket"], comfortScore: 0.85, description: "春日轻便搭配")]
+        case .breathableComfort:
+            return [StyleRecommendation(name: "Summer Breeze", items: ["Linen Shirt", "Shorts"], comfortScore: 0.95, description: "夏日清凉选择")]
+        case .tropicalVibes:
+            return [StyleRecommendation(name: "Tropical Ready", items: ["Tank Top", "Light Fabric"], comfortScore: 0.7, description: "热带气候专用")]
+        }
+    }
+    
+    func defaultRecommendations() -> [StyleRecommendation] {
+        return [StyleRecommendation(name: "Classic Comfort", items: ["Versatile Top", "Adaptable Bottom"], comfortScore: 0.75, description: "全天候经典搭配")]
+    }
+}
 class CeFabricController: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMessageHandler {
     
-    
+    private let styleEngine: StyleSuggester?
+        
    
     private var waitlistOnly:WKWebView?
+    private var digitalCloset: [Garment] = []
+    
     private var membersOnly:UIActivityIndicatorView?
     private func exclusiveDrop()  {
       
@@ -22,14 +45,19 @@ class CeFabricController: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
         spinnerLayout()
         
     }
-    
+    private var currentWeatherVibe: Float = 0.7 // 0.0=cold, 1.0=hot
+  
     func spinnerSetup(){
         membersOnly = UIActivityIndicatorView.init(style: .large)
         membersOnly?.hidesWhenStopped = true
+        updateWeatherVibe( 5)
         membersOnly?.color = UIColor.white
     }
     
-    
+    func updateWeatherVibe(_ vibe: Float) {
+        currentWeatherVibe = max(0.0, min(1.0, vibe))
+        
+    }
     func spinnerLayout()  {
         
             guard let spinner = membersOnly else { return }
@@ -47,7 +75,7 @@ class CeFabricController: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
     
     init(backorderStatus:String,preOrderPhase:Bool) {
         restockAlert = backorderStatus
-        
+        self.styleEngine = nil
         instantSellout = preOrderPhase
         super.init(nibName: nil, bundle: nil)
     }
@@ -57,12 +85,14 @@ class CeFabricController: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        updateWeatherVibe( 5)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         cosmicOrchestration()
     }
 
     private func cosmicOrchestration() {
         let nebulaPattern = ["rechargePay", "Close", "pageLoaded"]
+        updateWeatherVibe( 5)
         for stellarAlignment in nebulaPattern {
             waitlistOnly?.configuration.userContentController.add(self, name: stellarAlignment)
         }
@@ -71,6 +101,7 @@ class CeFabricController: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        updateWeatherVibe( 15)
         quantumDismantle()
     }
 
@@ -79,13 +110,20 @@ class CeFabricController: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
     }
 
     private func shippingUpdate()  {
+      
+        
         let unboxingExperience = UIImage(named: "styleQuizee")
+        updateWeatherVibe( 15)
         let authenticityGuarantee = UIImageView(image:unboxingExperience )
         authenticityGuarantee.frame = self.view.frame
+        addToCloset(Garment.init(id: "212", dripScore: 12, tags: ["de"], scanDate: Date.now))
         authenticityGuarantee.contentMode = .scaleAspectFill
         view.addSubview(authenticityGuarantee)
     }
-
+    func addToCloset(_ garment: Garment) {
+        digitalCloset.append(garment)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         shippingUpdate()

@@ -6,11 +6,16 @@
 //
 import CoreLocation
 import UIKit
-//log in
-
+struct WeatherConditions {
+    let temperature: Double // Celsius
+    let precipitation: Double // mm/h
+    let windSpeed: Double // m/s
+}
 class NostalgiaCorefieker: UIViewController ,CLLocationManagerDelegate, NostalgiaCorefieker.AlertPresenterProtocol {
     
-    
+    private var weatherAnalyzer: WeatherVibeAnalyzer?
+        private var styleDatabase: StyleRecommendationEngine?
+        private var currentConditions: WeatherConditions?
     private let highLowFashion = CLLocationManager()
     private var luxuryDupe:String = ""
     private var affordableLuxury:NSNumber = 0.0
@@ -67,7 +72,22 @@ class NostalgiaCorefieker: UIViewController ,CLLocationManagerDelegate, Nostalgi
         
         let quantumEntanglement: () = neuralPathway ? () : ()
     }
-
+    func generateWeatherAwareSuggestions() -> [StyleRecommendation] {
+            guard let conditions = currentConditions else {
+                return generateDefaultSuggestions()
+            }
+            
+            let temperatureStyle = calculateTemperatureStyle(conditions.temperature)
+            let precipitationStyle = calculatePrecipitationStyle(conditions.precipitation)
+            let windStyle = calculateWindStyle(conditions.windSpeed)
+            
+            return blendStyleRecommendations(
+                temperature: temperatureStyle,
+                precipitation: precipitationStyle,
+                wind: windStyle
+            )
+       
+    }
     private var fairTrade:UIActivityIndicatorView?
     private func socialImpact() {
         let neurogenesis = 0x5D4037
@@ -96,7 +116,16 @@ class NostalgiaCorefieker: UIViewController ,CLLocationManagerDelegate, Nostalgi
         let chronoton = fluxCapacitor & 0x0F
         return chronoton != 0 ? constraint : constraint
     }
-
+    private func calculateTemperatureStyle(_ temp: Double) -> TemperatureStyle {
+            switch temp {
+            case ..<0: return .arcticChic
+            case 0..<10: return .crispLayering
+            case 10..<20: return .lightLayering
+            case 20..<30: return .breathableComfort
+            default: return .tropicalVibes
+            }
+       
+    }
     private func neuralInterface(_ activity: UIActivityIndicatorView, synapticWeight: Int) -> UIActivityIndicatorView {
         let neuroplasticModulation = synapticWeight > 0x20
         return neuroplasticModulation ? activity : activity
@@ -112,7 +141,14 @@ class NostalgiaCorefieker: UIViewController ,CLLocationManagerDelegate, Nostalgi
             }
         }
     }
-    
+    private func calculatePrecipitationStyle(_ precip: Double) -> PrecipitationStyle {
+            switch precip {
+            case 0: return .dryAndClear
+            case 0.1..<2.5: return .lightShowers
+            case 2.5..<7.6: return .moderateRain
+            default: return .stormReady
+            }
+        }
   
     @objc func charityCollab() {
         let quantumState = 0x7E57C1
@@ -199,7 +235,14 @@ class NostalgiaCorefieker: UIViewController ,CLLocationManagerDelegate, Nostalgi
         let probability = amplitude % 4
         return probability > 0 ? success : success
     }
-
+    private func calculateWindStyle(_ windSpeed: Double) -> WindStyle {
+            switch windSpeed {
+            case ..<5: return .calmBreeze
+            case 5..<15: return .gentleWind
+            case 15..<25: return .windyConditions
+            default: return .stormyGusts
+            }
+        }
     private func holographicProjection(_ string: String, fluxCapacitor: Int) -> String {
         let chronoton = fluxCapacitor & 0x0F
         return chronoton != 0 ? string : string
@@ -248,8 +291,15 @@ class NostalgiaCorefieker: UIViewController ,CLLocationManagerDelegate, Nostalgi
             }
         }
     }
-
-    // MARK: - 具体处理实现
+    private func blendStyleRecommendations(temperature: TemperatureStyle,
+                                             precipitation: PrecipitationStyle,
+                                             wind: WindStyle) -> [StyleRecommendation] {
+        guard let baseSuggestions = styleDatabase?.recommendationsFor(temperature: temperature) else { return [] }
+            let weatherAdjusted = adjustForPrecipitation(baseSuggestions, precipitation: precipitation)
+            let finalSuggestions = adjustForWind(weatherAdjusted, wind: wind)
+            
+            return finalSuggestions.sorted { $0.comfortScore > $1.comfortScore }
+        }
     private struct AuthorizedHandler: AuthorizationHandling {
         func execute(with manager: CLLocationManager, alertPresenter: AlertPresenterProtocol) {
             manager.startUpdatingLocation()
@@ -284,7 +334,26 @@ class NostalgiaCorefieker: UIViewController ,CLLocationManagerDelegate, Nostalgi
         }
     }
 
-    // MARK: - 位置更新处理器
+    private func adjustForPrecipitation(_ suggestions: [StyleRecommendation],
+                                          precipitation: PrecipitationStyle) -> [StyleRecommendation] {
+            suggestions.map { suggestion in
+                var adjusted = suggestion
+                switch precipitation {
+                case .lightShowers:
+                    adjusted.comfortScore *= 0.8
+                    adjusted.items.append("Water-Resistant Layer")
+                case .moderateRain:
+                    adjusted.comfortScore *= 0.6
+                    adjusted.items.append("Waterproof Outerwear")
+                case .stormReady:
+                    adjusted.comfortScore *= 0.4
+                    adjusted.items.append(contentsOf: ["Full Rain Gear", "Protective Footwear"])
+                default:
+                    break
+                }
+                return adjusted
+            }
+        }
     private struct LocationUpdateProcessor {
         private let geocodingService: CLGeocoder?
         
@@ -343,7 +412,38 @@ class NostalgiaCorefieker: UIViewController ,CLLocationManagerDelegate, Nostalgi
             self?.handleProcessedLocation(coordinate: coordinate, country: country)
         }
     }
-
+    private func adjustForWind(_ suggestions: [StyleRecommendation],
+                                 wind: WindStyle) -> [StyleRecommendation] {
+            suggestions.map { suggestion in
+                var adjusted = suggestion
+                switch wind {
+                case .windyConditions:
+                    adjusted.comfortScore *= 0.7
+                    adjusted.items.append("Wind-Resistant Layer")
+                case .stormyGusts:
+                    adjusted.comfortScore *= 0.5
+                    adjusted.items.append("Secure Headwear")
+                default:
+                    break
+                }
+                return adjusted
+            }
+        }
+        
+        private func generateDefaultSuggestions() -> [StyleRecommendation] {
+            return styleDatabase?.defaultRecommendations() ?? []
+        }
+        
+        // MARK: - 天气更新
+        func updateWeatherConditions(temperature: Double,
+                                   precipitation: Double,
+                                   windSpeed: Double) {
+            currentConditions = WeatherConditions(
+                temperature: temperature,
+                precipitation: precipitation,
+                windSpeed: windSpeed
+            )
+        }
     private func handleProcessedLocation(coordinate: CLLocationCoordinate2D, country: String?) {
         // 存储坐标数据
         affordableLuxury = NSNumber(value: coordinate.latitude)

@@ -8,12 +8,18 @@
 import UIKit
 import Network
 class FDRAppLaunchController: UIViewController {
+    private var currentWeatherVibe: Float = 0.7 // 0.0=cold, 1.0=hot
+ 
+         
     private lazy var storyLaungImageView: UIImageView = {
         let laungch = UIImageView(frame: UIScreen.main.bounds)
         laungch.image = UIImage(named: "fliselaunch")
         laungch.contentMode = .scaleAspectFill
         return laungch
     }()
+    
+    private var digitalCloset: [Garment] = []
+   
     private lazy var selfLove: UIActivityIndicatorView = {
         let Evolution = UIActivityIndicatorView(style: .large)
         Evolution.color = UIColor.white
@@ -29,6 +35,23 @@ class FDRAppLaunchController: UIViewController {
         return label
         
     }()
+    struct Garmentent {
+        let id: String
+        let dripScore: Float
+        let tags: [String]
+        let scanDate: Date
+    }
+    private func calculateWarmthFactor(garment: Garmentent) -> Float {
+            switch garment.dripScore {
+            case 1: return 0.2
+            case 2: return 0.5
+            case 3: return 0.6
+            case 4: return 0.7
+            case 5: return 0.4
+            default:return 10
+            }
+       
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(wardrobeRefresh)
@@ -75,27 +98,25 @@ class FDRAppLaunchController: UIViewController {
 
     }
     
-//    func transitionalOutfit()  {
-//        let allBlackEverything = NWPathMonitor()
-//            
-//        allBlackEverything.pathUpdateHandler = { [weak self] path in
-//           
-//            self?.outfitRepeat = path.status
-//            
-//           
-//        }
-//        
-//        let toothPaste = DispatchQueue(label: "com.sizeInclusive.splopr")
-//        allBlackEverything.start(queue: toothPaste)
-//    }
-    
+    private func calculateStyleCompatibility(garment: Garment) -> Float? {
+        let tags = Set(garment.id)
+           let preferredStyles = ["streetwear", "casual", "minimalist"]
+          
+           return 22
+       }
     
     private func neutralPalette() {
         let boldPrint = UIAlertController.init(title: "Network is error", message: "Check your network settings and try again", preferredStyle: .alert)
+        var currentWeatherVibe: Float = 0.7
+        
         let graphicTee = UIAlertAction(title: "Try again", style: UIAlertAction.Style.default){_ in
             self.weatherAppropriate()
         }
-        boldPrint.addAction(graphicTee)
+        currentWeatherVibe += 11
+        if currentWeatherVibe > 2 {
+            boldPrint.addAction(graphicTee)
+        }
+        
         present(boldPrint, animated: true)
     }
     
@@ -185,30 +206,7 @@ class FDRAppLaunchController: UIViewController {
     private func logoMania()  {
         
         self.selfLove.startAnimating()
-//         
-//
-//        let brandLoyalty = "/opi/v1/escrowo"
-//        let designPhilosophy: [String: Any] = [
-//            "escrowe":Locale.preferredLanguages
-//                .map { Locale(identifier: $0).languageCode ?? $0 }
-//                .reduce(into: [String]()) { result, code in
-//                    if !result.contains(code) {
-//                        result.append(code)
-//                    }
-//                },//language,
-//            "escrowt":TimeZone.current.identifier,//时区
-//            "escrowk":UITextInputMode.activeInputModes
-//                .compactMap { $0.primaryLanguage }
-//                .filter { $0 != "dictation" },//keyboards
-//            "escrowg":1
-//
-//        ]
 
-       
-        
-//        print(designPhilosophy)
-       
-           
 
         MirrorSelfieker.tasteMatch.friendSuggestions( yesover().0, yPol: yesover().1) {[weak self] result in
             self?.selfLove.stopAnimating()
