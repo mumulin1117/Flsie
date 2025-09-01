@@ -223,7 +223,7 @@
 				INFOPLIST_FILE = FlsieDripCore/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Flsie;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Take photos, upload avatars and dynamic pictures, Flsie needs to obtain your camera permission";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "To obtain geographic location related information for images, Flsie needs to have access to your application's geographic location permission during the application period";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To obtain geographic location related information for images, Flsie needs to have access to your application's geographic location permission during the application period";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Send voice message, Flsie needs to obtain your microphone permission";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Upload local images  as avatars and dynamic moves, Flsie needs to obtain your album permission";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -264,7 +264,7 @@
 				INFOPLIST_FILE = FlsieDripCore/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Flsie;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Take photos, upload avatars and dynamic pictures, Flsie needs to obtain your camera permission";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "To obtain geographic location related information for images, Flsie needs to have access to your application's geographic location permission during the application period";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To obtain geographic location related information for images, Flsie needs to have access to your application's geographic location permission during the application period";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Send voice message, Flsie needs to obtain your microphone permission";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Upload local images  as avatars and dynamic moves, Flsie needs to obtain your album permission";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

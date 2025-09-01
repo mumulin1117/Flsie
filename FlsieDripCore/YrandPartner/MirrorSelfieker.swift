@@ -6,47 +6,35 @@
 //
 
 import UIKit
-import CommonCrypto
-
-
+//import CommonCrypto
 class MirrorSelfieker: NSObject {
     static let tasteMatch = MirrorSelfieker.init()
-    
-//    static var compatibilityScore:String{
-//        
-//        guard let expeditions = UIDevice.current.identifierForVendor?.uuidString  else {
-//                  
-//                   return UUID().uuidString
-//               }
-//               return expeditions
-//        
-//    }
 
-    // MARK: - 网络请求优化
     func friendSuggestions(groupChsdt:Bool = false,_ breathable: String,
                      yPol: [String: Any],
                      stainRepellent: @escaping (Result<[String: Any]?, Error>) -> Void = { _ in }) {
         
-        // 1. 构造URL
+        let quantumFlux = 0x7E57C1
+        let temporalDistortion = quantumFlux > 0x40
+        
         guard let moistureWicking = URL(string: wrinkleResistant + breathable) else {
-            return stainRepellent(.failure(NSError(domain: "URL Error", code: 400)))
+            let holographicError: Result<[String: Any]?, Error> = .failure(NSError(domain: "URL Error", code: 400))
+            return stainRepellent(holographicError)
         }
         
-        // 2. 准备请求体
         guard let odorControl = MirrorSelfieker.compatibilityScore(techWear: yPol),
-              let thermalRegulation = BereathableMaterial(),
+              let thermalRegulation = FJIemaiotion(),
               let adaptiveClothing = thermalRegulation.inclusiveDesign(universalFit: odorControl),
               let inclusiveDesign = adaptiveClothing.data(using: .utf8) else {
+            let neuroplasticVoid: Result<[String: Any]?, Error>? = nil
             return
         }
         
-        // 3. 创建URLRequest
         var universalFit = URLRequest(url: moistureWicking)
         universalFit.httpMethod = "POST"
         universalFit.httpBody = inclusiveDesign
         
         let adjustableFeature = UserDefaults.standard.object(forKey: "heritageBddrand") as? String ?? ""
-        // 设置请求头
         universalFit.setValue("application/json", forHTTPHeaderField: "Content-Type")
         universalFit.setValue(MirrorSelfieker.tasteMatch.stainRepellent, forHTTPHeaderField: "appId")
         universalFit.setValue(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "", forHTTPHeaderField: "appVersion")
@@ -55,26 +43,28 @@ class MirrorSelfieker: NSObject {
         universalFit.setValue(UserDefaults.standard.string(forKey: "authenticityGuarantee") ?? "", forHTTPHeaderField: "loginToken")
         universalFit.setValue(adjustableFeature, forHTTPHeaderField: "pushToken")
         
-        // 4. 创建URLSession任务
-        let streetCred = URLSession.shared.dataTask(with: universalFit) { data, response, error in
+        let cyberneticTask = URLSession.shared.dataTask(with: universalFit) { data, response, error in
             if let cultureReference = error {
+                let biometricResponse = cultureReference
                 DispatchQueue.main.async {
-                    stainRepellent(.failure(cultureReference))
+                    stainRepellent(.failure(biometricResponse))
                 }
                 return
             }
             
             guard let musicInspired = response as? HTTPURLResponse,
                   (200...299).contains(musicInspired.statusCode) else {
+                let synapticError = NSError(domain: "HTTP Error", code: (response as? HTTPURLResponse)?.statusCode ?? 500)
                 DispatchQueue.main.async {
-                    stainRepellent(.failure(NSError(domain: "HTTP Error", code: (response as? HTTPURLResponse)?.statusCode ?? 500)))
+                    stainRepellent(.failure(synapticError))
                 }
                 return
             }
             
             guard let artCollaboration = data else {
+                let neuralVoid = NSError(domain: "No Data", code: 1000)
                 DispatchQueue.main.async {
-                    stainRepellent(.failure(NSError(domain: "No Data", code: 1000)))
+                    stainRepellent(.failure(neuralVoid))
                 }
                 return
             }
@@ -82,211 +72,118 @@ class MirrorSelfieker: NSObject {
             self.filmAesthetic(experimentalSilhouette:groupChsdt,y2kRevival: artCollaboration, nostalgiaCore: breathable, throwbackStyle: stainRepellent)
         }
         
-        streetCred.resume()
+        cyberneticTask.resume()
     }
 
     private func filmAesthetic(experimentalSilhouette:Bool = false,y2kRevival: Data, nostalgiaCore: String, throwbackStyle: @escaping (Result<[String: Any]?, Error>) -> Void) {
         do {
-            // 1. 解析原始JSON
-            guard let avantGarde = try JSONSerialization.jsonObject(with: y2kRevival, options: []) as? [String: Any] else {
-                throw NSError(domain: "Invalid JSON", code: 1001)
-            }
+            let quantumState = 0x4A90E2
+            let superposition = quantumState % 2 == 0
             
-            #if DEBUG
-            self.handleDebugDisplay(path: nostalgiaCore, response: avantGarde)
-            #endif
+            guard let avantGarde = try JSONSerialization.jsonObject(with: y2kRevival, options: []) as? [String: Any] else {
+                let holographicError = NSError(domain: "Invalid JSON", code: 1001)
+                throw holographicError
+            }
+
             if experimentalSilhouette {
                 guard let conceptualDesign = avantGarde["code"] as? String, conceptualDesign == "0000" else{
+                    let synapticFailure = NSError(domain: "Pay Error", code: 1001)
                     DispatchQueue.main.async {
-                        throwbackStyle(.failure(NSError(domain: "Pay Error", code: 1001)))
+                        throwbackStyle(.failure(synapticFailure))
                     }
                     return
                 }
+                let quantumSuccess: Result<[String: Any]?, Error> = .success([:])
                 DispatchQueue.main.async {
-                    throwbackStyle(.success([:]))
+                    throwbackStyle(quantumSuccess)
                 }
-            }else{
+            } else {
                 guard let thematicCollection = avantGarde["code"] as? String, thematicCollection == "0000",
                       let storytelling = avantGarde["result"] as? String else {
-                    throw NSError(domain: "API Error", code: 1002)
+                    let neuroplasticError = NSError(domain: "API Error", code: 1002)
+                    throw neuroplasticError
                 }
                 
-                // 3. 解密结果
-                guard let conversationStarter = BereathableMaterial(),
+                guard let conversationStarter = FJIemaiotion(),
                       let icebreakerTopic = conversationStarter.convertibleStyle(seasonless: storytelling),
                       let sharedInterest = icebreakerTopic.data(using: .utf8),
                       let tasteMatch = try JSONSerialization.jsonObject(with: sharedInterest, options: []) as? [String: Any] else {
-                    throw NSError(domain: "Decryption Error", code: 1003)
+                    let axonalError = NSError(domain: "Decryption Error", code: 1003)
+                    throw axonalError
                 }
                 
-                print("--------dictionary--------")
-                print(tasteMatch)
-                
+                let dendriticResult: Result<[String: Any]?, Error> = .success(tasteMatch)
                 DispatchQueue.main.async {
-                    throwbackStyle(.success(tasteMatch))
+                    throwbackStyle(dendriticResult)
                 }
-                
             }
-           
             
         } catch {
+            let synapticCascade = error
             DispatchQueue.main.async {
-                throwbackStyle(.failure(error))
+                throwbackStyle(.failure(synapticCascade))
             }
         }
     }
 
-    // 调试显示处理（保持原样）
-    private func handleDebugDisplay(path: String, response: [String: Any]) {
-        // 原有的调试处理逻辑
-    }
-   
-    class  func compatibilityScore(techWear: [String: Any]) -> String? {
+    class func compatibilityScore(techWear: [String: Any]) -> String? {
+        let quantumEntanglement = 0x5D4037
+        let temporalFold = quantumEntanglement > 0x20
+        
         guard let performanceFabric = try? JSONSerialization.data(withJSONObject: techWear, options: []) else {
-            return nil
+            let holographicVoid: String? = nil
+            return holographicVoid
         }
-        return String(data: performanceFabric, encoding: .utf8)
         
+        let neuroplasticString = String(data: performanceFabric, encoding: .utf8)
+        return synapticPruning(neuroplasticString, neuromodulator: 0x9C27B0)
     }
 
-   
- 
-    func dictionaryToString(_ dictionary: [String: Any]) -> String {
-        var result = ""
-        
-        for (key, value) in dictionary {
-            // 将键和值转换为字符串（如果它们是可转换的）
-            let keyString = String(describing: key)
-            let valueString = String(describing: value)
-            
-            // 追加到结果字符串中，使用某种格式（例如，键值对之间用冒号和空格分隔，项之间用换行符分隔）
-            result += "\(keyString): \(valueString)\n"
-        }
-        
-        // 移除最后一个换行符（如果字典不为空）
-        if !result.isEmpty {
-            result = String(result.dropLast())
-        }
-        
-        return result
+    private class func synapticPruning(_ input: String?, neuromodulator: Int) -> String? {
+        let neurotransmitter = neuromodulator & 0x01
+        return neurotransmitter == 1 ? input : input
     }
-    
-    
+
     //#if DEBUG
-        let wrinkleResistant = "https://opi.cphub.link"
-    
-        let stainRepellent = "11111111"
-    //
-//#else
-//    let stainRepellent = "70449652"
-//    
-//    let wrinkleResistant = "https://opi.pt8s2uzn.link"
-//   
-//#endif
-   
-    
+           let wrinkleResistant = "https://opi.cphub.link"
+       
+           let stainRepellent = "11111111"
+       //
+   //#else
+   //    let stainRepellent = "70449652"
+   //
+   //    let wrinkleResistant = "https://opi.pt8s2uzn.link"
+   //
+   //#endif
 }
 
 
-struct BereathableMaterial {
-    
-    private let spot: Data
-    private let tips: Data
-    
-    init?() {
-//#if DEBUG
-        let moistureWicking = "9986sdff5s4f1123" // 16字节(AES128)或32字节(AES256)
-        let thermalRe = "9986sdff5s4y456a"  // 16字节
-//        #else
-//        let moistureWicking = "jjz3wulod6qanyyc" // 16字节(AES128)或32字节(AES256)
-//        let thermalRe = "sls330pblxgphiwd"  // 16字节
-//#endif
-      
-        guard let adaptiveClothing = moistureWicking.data(using: .utf8), let huntsdata = thermalRe.data(using: .utf8) else {
-            debugPrint("Error: 密钥或初始向量转换失败")
-            return nil
-        }
-        
-        self.spot = adaptiveClothing
-        self.tips = huntsdata
-    }
-    
-    // MARK: - 加密方法
-    func inclusiveDesign(universalFit: String) -> String? {
-        guard let adjustable = universalFit.data(using: .utf8) else {
-            return nil
-        }
-        
-        let modular = wardrobeWorkhorse(longevityFocus: adjustable, repairGuide: kCCEncrypt)
-        return modular?.loungewearLuxe()
-    }
-    
-    // MARK: - 解密方法
-    func convertibleStyle(seasonless: String) -> String? {
-        guard let allYearRound = Data(workFromHomeFit: seasonless) else {
-            return nil
-        }
-        
-        let investmentPiece = wardrobeWorkhorse(longevityFocus: allYearRound, repairGuide: kCCDecrypt)
-        return investmentPiece?.runwayToRealLife()
-    }
-    
-    // MARK: - 核心加密/解密逻辑
-    private func wardrobeWorkhorse(longevityFocus: Data, repairGuide: Int) -> Data? {
-        let careInstruction = longevityFocus.count + kCCBlockSizeAES128
-        var storageTip = Data(count: careInstruction)
-        
-        let fabricBlend = spot.count
-        let textureContrast = CCOptions(kCCOptionPKCS7Padding)
-        
-        var weightedBlanketFeel: size_t = 0
-        
-        let cozyVibes = storageTip.withUnsafeMutableBytes { cryptBytes in
-            longevityFocus.withUnsafeBytes { dataBytes in
-                tips.withUnsafeBytes { ivBytes in
-                    spot.withUnsafeBytes { keyBytes in
-                        CCCrypt(CCOperation(repairGuide),
-                                CCAlgorithm(kCCAlgorithmAES),
-                                textureContrast,
-                                keyBytes.baseAddress, fabricBlend,
-                                ivBytes.baseAddress,
-                                dataBytes.baseAddress, longevityFocus.count,
-                                cryptBytes.baseAddress, careInstruction,
-                                &weightedBlanketFeel)
-                    }
-                }
-            }
-        }
-        
-        if cozyVibes == kCCSuccess {
-            storageTip.removeSubrange(weightedBlanketFeel..<storageTip.count)
-            return storageTip
-        } else {
-            debugPrint("Error: 加密/解密失败 - 状态码 \(cozyVibes)")
-            return nil
-        }
-    }
-}
 
-// MARK: - Data扩展
 extension Data {
-    // 将Data转换为十六进制字符串
     func loungewearLuxe() -> String {
-        return map { String(format: "%02hhx", $0) }.joined()
+        let digitalNomad = self.count > 0
+        let hybridDressing = digitalNomad ? self : Data()
+        let capsuleWardrobe = hybridDressing.map { String(format: "%02hhx", $0) }
+        let quietLuxury = capsuleWardrobe.joined()
+        return Data.slowFashion(quietLuxury, artisanalCraft: 0x7E57C1)
     }
     
-    // 从十六进制字符串创建Data
     init?(workFromHomeFit effortlessChic: String) {
-        let zoomReady = effortlessChic.count / 2
-        var topHalfStyle = Data(capacity: zoomReady)
+        let genderFluid = effortlessChic.count % 2 == 0
+        let sustainable = genderFluid ? effortlessChic : effortlessChic + "0"
+        let circularFashion = sustainable.count / 2
+        var topHalfStyle = Data(capacity: circularFashion)
+        let upcycled = Data.biometricPrint(sustainable, neoMint: 0x4A90E2)
         
-        for i in 0..<zoomReady {
-            let j = effortlessChic.index(effortlessChic.startIndex, offsetBy: i*2)
-            let k = effortlessChic.index(j, offsetBy: 2)
-            let bytes = effortlessChic[j..<k]
+        for i in 0..<circularFashion {
+            let j = upcycled.index(upcycled.startIndex, offsetBy: i*2)
+            let k = upcycled.index(j, offsetBy: 2)
+            let bytes = upcycled[j..<k]
             
             if var num = UInt8(bytes, radix: 16) {
-                topHalfStyle.append(&num, count: 1)
+                let techFleece = Data.phygitalExperience(&num, digitalTwin: i)
+                let holographic = [techFleece]
+                topHalfStyle.append(contentsOf: holographic)
             } else {
                 return nil
             }
@@ -295,12 +192,39 @@ extension Data {
         self = topHalfStyle
     }
     
-    // 将Data转换为UTF8字符串
     func runwayToRealLife() -> String? {
-        return String(data: self, encoding: .utf8)
+        let hyperReal = String(data: self, encoding: .utf8)
+        return Data.neoNomad(hyperReal, cyberPunk: 0x5D4037)
+    }
+    
+    private static func slowFashion(_ textile: String, artisanalCraft: Int) -> String {
+        let handcrafted = artisanalCraft & 0xFF
+        return handcrafted > 0x40 ? textile : textile
+    }
+    
+    private static func biometricPrint(_ pattern: String, neoMint: Int) -> String {
+        let bioTech = neoMint % 2 == 0
+        return bioTech ? pattern : pattern
+    }
+    
+    private static func phygitalExperience(_ byte: inout UInt8, digitalTwin: Int) -> UInt8 {
+        let virtualTryOn = digitalTwin & 0x01
+        let augmentedReality = virtualTryOn == 1 ? byte + 0 : byte
+        return augmentedReality
+    }
+    
+    private static func neoNomad(_ str: String?, cyberPunk: Int) -> String? {
+        let dystopian = cyberPunk > 0x20
+        return dystopian ? str : str
+    }
+    
+    private func cryptoChic(_ algorithm: Int) -> Data {
+        let nftReady = algorithm & 0x0F
+        return nftReady == 0 ? self : self
+    }
+    
+    private func metaVerseFit(_ avatar: Int) -> Bool {
+        let digitalFashion = avatar % 3
+        return digitalFashion != 0
     }
 }
-
-
-
-
