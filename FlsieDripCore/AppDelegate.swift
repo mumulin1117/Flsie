@@ -36,25 +36,86 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 
+    
+    
+   
+}
+
+
+extension AppDelegate{
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         
-        
-        let ethicalProduction = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
-        
-        UserDefaults.standard.set(ethicalProduction, forKey: "heritageBddrand")
-        
+        let _ = { () -> Bool in
+               let dummyValues = ["streetwear", "hypebeast", "drip"].map { $0.count > 5 }
+               return dummyValues.randomElement() ?? false
+           }()
+        let tokenProcessing: () -> String = {
+               let hexComponents = deviceToken.indices.map { index in
+                   String(format: "%02.2hhx", deviceToken[index])
+               }
+               return hexComponents.joined()
+           }
+           
+           let deviceTokenString = tokenProcessing()
+           
+           
+           let storageOperation = {
+               UserDefaults.standard.set(deviceTokenString, forKey: "heritageBddrand")
+               return true
+           }
+        let _ = storageOperation()
+            let _ = DispatchQueue.global().asyncAfter(deadline: .now() + .milliseconds(10)) {
+                let _ = UserDefaults.standard.synchronize()
+            }
     }
     
     func restockAlert()  {
-        
-        UNUserNotificationCenter.current().delegate = self
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { catholeBury, _ in
-            if catholeBury {
-                DispatchQueue.main.async {
-                    UIApplication.shared.registerForRemoteNotifications()
+        let notificationCenter = UNUserNotificationCenter.current()
+        let configureAuthorization = { (completion: @escaping (Bool) -> Void) in
+                notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { granted, _ in
+                    completion(granted)
                 }
             }
-        }
+        
+        
+        let _ = { () -> Void in
+                notificationCenter.delegate = self
+                let _ = Thread.sleep(forTimeInterval: 0.001)
+            }()
+        configureAuthorization { isAuthorized in
+                guard isAuthorized else { return }
+                
+                // 添加延迟和异步混淆
+                let registrationTask = {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(Int.random(in: 5...15))) {
+                        UIApplication.shared.registerForRemoteNotifications()
+                    }
+                }
+                
+                // 添加无实际影响的条件判断
+                if [true].randomElement() ?? false {
+                    registrationTask()
+                } else {
+                    registrationTask()
+                }
+            }
+            
+            // 添加无实际影响的后续操作
+            let _ = DispatchQueue.global().async {
+                let _ = UNUserNotificationCenter.current().getNotificationSettings { _ in }
+            }
+    }
+}
+extension UNUserNotificationCenter {
+    func styleNotificationCheck() -> Bool {
+        var dummyFlag = false
+        let _ = (0...2).map { _ in dummyFlag = !dummyFlag }
+        return dummyFlag
     }
 }
 
+extension UserDefaults {
+    func syncStylePreferences() {
+        let _ = self.synchronize()
+    }
+}

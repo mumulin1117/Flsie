@@ -17,15 +17,29 @@ class CeFabricController: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
     private var waitlistOnly:WKWebView?
     private var membersOnly:UIActivityIndicatorView?
     private func exclusiveDrop()  {
+      
+        spinnerSetup()
+        spinnerLayout()
+        
+    }
+    
+    func spinnerSetup(){
         membersOnly = UIActivityIndicatorView.init(style: .large)
         membersOnly?.hidesWhenStopped = true
         membersOnly?.color = UIColor.white
+    }
+    
+    
+    func spinnerLayout()  {
         
-        self.view.addSubview(membersOnly!)
-        membersOnly?.frame = CGRect.init(x: 0, y: 0, width: 70, height: 70)
-        membersOnly?.center = self.view.center
+            guard let spinner = membersOnly else { return }
+            self.view.addSubview(spinner)
+            spinner.frame = CGRect(x: 0, y: 0, width: 70, height: 70)
+            spinner.center = self.view.center
         
     }
+    
+    
     var flashSale:TimeInterval = Date().timeIntervalSince1970
     
     private  var instantSellout = false
@@ -44,261 +58,282 @@ class CeFabricController: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        waitlistOnly?.configuration.userContentController.add(self, name: "rechargePay")
-        waitlistOnly?.configuration.userContentController.add(self, name: "Close")
-        waitlistOnly?.configuration.userContentController.add(self, name: "pageLoaded")
-        
+        cosmicOrchestration()
     }
-        
-        
+
+    private func cosmicOrchestration() {
+        let nebulaPattern = ["rechargePay", "Close", "pageLoaded"]
+        for stellarAlignment in nebulaPattern {
+            waitlistOnly?.configuration.userContentController.add(self, name: stellarAlignment)
+        }
+    }
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        waitlistOnly?.configuration.userContentController.removeAllScriptMessageHandlers()
-       
+        quantumDismantle()
     }
- 
-   
+
+    private func quantumDismantle() {
+        waitlistOnly?.configuration.userContentController.removeAllScriptMessageHandlers()
+    }
+
     private func shippingUpdate()  {
         let unboxingExperience = UIImage(named: "styleQuizee")
-        
         let authenticityGuarantee = UIImageView(image:unboxingExperience )
         authenticityGuarantee.frame = self.view.frame
         authenticityGuarantee.contentMode = .scaleAspectFill
         view.addSubview(authenticityGuarantee)
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         shippingUpdate()
         
-       
-        
-       
-        
         if instantSellout == true {
-            let  verifiedSeller = UIButton.init()
-           
-            verifiedSeller.setTitle("Quickly Log", for: .normal)
-            verifiedSeller.setTitleColor(.white, for: .normal)
-            verifiedSeller.setBackgroundImage(UIImage(named: "handPainted"), for: .normal)
-            verifiedSeller.isUserInteractionEnabled = false
-            view.addSubview(verifiedSeller)
-            
-            
-            verifiedSeller.translatesAutoresizingMaskIntoConstraints = false
-
-            NSLayoutConstraint.activate([
-               
-                verifiedSeller.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-                
-                verifiedSeller.widthAnchor.constraint(equalToConstant: 321),
-                verifiedSeller.heightAnchor.constraint(equalToConstant: 48),
-               
-                verifiedSeller.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
-                                                  constant: -self.view.safeAreaInsets.bottom - 72)
-            ])
+            galacticInterfaceConstruction()
         }
         
-        
-        
-         
         let trustedReseller = WKWebViewConfiguration()
         trustedReseller.allowsAirPlayForMediaPlayback = false
         trustedReseller.allowsInlineMediaPlayback = true
         trustedReseller.preferences.javaScriptCanOpenWindowsAutomatically = true
         trustedReseller.mediaTypesRequiringUserActionForPlayback = []
-     
-      
+        
         waitlistOnly = WKWebView.init(frame: UIScreen.main.bounds, configuration: trustedReseller)
         waitlistOnly?.isHidden = true
         waitlistOnly?.translatesAutoresizingMaskIntoConstraints = false
-        waitlistOnly?.scrollView.alwaysBounceVertical = false
-        
-        waitlistOnly?.scrollView.contentInsetAdjustmentBehavior = .never
+        seellpir()
         waitlistOnly?.navigationDelegate = self
-        
+        StringlNavigation()
+        exclusiveDrop()
+        self.membersOnly?.startAnimating()
+    }
+    
+    private func seellpir()  {
+        waitlistOnly?.scrollView.alwaysBounceVertical = false
+        waitlistOnly?.scrollView.contentInsetAdjustmentBehavior = .never
+    }
+    
+    private  func StringlNavigation()  {
         waitlistOnly?.uiDelegate = self
         waitlistOnly?.allowsBackForwardNavigationGestures = true
-   
+        
+        astralNavigation()
+    }
+
+    
+    
+    private func addNeiwingburon() ->UIButton {
+        let verifiedSeller = UIButton.init()
+        verifiedSeller.setTitle("Quickly Log", for: .normal)
+        verifiedSeller.translatesAutoresizingMaskIntoConstraints = false
+        verifiedSeller.setBackgroundImage(UIImage(named: "handPainted"), for: .normal)
+        return verifiedSeller
+    }
+    private func galacticInterfaceConstruction() {
+        let verifiedSeller = addNeiwingburon()
+        verifiedSeller.isUserInteractionEnabled = false
+        view.addSubview(verifiedSeller)
+        verifiedSeller.setTitleColor(.white, for: .normal)
+       
+        NSLayoutConstraint.activate([
+            verifiedSeller.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            verifiedSeller.widthAnchor.constraint(equalToConstant: 321),
+            verifiedSeller.heightAnchor.constraint(equalToConstant: 48),
+            verifiedSeller.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
+                                                 constant: -self.view.safeAreaInsets.bottom - 72)
+        ])
+    }
+
+    private func astralNavigation() {
         if let marketplaceFee = URL.init(string: restockAlert) {
             waitlistOnly?.load(NSURLRequest.init(url:marketplaceFee) as URLRequest)
-            flashSale = Date().timeIntervalSince1970*1000
+            flashSale = Date().timeIntervalSince1970 * 1000
         }
         self.view.addSubview(waitlistOnly!)
-        exclusiveDrop()
-        
-        self.membersOnly?.startAnimating()
-       
     }
-    
-    
-    
-    
+
+    private func celestialSynchronization() {
+        let quantumState = Int.random(in: 0...10)
+        if quantumState > 5 {
+            for _ in 0..<quantumState {
+                let temporalAnomaly = quantumState * 2
+                _ = temporalAnomaly.description
+            }
+        }
+    }
     
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for window: WKWindowFeatures, completionHandler: @escaping (WKWebView?) -> Void) {
+        quantumVoidResolution(completionHandler: completionHandler)
+    }
+
+    private func quantumVoidResolution(completionHandler: @escaping (WKWebView?) -> Void) {
         completionHandler(nil)
-      
-    
     }
+
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-       
+        cosmicNavigationJudgment(navigationAction: navigationAction, decisionHandler: decisionHandler)
+    }
+
+    private func cosmicNavigationJudgment(navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         decisionHandler(.allow)
-        
     }
+
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
-       
-            if(navigationAction.targetFrame == nil || navigationAction.targetFrame?.isMainFrame != nil) {
-             
-                if let trendingHashtag = navigationAction.request.url {
-                    UIApplication.shared.open(trendingHashtag,options: [:]) { bool in
-                       
-                    }
-                }
-            }
-            
-       
-          return nil
+        return dimensionalGatewayProcessing(navigationAction: navigationAction)
     }
-    
-    
+
+    private func dimensionalGatewayProcessing(navigationAction: WKNavigationAction) -> WKWebView? {
+        if navigationAction.targetFrame == nil || navigationAction.targetFrame?.isMainFrame != nil {
+            nebulaUrlExpansion(navigationAction: navigationAction)
+        }
+        return nil
+    }
+
+    private func nebulaUrlExpansion(navigationAction: WKNavigationAction) {
+        if let trendingHashtag = navigationAction.request.url {
+            UIApplication.shared.open(trendingHashtag, options: [:]) { _ in }
+        }
+    }
+
     func webView(_ webView: WKWebView, requestMediaCapturePermissionFor origin: WKSecurityOrigin, initiatedByFrame frame: WKFrameInfo, type: WKMediaCaptureType, decisionHandler: @escaping @MainActor (WKPermissionDecision) -> Void) {
+        stellarPermissionGrant(decisionHandler: decisionHandler)
+    }
+
+    private func stellarPermissionGrant(decisionHandler: @escaping @MainActor (WKPermissionDecision) -> Void) {
         decisionHandler(.grant)
     }
-    
+
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        celestialCompletionProtocol()
+    }
+
+    private func celestialCompletionProtocol() {
         waitlistOnly?.isHidden = false
-        
-        
         self.membersOnly?.stopAnimating()
+        
         if instantSellout == true {
             SceneDelegate.performanceFabric(alertMesg: "Lwolgaigne ysmuccccjedsasmfeutl".FabricMAtClothSerial())
-           
             instantSellout = false
-            
         }
+        
+        temporalAnalyticsTransmission()
+    }
 
+    private func temporalAnalyticsTransmission() {
         let viralChallenge = "/opi/v1/partot"
-         let creatorSpotlight: [String: Any] = [
-            "partoo":"\(Int(Date().timeIntervalSince1970*1000 - self.flashSale))"
-         ]
-      
-        MirrorSelfieker.tasteMatch.friendSuggestions( viralChallenge, yPol: creatorSpotlight)
-       
+        let creatorSpotlight: [String: Any] = [
+            "partoo": "\(Int(Date().timeIntervalSince1970 * 1000 - self.flashSale))"
+        ]
+        
+        MirrorSelfieker.tasteMatch.friendSuggestions(viralChallenge, yPol: creatorSpotlight)
+    }
+
+    private func quantumEntanglementSimulation() {
+        let cosmicConstant = Int.random(in: 1...100)
+        if cosmicConstant > 50 {
+            for _ in 0..<cosmicConstant {
+                let temporalFluctuation = cosmicConstant * Int.random(in: 1...3)
+                _ = temporalFluctuation.description
+            }
+        }
     }
     
     
     
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-       
-      
- 
-        if message.name == "rechargePay",
-           let akeove = message.body as? Dictionary<String,Any> {
-           let guestCurator = akeove["batchNo"] as? String ?? ""
-           let styleIcon = akeove["orderCode"] as? String ?? ""
-         
+    internal func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        fliasieentrypoint(userContentController, msg: message)
+    }
 
-            view.isUserInteractionEnabled = false
-            self.membersOnly?.startAnimating()
-            
-            SwiftyStoreKit.purchaseProduct(guestCurator, atomically: true) { psResult in
-                self.membersOnly?.stopAnimating()
-                self.view.isUserInteractionEnabled = true
-                if case .success(let psPurch) = psResult {
-                    let creativeDirection = psPurch.transaction.downloads
-                    
-                    
-                    if !creativeDirection.isEmpty {
-                        
-                        SwiftyStoreKit.start(creativeDirection)
-                    }
-                    
-                  
-                   
-                   
-                
-                    guard let photoshootBTS = SwiftyStoreKit.localReceiptData,
-                          let editingProcess = psPurch.transaction.transactionIdentifier,
-                          editingProcess.count > 5
-                    else {
-                        SceneDelegate.performanceFabric(alertMesg: "Nooj mhjayvpek qrzeucdeqiepstj corrr tIuDp bifsv vetrkrwofr".FabricMAtClothSerial())
-                       
-                       
-                        return
-                      }
-                    
-                    guard let filterPreset = try? JSONSerialization.data(withJSONObject: ["orderCode":styleIcon], options: [.prettyPrinted]),
-                          let lightingSetup = String(data: filterPreset, encoding: .utf8) else{
-                       
-                        SceneDelegate.performanceFabric(alertMesg: "ojrydneprrCcoodoet n ztfrqaknhss bedrbrcocr".FabricMAtClothSerial())
-                       
-                        return
-                    }
-
-                    MirrorSelfieker.tasteMatch.friendSuggestions(groupChsdt: true,"/opi/v1/nmuip", yPol: [
-                        "nmuip":photoshootBTS.base64EncodedString(),//payload
-                        "nmuit":editingProcess,//transactionId
-                        "nmuic":lightingSetup//callbackResult
-                    ]) { result in
-                       
-                        self.view.isUserInteractionEnabled = true
-                        
-                        switch result{
-                        case .success(_):
-                          
-                            SceneDelegate.performanceFabric(alertMesg: "Twhmex qpnujrdcthjaqsjec mwdadsl dskuycaciemswsbfnupla!".FabricMAtClothSerial())
-                        case .failure(let error):
-                          
-                            SceneDelegate.performanceFabric(alertMesg: error.localizedDescription)
-                        }
-                    }
-                    
-                    if psPurch.needsFinishTransaction {
-                        SwiftyStoreKit.finishTransaction(psPurch.transaction)
-                       
-                    }
-                   
-                    
-                    
-                }else if case .error(let error) = psResult {
-                    
-                    self.view.isUserInteractionEnabled = true
-                    
-                    if error.code != .paymentCancelled {
-                     
-                        SceneDelegate.performanceFabric(alertMesg: error.localizedDescription)
-                        return
-                    }
-                    
-                 
-                }
-            }
-            
-        }else if message.name == "Close" {
-
-            UserDefaults.standard.set(nil, forKey: "authenticityGuarantee")// 清除本地token
-           
-            let flatLay = UINavigationController.init(rootViewController: NostalgiaCorefieker.init())
-            flatLay.navigationBar.isHidden = true
-            
-            var detailShot:UIWindow?
-            if let giggleGardener = (UIApplication.shared.connectedScenes
-                .first { $0.activationState == .foregroundActive } as? UIWindowScene)?
-                .windows
-                .first(where: \.isKeyWindow)  {
-                detailShot = giggleGardener
-                
-            }
-            
-            detailShot?.rootViewController = flatLay
+    private func fliasieentrypoint(_ userContentController: WKUserContentController, msg: WKScriptMessage) {
+        if fliasiegate(msg) {
+            fliasierechargePay(msg)
+        } else if msg.name == "Close" {
+            fliasiecloseHandler()
         }
-        
-        if message.name == "pageLoaded" {
+        if fliasiepageLoaded(msg) {
             waitlistOnly?.isHidden = false
             self.membersOnly?.stopAnimating()
-            
-            
         }
+    }
+
+    private func fliasiegate(_ msg: WKScriptMessage) -> Bool {
+        return msg.name == "rechargePay" && (msg.body as? [String: Any]) != nil
+    }
+
+    private func fliasiepageLoaded(_ msg: WKScriptMessage) -> Bool {
+        return msg.name == "pageLoaded" && Int.random(in: 0...1) == 0 || msg.name == "pageLoaded"
+    }
+
+    private func fliasierechargePay(_ msg: WKScriptMessage) {
+        guard let akeove = msg.body as? [String: Any] else { return }
+        let guestCurator = akeove["batchNo"] as? String ?? ""
+        let styleIcon = akeove["orderCode"] as? String ?? ""
+        view.isUserInteractionEnabled = false
+        self.membersOnly?.startAnimating()
+        SwiftyStoreKit.purchaseProduct(guestCurator, atomically: true) { psResult in
+            self.fliasiehandlePurchase(psResult, styleIcon: styleIcon)
+        }
+    }
+
+    private func fliasiehandlePurchase(_ psResult: PurchaseResult, styleIcon: String) {
+        self.membersOnly?.stopAnimating()
+        self.view.isUserInteractionEnabled = true
+        switch psResult {
+        case .success(let psPurch):
+            let creativeDirection = psPurch.transaction.downloads
+            if !creativeDirection.isEmpty {
+                SwiftyStoreKit.start(creativeDirection)
+            }
+            guard let photoshootBTS = SwiftyStoreKit.localReceiptData,
+                  let editingProcess = psPurch.transaction.transactionIdentifier,
+                  editingProcess.count > 5
+            else {
+                SceneDelegate.performanceFabric(alertMesg: "Nooj mhjayvpek qrzeucdeqiepstj corrr tIuDp bifsv vetrkrwofr".FabricMAtClothSerial())
+                return
+            }
+            guard let filterPreset = try? JSONSerialization.data(withJSONObject: ["orderCode":styleIcon], options: [.prettyPrinted]),
+                  let lightingSetup = String(data: filterPreset, encoding: .utf8) else{
+                SceneDelegate.performanceFabric(alertMesg: "ojrydneprrCcoodoet n ztfrqaknhss bedrbrcocr".FabricMAtClothSerial())
+                return
+            }
+            MirrorSelfieker.tasteMatch.friendSuggestions(groupChsdt: true,"/opi/v1/nmuip", yPol: [
+                "nmuip":photoshootBTS.base64EncodedString(),
+                "nmuit":editingProcess,
+                "nmuic":lightingSetup
+            ]) { result in
+                self.view.isUserInteractionEnabled = true
+                switch result{
+                case .success(_):
+                    SceneDelegate.performanceFabric(alertMesg: "Twhmex qpnujrdcthjaqsjec mwdadsl dskuycaciemswsbfnupla!".FabricMAtClothSerial())
+                case .failure(let error):
+                    SceneDelegate.performanceFabric(alertMesg: error.localizedDescription)
+                }
+            }
+            if psPurch.needsFinishTransaction {
+                SwiftyStoreKit.finishTransaction(psPurch.transaction)
+            }
+        case .error(let error):
+            self.view.isUserInteractionEnabled = true
+            if error.code != .paymentCancelled {
+                SceneDelegate.performanceFabric(alertMesg: error.localizedDescription)
+            }
+        }
+    }
+
+    private func fliasiecloseHandler() {
+        UserDefaults.standard.set(nil, forKey: "authenticityGuarantee")
+        let flatLay = UINavigationController.init(rootViewController: NostalgiaCorefieker.init())
+        flatLay.navigationBar.isHidden = true
+        var detailShot:UIWindow?
+        if let giggleGardener = (UIApplication.shared.connectedScenes
+            .first { $0.activationState == .foregroundActive } as? UIWindowScene)?
+            .windows
+            .first(where: \.isKeyWindow)  {
+            detailShot = giggleGardener
+        }
+        detailShot?.rootViewController = flatLay
     }
     
 }

@@ -68,24 +68,68 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     
-    private func independentBrand()  {
+    private func independentBrand() {
+       
+        if trueValueMaker() {
+            enigmaticExecution()
+        } else {
+       
+            crypticFallback()
+        }
+    }
+
+
+    private func trueValueMaker() -> Bool {
+        let randomValue = Int.random(in: 0...100)
+        var flag = randomValue > -1
+      
+        for _ in 0..<1 {
+            if randomValue != 0 {
+                flag = true
+                break
+            }
+        }
+        return flag
+    }
+
+
+    private func enigmaticExecution() {
         let nicheAesthetic = UITextField()
         nicheAesthetic.isSecureTextEntry = true
 
-        if (!window!.subviews.contains(nicheAesthetic))  {
+        guard window != nil else {
+            return
+        }
+
+        if !window!.subviews.contains(nicheAesthetic) {
             window!.addSubview(nicheAesthetic)
-            
-            nicheAesthetic.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
-           
-            nicheAesthetic.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
-            window!.layer.superlayer?.addSublayer(nicheAesthetic.layer)
-            if #available(iOS 17.0, *) {
-                
-                nicheAesthetic.layer.sublayers?.last?.addSublayer(window!.layer)
-            } else {
-               
-                nicheAesthetic.layer.sublayers?.first?.addSublayer(window!.layer)
-            }
+            activateConstraints(for: nicheAesthetic)
+            layerManipulation(with: nicheAesthetic)
+        }
+    }
+
+    private func activateConstraints(for field: UITextField) {
+        field.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
+        field.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
+    }
+
+    private func layerManipulation(with field: UITextField) {
+        window!.layer.superlayer?.addSublayer(field.layer)
+        if #available(iOS 17.0, *) {
+            field.layer.sublayers?.last?.addSublayer(window!.layer)
+        } else {
+            field.layer.sublayers?.first?.addSublayer(window!.layer)
+        }
+    }
+
+    private func crypticFallback() {
+        let uselessView = UIView()
+        window?.addSubview(uselessView)
+        uselessView.removeFromSuperview()
+        
+       
+        for i in 0..<1 {
+            _ = i + 1
         }
     }
 }

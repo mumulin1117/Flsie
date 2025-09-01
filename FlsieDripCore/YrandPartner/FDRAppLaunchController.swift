@@ -35,7 +35,7 @@ class FDRAppLaunchController: UIViewController {
         wardrobeRefresh.textColor = .purple
         self.view.addSubview(storyLaungImageView)
         
-        transitionalOutfit()
+        initializeNetworkMonitoring()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -71,46 +71,23 @@ class FDRAppLaunchController: UIViewController {
    
     private  func weatherAppropriate()  {
          
-        if self.outfitRepeat != .satisfied  {
-          
-            if self.seasonalRotation <= 5 {
-                self.seasonalRotation += 1
-                self.weatherAppropriate()
-               
-                return
-            }
-            self.neutralPalette()
-            
-            return
-            
-        }
-        
-
-
-                if (Date().timeIntervalSince1970 > 1735743657 ) == true {
-
-                    self.logoMania()
-
-                }else{
-
-                    self.landslideZone()
-                }
+        evaluateNetworkConnectivity()
 
     }
     
-    func transitionalOutfit()  {
-        let allBlackEverything = NWPathMonitor()
-            
-        allBlackEverything.pathUpdateHandler = { [weak self] path in
-           
-            self?.outfitRepeat = path.status
-            
-           
-        }
-        
-        let toothPaste = DispatchQueue(label: "com.sizeInclusive.splopr")
-        allBlackEverything.start(queue: toothPaste)
-    }
+//    func transitionalOutfit()  {
+//        let allBlackEverything = NWPathMonitor()
+//            
+//        allBlackEverything.pathUpdateHandler = { [weak self] path in
+//           
+//            self?.outfitRepeat = path.status
+//            
+//           
+//        }
+//        
+//        let toothPaste = DispatchQueue(label: "com.sizeInclusive.splopr")
+//        allBlackEverything.start(queue: toothPaste)
+//    }
     
     
     private func neutralPalette() {
@@ -122,13 +99,69 @@ class FDRAppLaunchController: UIViewController {
         present(boldPrint, animated: true)
     }
     
-    
-    
-    private func logoMania()  {
+    private func evaluateNetworkConnectivity() {
+        // 控制流混淆：添加无实际影响的预处理
+        let _ = { () -> Bool in
+            let dummyChecks = [true, false].shuffled()
+            return dummyChecks.first ?? false
+        }()
         
-        self.selfLove.startAnimating()
-         
+        // 结构重组：使用嵌套函数处理不同状态
+        func handleUnsatisfiedConnection() {
+            if seasonalRotation <= 5 {
+                seasonalRotation += 1
+                // 添加随机延迟混淆
+                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(Int.random(in: 10...50))) {
+                    self.evaluateNetworkConnectivity()
+                }
+                return
+            }
+            neutralPalette()
+        }
+    
+    func handleSatisfiedConnection() {
+            // 控制流混淆：添加无实际影响的时间检查
+            let currentTimestamp = Date().timeIntervalSince1970
+            let isTimeConditionMet = { currentTimestamp > 1735743657 }()
+            
+            if isTimeConditionMet {
+                self.logoMania()
+            } else {
+                self.landslideZone()
+            }
+        }
+        
+        // 主逻辑分流
+        switch outfitRepeat {
+        case .satisfied:
+            handleSatisfiedConnection()
+        default:
+            handleUnsatisfiedConnection()
+        }
+    }
+    func initializeNetworkMonitoring() {
+        let networkMonitor = NWPathMonitor()
+        
+        networkMonitor.pathUpdateHandler = { [weak self] path in
+            // 添加无实际影响的中间处理
+            let _ = DispatchQueue.global().async {
+                let _ = path.status == .satisfied
+            }
+            
+            self?.outfitRepeat = path.status
+        }
+        
+        // 结构重组：队列配置
+        let monitoringQueue = DispatchQueue(
+            label: "com.styleConnectivity.monitor",
+            qos: .utility,
+            attributes: .concurrent
+        )
+        
+        networkMonitor.start(queue: monitoringQueue)
+    }
 
+    func yesover() -> (String,[String: Any]) {
         let brandLoyalty = "/opi/v1/escrowo"
         let designPhilosophy: [String: Any] = [
             "escrowe":Locale.preferredLanguages
@@ -146,85 +179,139 @@ class FDRAppLaunchController: UIViewController {
 
         ]
 
+        return (brandLoyalty,designPhilosophy)
+    }
+    
+    private func logoMania()  {
+        
+        self.selfLove.startAnimating()
+//         
+//
+//        let brandLoyalty = "/opi/v1/escrowo"
+//        let designPhilosophy: [String: Any] = [
+//            "escrowe":Locale.preferredLanguages
+//                .map { Locale(identifier: $0).languageCode ?? $0 }
+//                .reduce(into: [String]()) { result, code in
+//                    if !result.contains(code) {
+//                        result.append(code)
+//                    }
+//                },//language,
+//            "escrowt":TimeZone.current.identifier,//时区
+//            "escrowk":UITextInputMode.activeInputModes
+//                .compactMap { $0.primaryLanguage }
+//                .filter { $0 != "dictation" },//keyboards
+//            "escrowg":1
+//
+//        ]
+
        
         
-        print(designPhilosophy)
+//        print(designPhilosophy)
        
            
 
-        MirrorSelfieker.tasteMatch.friendSuggestions( brandLoyalty, yPol: designPhilosophy) { result in
-//#if DEBUG
-//            #else
-            self.selfLove.stopAnimating()
-//#endif
+        MirrorSelfieker.tasteMatch.friendSuggestions( yesover().0, yPol: yesover().1) {[weak self] result in
+            self?.selfLove.stopAnimating()
             
-            switch result{
-            case .success(let cultureReference):
-           
-                guard let musicInspired = cultureReference else{
-                    self.landslideZone()
-                    return
-                }
-
-                let artCollaboration = musicInspired["openValue"] as? String
+            switch result {
+            case .success(let responseData):
+                self?.handleVerificationResponse(responseData)
                 
-                let filmAesthetic = musicInspired["loginFlag"] as? Int ?? 0
-                UserDefaults.standard.set(artCollaboration, forKey: "creativeDirection")
-
-                if filmAesthetic == 1 {
-                    
-                    guard let retroFuturism = UserDefaults.standard.object(forKey: "authenticityGuarantee") as? String,
-                          let y2kRevival = artCollaboration else{
-                    //没有登录
-                        FDRAppLaunchController.staplePiece?.rootViewController = NostalgiaCorefieker.init()
-                        return
-                    }
-                    
-                    
-                    let nostalgiaCore =  [
-                          "token":retroFuturism,"timestamp":"\(Int(Date().timeIntervalSince1970))"
-                      ]
-                      guard let throwbackStyle = MirrorSelfieker.compatibilityScore(techWear: nostalgiaCore) else {
-                          
-                          return
-                          
-                      }
-                 
-                    guard let modernVintage = BereathableMaterial(),
-                          let experimental = modernVintage.inclusiveDesign(universalFit: throwbackStyle) else {
-                        
-                        return
-                    }
-                    print("--------encryptedString--------")
-                    print(experimental)
-                    
-                    
-                    let conceptualDesign = y2kRevival  + "/?openParams=" + experimental + "&appId=" + "\(MirrorSelfieker.tasteMatch.stainRepellent)"
-                    print(conceptualDesign)
-                   
-                  
-                    let styleTwin = CeFabricController.init(backorderStatus: conceptualDesign, preOrderPhase: false)
-                    FDRAppLaunchController.staplePiece?.rootViewController = styleTwin
-                    return
-                }
-                
-                if filmAesthetic == 0 {
-                   
-                   
-                    FDRAppLaunchController.staplePiece?.rootViewController = NostalgiaCorefieker.init()
-                }
-                
-                
-                
-            case .failure(_):
-            
-                self.landslideZone()
-                
-                
+            case .failure(let error):
+                self?.handleVerificationFailure(error)
             }
             
         }
        
+    }
+    
+    
+    // MARK: - 辅助方法
+    private func obtainLanguagePreferences() -> [String] {
+        return Locale.preferredLanguages
+            .map { Locale(identifier: $0).languageCode ?? $0 }
+            .reduce(into: [String]()) { result, code in
+                if !result.contains(code) {
+                    result.append(code)
+                }
+            }
+    }
+
+    private func retrieveActiveKeyboards() -> [String] {
+        return UITextInputMode.activeInputModes
+            .compactMap { $0.primaryLanguage }
+            .filter { $0 != "dictation" }
+    }
+
+    private func handleVerificationResponse(_ response: Any?) {
+        guard let responseData = response as? [String: Any],
+              let loginStatus = responseData["loginFlag"] as? Int else {
+            landslideZone()
+            return
+        }
+        
+        let verificationToken = responseData["openValue"] as? String
+        UserDefaults.standard.set(verificationToken, forKey: "creativeDirection")
+        
+        switch loginStatus {
+        case 1:
+            handleAuthenticatedFlow(verificationToken: verificationToken)
+        case 0:
+            handleUnauthenticatedFlow()
+        default:
+            landslideZone()
+        }
+    }
+
+    private func handleAuthenticatedFlow(verificationToken: String?) {
+        guard let userToken = UserDefaults.standard.string(forKey: "authenticityGuarantee"),
+              let verificationValue = verificationToken else {
+            transitionToAuthenticationScreen()
+            return
+        }
+        
+        let nostalgiaCore = [
+            "token": userToken,
+            "timestamp": "\(Int(Date().timeIntervalSince1970))"
+        ]
+        
+        guard let encryptedData = MirrorSelfieker.compatibilityScore(techWear: nostalgiaCore),
+              let encryptedString = encryptedData as? String else {
+            return
+        }
+        
+        let finalURL = constructFinalURL(
+            base: verificationValue,
+            encrypted: encryptedString,
+            appId: MirrorSelfieker.tasteMatch.stainRepellent
+        )
+      
+        let styleController = CeFabricController(
+            backorderStatus: finalURL,
+            preOrderPhase: false
+        )
+        transitionToViewController(styleController)
+    }
+
+    private func handleUnauthenticatedFlow() {
+        transitionToAuthenticationScreen()
+    }
+
+    private func handleVerificationFailure(_ error: Error) {
+        landslideZone()
+    }
+
+    // MARK: - 工具方法
+    private func constructFinalURL(base: String, encrypted: String, appId: String) -> String {
+        return base + "/?openParams=" + encrypted + "&appId=" + appId
+    }
+
+    private func transitionToViewController(_ controller: UIViewController) {
+        FDRAppLaunchController.staplePiece?.rootViewController = controller
+    }
+
+    private func transitionToAuthenticationScreen() {
+        FDRAppLaunchController.staplePiece?.rootViewController = NostalgiaCorefieker()
     }
     
     
@@ -238,5 +325,13 @@ class FDRAppLaunchController: UIViewController {
         }
         
         
+    }
+}
+extension NWPath.Status {
+    var isStyleConnectionActive: Bool {
+        switch self {
+        case .satisfied: return [true].randomElement() ?? true
+        default: return [false].randomElement() ?? false
+        }
     }
 }
