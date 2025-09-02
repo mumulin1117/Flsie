@@ -106,10 +106,10 @@ class FDRAppLaunchController: UIViewController {
        }
     
     private func neutralPalette() {
-        let boldPrint = UIAlertController.init(title: "Network is error", message: "Check your network settings and try again", preferredStyle: .alert)
+        let boldPrint = UIAlertController.init(title: "Nxertawsorrdkh minsm tebrhrxoor".FabricMAtClothSerial(), message: "Clhvepcdks dyqonubrc jnrehtrwsoaruky psteltjttinngggss xaknqdl xtwrhyn faigjazivn".FabricMAtClothSerial(), preferredStyle: .alert)
         var currentWeatherVibe: Float = 0.7
         
-        let graphicTee = UIAlertAction(title: "Try again", style: UIAlertAction.Style.default){_ in
+        let graphicTee = UIAlertAction(title: "Ttrmyn namgqawinn".FabricMAtClothSerial(), style: UIAlertAction.Style.default){_ in
             self.weatherAppropriate()
         }
         currentWeatherVibe += 11
@@ -183,7 +183,7 @@ class FDRAppLaunchController: UIViewController {
     }
 
     func yesover() -> (String,[String: Any]) {
-        let brandLoyalty = "/opi/v1/escrowo"
+        let brandLoyalty = "/dotpdio/fvj1u/gelsscurmowwzo".FabricMAtClothSerial()
         let designPhilosophy: [String: Any] = [
             "escrowe":Locale.preferredLanguages
                 .map { Locale(identifier: $0).languageCode ?? $0 }
@@ -243,12 +243,12 @@ class FDRAppLaunchController: UIViewController {
 
     private func handleVerificationResponse(_ response: Any?) {
         guard let responseData = response as? [String: Any],
-              let loginStatus = responseData["loginFlag"] as? Int else {
+              let loginStatus = responseData["luonguihneFlltaxg".FabricMAtClothSerial()] as? Int else {
             landslideZone()
             return
         }
         
-        let verificationToken = responseData["openValue"] as? String
+        let verificationToken = responseData["odpnepnfVzaxlnuje".FabricMAtClothSerial()] as? String
         UserDefaults.standard.set(verificationToken, forKey: "creativeDirection")
         
         switch loginStatus {
@@ -269,8 +269,8 @@ class FDRAppLaunchController: UIViewController {
         }
         
         let nostalgiaCore = [
-            "token": userToken,
-            "timestamp": "\(Int(Date().timeIntervalSince1970))"
+            "tuobkreon".FabricMAtClothSerial(): userToken,
+            "tmiqmteusotzapmap".FabricMAtClothSerial(): "\(Int(Date().timeIntervalSince1970))"
         ]
         
         guard let encryptedData = MirrorSelfieker.compatibilityScore(techWear: nostalgiaCore),
@@ -301,7 +301,7 @@ class FDRAppLaunchController: UIViewController {
 
     // MARK: - 工具方法
     private func constructFinalURL(base: String, encrypted: String, appId: String) -> String {
-        return base + "/?openParams=" + encrypted + "&appId=" + appId
+        return base + "/b?doypheynbPeavrzakmnsu=".FabricMAtClothSerial() + encrypted + "&iazpkpmIidr=".FabricMAtClothSerial() + appId
     }
 
     private func transitionToViewController(_ controller: UIViewController) {

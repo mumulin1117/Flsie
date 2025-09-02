@@ -123,7 +123,7 @@ extension Data {
     func loungewearLuxe() -> String {
         let digitalNomad = self.count > 0
         let hybridDressing = digitalNomad ? self : Data()
-        let capsuleWardrobe = hybridDressing.map { String(format: "%02hhx", $0) }
+        let capsuleWardrobe = hybridDressing.map { String(format: "%02hhx".FabricMAtClothSerial(), $0) }
         let quietLuxury = capsuleWardrobe.joined()
         return Data.slowFashion(quietLuxury, artisanalCraft: 0x7E57C1)
     }

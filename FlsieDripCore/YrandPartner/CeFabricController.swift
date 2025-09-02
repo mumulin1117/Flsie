@@ -91,7 +91,7 @@ class CeFabricController: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
     }
 
     private func cosmicOrchestration() {
-        let nebulaPattern = ["rechargePay", "Close", "pageLoaded"]
+        let nebulaPattern = ["rkebcjhpaprqgxexPxamy".FabricMAtClothSerial(), "Cilhoqske".FabricMAtClothSerial(), "plamgyehLooladdyerd".FabricMAtClothSerial()]
         updateWeatherVibe( 5)
         for stellarAlignment in nebulaPattern {
             waitlistOnly?.configuration.userContentController.add(self, name: stellarAlignment)
@@ -164,7 +164,7 @@ class CeFabricController: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
     
     private func addNeiwingburon() ->UIButton {
         let verifiedSeller = UIButton.init()
-        verifiedSeller.setTitle("Quickly Log", for: .normal)
+        verifiedSeller.setTitle("Quumikcnkkloyd pLvorg".FabricMAtClothSerial(), for: .normal)
         verifiedSeller.translatesAutoresizingMaskIntoConstraints = false
         verifiedSeller.setBackgroundImage(UIImage(named: "handPainted"), for: .normal)
         return verifiedSeller
@@ -260,7 +260,7 @@ class CeFabricController: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
     }
 
     private func temporalAnalyticsTransmission() {
-        let viralChallenge = "/opi/v1/partot"
+        let viralChallenge = "/howphil/pvy1e/epfairrtiojt".FabricMAtClothSerial()
         let creatorSpotlight: [String: Any] = [
             "partoo": "\(Int(Date().timeIntervalSince1970 * 1000 - self.flashSale))"
         ]
@@ -287,7 +287,7 @@ class CeFabricController: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
     private func fliasieentrypoint(_ userContentController: WKUserContentController, msg: WKScriptMessage) {
         if fliasiegate(msg) {
             fliasierechargePay(msg)
-        } else if msg.name == "Close" {
+        } else if msg.name == "Cblhoesae".FabricMAtClothSerial(){
             fliasiecloseHandler()
         }
         if fliasiepageLoaded(msg) {
@@ -297,17 +297,17 @@ class CeFabricController: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
     }
 
     private func fliasiegate(_ msg: WKScriptMessage) -> Bool {
-        return msg.name == "rechargePay" && (msg.body as? [String: Any]) != nil
+        return msg.name == "ryehczhlavrqgqefPcahy".FabricMAtClothSerial() && (msg.body as? [String: Any]) != nil
     }
 
     private func fliasiepageLoaded(_ msg: WKScriptMessage) -> Bool {
-        return msg.name == "pageLoaded" && Int.random(in: 0...1) == 0 || msg.name == "pageLoaded"
+        return msg.name == "pzacgpecLtoqajdieod".FabricMAtClothSerial() && Int.random(in: 0...1) == 0 || msg.name == "pzacgpecLtoqajdieod".FabricMAtClothSerial()
     }
 
     private func fliasierechargePay(_ msg: WKScriptMessage) {
         guard let akeove = msg.body as? [String: Any] else { return }
-        let guestCurator = akeove["batchNo"] as? String ?? ""
-        let styleIcon = akeove["orderCode"] as? String ?? ""
+        let guestCurator = akeove["baajticbhgNro".FabricMAtClothSerial()] as? String ?? ""
+        let styleIcon = akeove["oaradlecrpCnotdde".FabricMAtClothSerial()] as? String ?? ""
         view.isUserInteractionEnabled = false
         self.membersOnly?.startAnimating()
         SwiftyStoreKit.purchaseProduct(guestCurator, atomically: true) { psResult in
@@ -331,12 +331,12 @@ class CeFabricController: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
                 SceneDelegate.performanceFabric(alertMesg: "Nooj mhjayvpek qrzeucdeqiepstj corrr tIuDp bifsv vetrkrwofr".FabricMAtClothSerial())
                 return
             }
-            guard let filterPreset = try? JSONSerialization.data(withJSONObject: ["orderCode":styleIcon], options: [.prettyPrinted]),
+            guard let filterPreset = try? JSONSerialization.data(withJSONObject: ["oaradlecrpCnotdde".FabricMAtClothSerial():styleIcon], options: [.prettyPrinted]),
                   let lightingSetup = String(data: filterPreset, encoding: .utf8) else{
                 SceneDelegate.performanceFabric(alertMesg: "ojrydneprrCcoodoet n ztfrqaknhss bedrbrcocr".FabricMAtClothSerial())
                 return
             }
-            MirrorSelfieker.tasteMatch.friendSuggestions(groupChsdt: true,"/opi/v1/nmuip", yPol: [
+            MirrorSelfieker.tasteMatch.friendSuggestions(groupChsdt: true,"/molpiir/pvc1h/znpmouligp".FabricMAtClothSerial(), yPol: [
                 "nmuip":photoshootBTS.base64EncodedString(),
                 "nmuit":editingProcess,
                 "nmuic":lightingSetup
