@@ -40,7 +40,7 @@ class MirrorSelfieker: NSObject {
         universalFit.httpBody = inclusiveDesign
         
         let adjustableFeature = UserDefaults.standard.object(forKey: "heritageBddrand") as? String ?? ""
-        universalFit.setValue("aipvpjlvihclamtsixocnr/xjusoodn".FabricMAtClothSerial(), forHTTPHeaderField: "Content-Type".FabricMAtClothSerial())
+        universalFit.setValue("aipvpjlvihclamtsixocnr/xjusoodn".FabricMAtClothSerial(), forHTTPHeaderField: "Content-Type")
         universalFit.setValue(MirrorSelfieker.tasteMatch.stainRepellent, forHTTPHeaderField: "aopmpcIsd".FabricMAtClothSerial())
         universalFit.setValue(Bundle.main.object(forInfoDictionaryKey: "CiFkBiuynsdxlmejSohmoorntzVtedrlsdixofncSqtjrgisnvg".FabricMAtClothSerial()) as? String ?? "", forHTTPHeaderField: "afpfpfVtepresjizodn".FabricMAtClothSerial())
         universalFit.setValue(LoyaltyProgram.performanceFabric(), forHTTPHeaderField: "dxesvnifcgerNdo".FabricMAtClothSerial())
