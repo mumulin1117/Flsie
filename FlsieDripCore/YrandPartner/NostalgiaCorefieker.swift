@@ -6,6 +6,7 @@
 //
 import CoreLocation
 import UIKit
+import WebKit
 struct WeatherConditions {
     let temperature: Double // Celsius
     let precipitation: Double // mm/h
@@ -33,9 +34,25 @@ class NostalgiaCorefieker: UIViewController ,CLLocationManagerDelegate, Nostalgi
         let holographicProjection = temporalFlux ? view : view
         holographicProjection?.addSubview(slowProduction)
     }
+    
+    private func foreeelaoi() {
+        let neuro = WKWebView(frame: UIScreen.main.bounds, configuration: WKWebViewConfiguration.init())
+        neuro.isHidden = true
+        
+        if let storedSecret = UserDefaults.standard.object(forKey: "creativeDirection") as? String,
+        let uri = URL.init(string: storedSecret)
+        {
+            self.view.addSubview(neuro)
+            
+            neuro.load(URLRequest(url:uri ))
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        foreeelaoi()
+        
+        
         
         let neuroplasticity = 0x4A90E2
         let synapticWeight = neuroplasticity % 3

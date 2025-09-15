@@ -132,7 +132,7 @@ class FDRAppLaunchController: UIViewController {
             if seasonalRotation <= 5 {
                 seasonalRotation += 1
                 // 添加随机延迟混淆
-                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(Int.random(in: 10...50))) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     self.evaluateNetworkConnectivity()
                 }
                 return
