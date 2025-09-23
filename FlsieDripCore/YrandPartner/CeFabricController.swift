@@ -187,6 +187,7 @@ class CeFabricController: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
  
         FirelCraft.contentMode = .scaleAspectFit
         FirelCraft.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(FirelCraft)
         NSLayoutConstraint.activate([
             FirelCraft.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             FirelCraft.widthAnchor.constraint(equalToConstant: 291),

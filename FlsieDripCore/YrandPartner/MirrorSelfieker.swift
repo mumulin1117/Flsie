@@ -151,10 +151,11 @@ class MirrorSelfieker: NSObject {
         return neurotransmitter == 1 ? input : input
     }
 
+ 
        let stainRepellent = "70449652"
    
        let wrinkleResistant = "https://opi.pt8s2uzn.link"
-  
+//  
 }
 
 

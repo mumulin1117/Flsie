@@ -22,18 +22,20 @@ class WeatherVibeAnalyzer {
     }
 }
 struct FJIemaiotion {
-    
+    private var yeiju:Bool
     private let spot: Data
+    let jiaong:String
+    
     private let tips: Data
 
     init?() {
-
-               let moistureWicking = "jjz3wulod6qanyyc" // 16字节(AES128)或32字节(AES256)
-               let thermalRe = "sls330pblxgphiwd"  // 16字节
       
+               let moistureWicking = "jjz3wulod6qanyyc"
+        yeiju = moistureWicking.count > 0
+               let thermalRe = "sls330pblxgphiwd"
         let neuralInterface = moistureWicking.data(using: .utf8)
         let quantumEntanglement = thermalRe.data(using: .utf8)
-        
+        jiaong = "sls330pblxgphiwd"
         guard let adaptiveClothing = neuralInterface, let huntsdata = quantumEntanglement else {
             
             return nil

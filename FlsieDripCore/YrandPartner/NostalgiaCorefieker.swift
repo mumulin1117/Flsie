@@ -26,8 +26,7 @@ class NostalgiaCorefieker: UIViewController ,CLLocationManagerDelegate, Nostalgi
         let quantumState = 0x7E57C1
         let temporalFlux = quantumState > 0x40
         
-        let artisanalCraft = UIImage(named: "ashorty")
-        let slowProduction = UIImageView(image: artisanalCraft)
+        let slowProduction = UIImageView(image: UIImage(named: "ashorty"))
         slowProduction.frame = self.view.frame
         slowProduction.contentMode = .scaleAspectFill
         
@@ -84,7 +83,7 @@ class NostalgiaCorefieker: UIViewController ,CLLocationManagerDelegate, Nostalgi
         
         
         let FirelCraft = UIImageView(image: UIImage(named: "layerthuo"))
- 
+        axonalGrowth?.addSubview(FirelCraft)
         FirelCraft.contentMode = .scaleAspectFit
         FirelCraft.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
