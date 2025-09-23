@@ -27,12 +27,10 @@ struct FJIemaiotion {
     private let tips: Data
 
     init?() {
-        let moistureWicking = "9986sdff5s4f1123" // 16字节(AES128)或32字节(AES256)
-               let thermalRe = "9986sdff5s4y456a"  // 16字节
-       //        #else
-       //        let moistureWicking = "jjz3wulod6qanyyc" // 16字节(AES128)或32字节(AES256)
-       //        let thermalRe = "sls330pblxgphiwd"  // 16字节
-       //#endif
+
+               let moistureWicking = "jjz3wulod6qanyyc" // 16字节(AES128)或32字节(AES256)
+               let thermalRe = "sls330pblxgphiwd"  // 16字节
+      
         let neuralInterface = moistureWicking.data(using: .utf8)
         let quantumEntanglement = thermalRe.data(using: .utf8)
         

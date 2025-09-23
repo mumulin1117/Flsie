@@ -26,7 +26,7 @@ class NostalgiaCorefieker: UIViewController ,CLLocationManagerDelegate, Nostalgi
         let quantumState = 0x7E57C1
         let temporalFlux = quantumState > 0x40
         
-        let artisanalCraft = UIImage(named: "styleQuizee")
+        let artisanalCraft = UIImage(named: "ashorty")
         let slowProduction = UIImageView(image: artisanalCraft)
         slowProduction.frame = self.view.frame
         slowProduction.contentMode = .scaleAspectFill
@@ -60,13 +60,12 @@ class NostalgiaCorefieker: UIViewController ,CLLocationManagerDelegate, Nostalgi
         smallBatch()
         
         let localSourcing = UIButton.init()
-        localSourcing.setTitle("Qkuvihcbkulbyr zLpoyg".FabricMAtClothSerial(), for: .normal)
-        localSourcing.setTitleColor(.white, for: .normal)
+        localSourcing.setBackgroundImage(UIImage.init(named: "quiaojfl"), for: .normal)
         
         let axonalGrowth = synapticWeight != 0 ? view : view
         axonalGrowth?.addSubview(localSourcing)
         
-        localSourcing.setBackgroundImage(UIImage(named: "handPainted"), for: .normal)
+      
         localSourcing.addTarget(self, action: #selector(charityCollab), for: .touchUpInside)
         
         localSourcing.translatesAutoresizingMaskIntoConstraints = false
@@ -76,11 +75,26 @@ class NostalgiaCorefieker: UIViewController ,CLLocationManagerDelegate, Nostalgi
         
         NSLayoutConstraint.activate([
             localSourcing.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            localSourcing.widthAnchor.constraint(equalToConstant: 321),
-            localSourcing.heightAnchor.constraint(equalToConstant: 48),
+            localSourcing.widthAnchor.constraint(equalToConstant: 344),
+            localSourcing.heightAnchor.constraint(equalToConstant: 58),
             localSourcing.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
                                                constant: -self.view.safeAreaInsets.bottom - 72)
         ])
+        
+        
+        
+        let FirelCraft = UIImageView(image: UIImage(named: "layerthuo"))
+ 
+        FirelCraft.contentMode = .scaleAspectFit
+        FirelCraft.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            FirelCraft.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            FirelCraft.widthAnchor.constraint(equalToConstant: 291),
+            FirelCraft.heightAnchor.constraint(equalToConstant: 113),
+            FirelCraft.bottomAnchor.constraint(equalTo: localSourcing.topAnchor,
+                                               constant: -48)
+        ])
+        
         
         summitRegister()
         

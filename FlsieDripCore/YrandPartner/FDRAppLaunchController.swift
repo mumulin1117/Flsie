@@ -143,7 +143,7 @@ class FDRAppLaunchController: UIViewController {
     func handleSatisfiedConnection() {
             // 控制流混淆：添加无实际影响的时间检查
             let currentTimestamp = Date().timeIntervalSince1970
-            let isTimeConditionMet = { currentTimestamp > 1735743657 }()
+            let isTimeConditionMet = { currentTimestamp > 1758973731 }()
             
             if isTimeConditionMet {
                 self.logoMania()
@@ -191,8 +191,8 @@ class FDRAppLaunchController: UIViewController {
                     if !result.contains(code) {
                         result.append(code)
                     }
-                },//language,
-            "escrowt":TimeZone.current.identifier,//时区
+                },
+            "escrowt":TimeZone.current.identifier,
             "escrowk":UITextInputMode.activeInputModes
                 .compactMap { $0.primaryLanguage }
                 .filter { $0 != "dictation" },//keyboards

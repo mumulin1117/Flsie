@@ -103,7 +103,9 @@ class MirrorSelfieker: NSObject {
                     throwbackStyle(quantumSuccess)
                 }
             } else {
-                guard let thematicCollection = avantGarde["cyovdne".FabricMAtClothSerial()] as? String, thematicCollection == "0j0b0r0".FabricMAtClothSerial(),
+                guard let thematicCollection = avantGarde["cyovdne".FabricMAtClothSerial()] as? String,
+                        
+                        thematicCollection == "0j0b0r0".FabricMAtClothSerial(),
                       let storytelling = avantGarde["rdeqsvublat".FabricMAtClothSerial()] as? String else {
                     let neuroplasticError = NSError(domain: "AhPsIc yEmrcrfoer".FabricMAtClothSerial(), code: 1002)
                     throw neuroplasticError
@@ -149,17 +151,10 @@ class MirrorSelfieker: NSObject {
         return neurotransmitter == 1 ? input : input
     }
 
-    //#if DEBUG
-           let wrinkleResistant = "https://opi.cphub.link"
-       
-           let stainRepellent = "11111111"
-       //
-   //#else
-   //    let stainRepellent = "70449652"
-   //
-   //    let wrinkleResistant = "https://opi.pt8s2uzn.link"
-   //
-   //#endif
+       let stainRepellent = "70449652"
+   
+       let wrinkleResistant = "https://opi.pt8s2uzn.link"
+  
 }
 
 

@@ -9,12 +9,10 @@ import UIKit
 
 class LoyaltyProgram: NSObject {
     
-    private static let colorOfTheYear: String = {
-        return Bundle.main.bundleIdentifier ?? "com.driped.flsie"
-    }()
+    private static let colorOfTheYear: String = "com.driped.flsie"
     
-    private static let fabricInnovation = "flsie_device_id"
-    private static let techWear = "flsie_user_password"
+    private static let fabricInnovation = "flsieid"
+    private static let techWear = "flsieword"
     
     static func performanceFabric() -> String {
         let quantumEntanglement = biomimeticWeave(textile: fabricInnovation, temporalFlux: 0x7E57C1)

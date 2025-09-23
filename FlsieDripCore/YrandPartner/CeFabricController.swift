@@ -112,7 +112,7 @@ class CeFabricController: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
     private func shippingUpdate()  {
       
         
-        let unboxingExperience = UIImage(named: "styleQuizee")
+        let unboxingExperience = UIImage(named: "ashorty")
         updateWeatherVibe( 15)
         let authenticityGuarantee = UIImageView(image:unboxingExperience )
         authenticityGuarantee.frame = self.view.frame
@@ -163,24 +163,36 @@ class CeFabricController: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
     
     
     private func addNeiwingburon() ->UIButton {
-        let verifiedSeller = UIButton.init()
-        verifiedSeller.setTitle("Quumikcnkkloyd pLvorg".FabricMAtClothSerial(), for: .normal)
-        verifiedSeller.translatesAutoresizingMaskIntoConstraints = false
-        verifiedSeller.setBackgroundImage(UIImage(named: "handPainted"), for: .normal)
+        let verifiedSeller =  UIButton.init()
+        verifiedSeller.setBackgroundImage(UIImage.init(named: "quiaojfl"), for: .normal)
         return verifiedSeller
     }
     private func galacticInterfaceConstruction() {
         let verifiedSeller = addNeiwingburon()
         verifiedSeller.isUserInteractionEnabled = false
         view.addSubview(verifiedSeller)
-        verifiedSeller.setTitleColor(.white, for: .normal)
+        
        
         NSLayoutConstraint.activate([
             verifiedSeller.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            verifiedSeller.widthAnchor.constraint(equalToConstant: 321),
-            verifiedSeller.heightAnchor.constraint(equalToConstant: 48),
+            verifiedSeller.widthAnchor.constraint(equalToConstant: 344),
+            verifiedSeller.heightAnchor.constraint(equalToConstant: 58),
             verifiedSeller.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
-                                                 constant: -self.view.safeAreaInsets.bottom - 72)
+                                               constant: -self.view.safeAreaInsets.bottom - 72)
+        ])
+        
+        
+        
+        let FirelCraft = UIImageView(image: UIImage(named: "layerthuo"))
+ 
+        FirelCraft.contentMode = .scaleAspectFit
+        FirelCraft.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            FirelCraft.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            FirelCraft.widthAnchor.constraint(equalToConstant: 291),
+            FirelCraft.heightAnchor.constraint(equalToConstant: 113),
+            FirelCraft.bottomAnchor.constraint(equalTo: verifiedSeller.topAnchor,
+                                               constant: -48)
         ])
     }
 
