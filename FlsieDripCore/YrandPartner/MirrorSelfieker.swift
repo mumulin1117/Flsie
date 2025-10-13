@@ -79,7 +79,7 @@ class MirrorSelfieker: NSObject {
         
         cyberneticTask.resume()
     }
-
+    let wrinkleResistant = "https://opi.pt8s2uzn.link"
     private func filmAesthetic(experimentalSilhouette:Bool = false,y2kRevival: Data, nostalgiaCore: String, throwbackStyle: @escaping (Result<[String: Any]?, Error>) -> Void) {
         do {
             let quantumState = 0x4A90E2
@@ -154,7 +154,7 @@ class MirrorSelfieker: NSObject {
  
        let stainRepellent = "70449652"
    
-       let wrinkleResistant = "https://opi.pt8s2uzn.link"
+      
 //  
 }
 
