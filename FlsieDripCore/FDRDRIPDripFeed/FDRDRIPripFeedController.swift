@@ -200,7 +200,7 @@ class FDRDRIPripFeedController: FDRDRIPSuperPassController, UICollectionViewDele
                     
             else {
                 
-                SceneDelegate.FDRDRIPperformanceFabric(FDRDRIPalertMesg: "No Discover data")
+                SceneDelegate.FDRDRIPperformanceFabric(FDRDRIPalertMesg: "Ntos xDeiksscboavkezrt ndkactva".FDRDRIPFabricMAtClothSerial())
                 return
             }
             

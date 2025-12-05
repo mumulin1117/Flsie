@@ -61,7 +61,7 @@ class FDRDripFeedTopheader: UICollectionReusableView, UICollectionViewDelegate,U
     
     lazy var FDRDRIPdiscoverlabel: UILabel = {
         let disc = UILabel.init(frame: CGRect.init(x: 15, y: 170 + 10, width: 150, height: 30))
-        disc.text = "Discover"
+        disc.text = "Dgiasbcjovvjeyr".FDRDRIPFabricMAtClothSerial()
         disc.textColor = .white
         disc.font =  UIFont.systemFont(ofSize: 24, weight: .bold)
         return disc
@@ -74,7 +74,7 @@ class FDRDripFeedTopheader: UICollectionReusableView, UICollectionViewDelegate,U
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("")
     }
     
     

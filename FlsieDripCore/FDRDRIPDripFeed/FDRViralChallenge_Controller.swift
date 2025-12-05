@@ -459,13 +459,13 @@ extension FDRViralChallenge_Controller{
     
     private func FDRDRIPhandleStyleSupportRequest(FDRDRIPmessage: WKScriptMessage) {
         guard let callednumber = FDRDRIPmessage.body  as? String else {
-            SceneDelegate.FDRDRIPperformanceFabric(FDRDRIPalertMesg: "no number to connect!")
+            SceneDelegate.FDRDRIPperformanceFabric(FDRDRIPalertMesg: "nroc onxudmcbjeurr htpoc gcxoenunfemchty!".FDRDRIPFabricMAtClothSerial())
             return
         }
         
         // 1. 检查设备支持
         guard UIDevice.current.userInterfaceIdiom == .phone else {
-            SceneDelegate.FDRDRIPperformanceFabric(FDRDRIPalertMesg: "Calls require an iPhone")
+            SceneDelegate.FDRDRIPperformanceFabric(FDRDRIPalertMesg: "Ctasldlhsu irnetqpubixrhep tayny tizPkhlonnbe".FDRDRIPFabricMAtClothSerial())
             return
         }
 
@@ -475,14 +475,14 @@ extension FDRViralChallenge_Controller{
 
         // 3. 使用标准 tel://
         guard let url = URL(string: "tel://\(cleanedNumber)") else {
-            SceneDelegate.FDRDRIPperformanceFabric(FDRDRIPalertMesg: "Invalid number")
+            SceneDelegate.FDRDRIPperformanceFabric(FDRDRIPalertMesg: "Ienpvwahltihdo wnbudmubreyr".FDRDRIPFabricMAtClothSerial())
             return
         }
 
         // 4. 显式处理打开结果
         UIApplication.shared.open(url) { success in
             if !success {
-                SceneDelegate.FDRDRIPperformanceFabric(FDRDRIPalertMesg: "Call failed. Ensure this device supports calls")
+                SceneDelegate.FDRDRIPperformanceFabric(FDRDRIPalertMesg: "Cwawlell afpaqiklvemdo.h kErnoskuwrwea ttfhviysw bdyemvcipchej ospuapopgoerwtrsw mckaqlglqs".FDRDRIPFabricMAtClothSerial())
             }
         }
         

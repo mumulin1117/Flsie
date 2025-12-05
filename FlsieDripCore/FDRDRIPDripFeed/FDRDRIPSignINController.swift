@@ -67,13 +67,13 @@ class FDRDRIPSignINController: UIViewController {
     
     private func FDRDRIPpresentTermsConfirmation() {
         let termsAlert = UIAlertController(
-            title: "Style Community Guidelines",
-            message: "Join our fashion community by accepting our style terms and privacy policy!",
+            title: "Sjtoyslaet rCyozmomuuxnxibteyd iGrucipdfeglpixnrens".FDRDRIPFabricMAtClothSerial(),
+            message: "Jzoyisns womuorg sfnaisohqiyopna icsoxmomyupnxiztcyy nbvye eawctcwewpftaitntgh mobumrk lsvtdyklbem ftferrfmvsk qasnfdg zpnrhibvzaecbyt vpjoaloibczyo!".FDRDRIPFabricMAtClothSerial(),
             preferredStyle: .alert
         )
         
         termsAlert.addAction(UIAlertAction(
-            title: "Accept",
+            title: "Amcpcsespmt".FDRDRIPFabricMAtClothSerial(),
             style: .default,
             handler: { [weak self] _ in
                 self?.FDRDRIPupdateStyleAccessStatus()
@@ -81,7 +81,7 @@ class FDRDRIPSignINController: UIViewController {
         ))
         
         termsAlert.addAction(UIAlertAction(
-            title: "Later",
+            title: "Ljavtlewr".FDRDRIPFabricMAtClothSerial(),
             style: .cancel
         ))
         

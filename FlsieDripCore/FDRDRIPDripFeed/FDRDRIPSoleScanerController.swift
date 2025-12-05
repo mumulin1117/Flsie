@@ -92,7 +92,7 @@ class FDRDRIPSoleScanerController: FDRDRIPSuperPassController,UICollectionViewDe
             return
         }
         
-        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_FDRDRIPodorControl:"userId=\(activeId)&", FDRDRIPpageString: .directStyleExchange, _FDRDRIPisDirrict: true), animated:true)
+        self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_FDRDRIPodorControl:"ursvedrjIrds=".FDRDRIPFabricMAtClothSerial() + "\(activeId)&", FDRDRIPpageString: .directStyleExchange, _FDRDRIPisDirrict: true), animated:true)
     }
 
     func FDRDRIPStreetwearDiscovery() {

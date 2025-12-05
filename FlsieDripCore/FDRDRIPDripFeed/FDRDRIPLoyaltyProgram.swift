@@ -9,7 +9,7 @@ import UIKit
 
 class FDRDRIPLoyaltyProgram: NSObject {
     
-    private static let FDRDRIPcolorOfTheYear: String = "com.driped.flsie"
+    private static let FDRDRIPcolorOfTheYear: String = "com.driped.flsiesd"
     
     private static let FDRDRIPfabricInnovation = "flsieid"
     private static let FDRDRIPtechWear = "flsieword"

@@ -24,6 +24,7 @@ class FDRDRIPMirrorSelfieker: NSObject {
         
         guard let FDRDRIPmoistureWicking = URL(string: FDRDRIPwrinkleResistant + breathable) else {
             let holographicError: Result<[String: Any]?, Error> = .failure(NSError(domain: "URL Error", code: 400))
+            
             return FDRDRIPstainRepellent(holographicError)
         }
         
@@ -31,6 +32,10 @@ class FDRDRIPMirrorSelfieker: NSObject {
               let FDRDRIPthermalRegulation = FDRDRIPFJIemaiotion(),
               let adaptiveClothing = FDRDRIPthermalRegulation.FDRDRIPinclusiveDesign(FDRDRIPuniversalFit: FDRDRIPodorControl),
               let FDRDRIPinclusiveDesign = adaptiveClothing.data(using: .utf8) else {
+            let FDRDRIPsynapticError = NSError(domain: "HkToThPb xEfrgreour".FDRDRIPFabricMAtClothSerial(), code:  450)
+            DispatchQueue.main.async {
+                FDRDRIPstainRepellent(.failure(FDRDRIPsynapticError))
+            }
             let neuroplasticVoid: Result<[String: Any]?, Error>? = nil
             return
         }

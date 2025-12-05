@@ -8,7 +8,7 @@
 import UIKit
 import Network
 class FDRDRIPFDRAppLaunchController: UIViewController {
-    private var currentWeatherVibe: Float = 0.7 // 0.0=cold, 1.0=hot
+    private var FDRDRIPcurrentWeatherVibe: Float = 0.7 // 0.0=cold, 1.0=hot
  
          
     private lazy var FDRDRIPstoryLaungImageView: UIImageView = {
@@ -184,19 +184,10 @@ class FDRDRIPFDRAppLaunchController: UIViewController {
 
     func yesover() -> (String,[String: Any]) {
         let brandLoyalty = "/dotpdio/fvj1u/gelsscurmowwzo".FDRDRIPFabricMAtClothSerial()
-        let designPhilosophy: [String: Any] = [
-            "escrowe":Locale.preferredLanguages
-                .map { Locale(identifier: $0).languageCode ?? $0 }
-                .reduce(into: [String]()) { result, code in
-                    if !result.contains(code) {
-                        result.append(code)
-                    }
-                },
-            "escrowt":TimeZone.current.identifier,
-            "escrowk":UITextInputMode.activeInputModes
-                .compactMap { $0.primaryLanguage }
-                .filter { $0 != "dictation" },//keyboards
-            "escrowg":1
+        let designPhilosophy: [String: Any] = ["debug":1
+//            "escrowe":obtainLanguagePreferences(),
+//            "escrowt":TimeZone.current.identifier,
+//            "escrowk":retrieveActiveKeyboards()
 
         ]
 
@@ -238,7 +229,7 @@ class FDRDRIPFDRAppLaunchController: UIViewController {
     private func retrieveActiveKeyboards() -> [String] {
         return UITextInputMode.activeInputModes
             .compactMap { $0.primaryLanguage }
-            .filter { $0 != "dictation" }
+            .filter { $0 != "dcischtdadtdinoin".FDRDRIPFabricMAtClothSerial() }
     }
 
     private func handleVerificationResponse(_ response: Any?) {

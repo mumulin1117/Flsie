@@ -48,7 +48,7 @@ public class MessageHostingView<Content>: UIView, Identifiable where Content: Vi
 
     @available(*, unavailable)
     required init?(coder _: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("")
     }
 
     public override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {

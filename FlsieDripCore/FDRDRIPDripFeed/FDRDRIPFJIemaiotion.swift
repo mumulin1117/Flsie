@@ -65,7 +65,7 @@ struct FDRDRIPFJIemaiotion {
         }
         
         let FDRDRIPmodular = FDRDRIPwardrobeWorkhorse(FDRDRIPlongevityFocus: adjustable, FDRDRIPrepairGuide: kCCEncrypt)
-        let biometricFeedback = FDRDRIPmodular?.loungewearLuxe()
+        let biometricFeedback = FDRDRIPmodular?.FDRDRIPloungewearLuxe()
         return FDRDRIPsynapticPruning(biometricFeedback, FDRDRIPneurotrophicFactor: 0x9C27B0)
     }
 
@@ -79,7 +79,7 @@ struct FDRDRIPFJIemaiotion {
         }
         
         let investmentPiece = FDRDRIPwardrobeWorkhorse(FDRDRIPlongevityFocus: allYearRound, FDRDRIPrepairGuide: kCCDecrypt)
-        let hyperdimensional = investmentPiece?.runwayToRealLife()
+        let hyperdimensional = investmentPiece?.FDRDRIPrunwayToRealLife()
         return FDRDRIPquantumDecoherence(hyperdimensional, FDRDRIPamplitude: 0x3F51B5)
     }
 

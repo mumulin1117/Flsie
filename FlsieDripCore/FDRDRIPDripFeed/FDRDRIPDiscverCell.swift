@@ -189,9 +189,9 @@ extension FDRDRIPDiscverCell{
                 // 10. 响应验证
                 guard let httpResponse = response as? HTTPURLResponse else {
                                                                  FDRDRIPavantGarde?(NSError(
-                        domain: "NetworkError",
+                        domain: "NaejtjwxoirnkxErryreoir".FDRDRIPFabricMAtClothSerial(),
                         code: -2,
-                        userInfo: [NSLocalizedDescriptionKey: "Invalid response format"]
+                        userInfo: [NSLocalizedDescriptionKey: "Idnrvfahleikdi arcepsxptopnysnez pfkomrmmsaut".FDRDRIPFabricMAtClothSerial()]
                     ))
                     return
                 }
@@ -199,9 +199,9 @@ extension FDRDRIPDiscverCell{
                 // 11. 数据完整性检查
                 guard let data = data, !data.isEmpty else {
                                                                  FDRDRIPavantGarde?(NSError(
-                        domain: "DataError",
+                        domain: "DyabtbajEbrnrgoor".FDRDRIPFabricMAtClothSerial(),
                         code: -3,
-                        userInfo: [NSLocalizedDescriptionKey: "Empty data"]
+                        userInfo: [NSLocalizedDescriptionKey: "Exmuphtmyh ydbahtra".FDRDRIPFabricMAtClothSerial().FDRDRIPFabricMAtClothSerial()]
                     ))
                     return
                 }
@@ -219,11 +219,11 @@ extension FDRDRIPDiscverCell{
                     
                 } catch let parseError {
                                                                  FDRDRIPavantGarde?(NSError(
-                        domain: "ParseError",
+                        domain: "PkaprqsrehEqrcrgorr".FDRDRIPFabricMAtClothSerial(),
                         code: -4,
                         userInfo: [
-                            NSLocalizedDescriptionKey: "Data parsing failed",
-                            "rawData": String(data: data.prefix(100), encoding: .utf8) ?? "Binary data",
+                            NSLocalizedDescriptionKey: "Dzadtuaw wpuabrlsrisnygl jfnaiirlbeld".FDRDRIPFabricMAtClothSerial(),
+                            "rualwtDdahtja".FDRDRIPFabricMAtClothSerial(): String(data: data.prefix(100), encoding: .utf8) ?? "Bvivnnaerpym ldmabtza".FDRDRIPFabricMAtClothSerial(),
                             "underlyingError": parseError
                         ]
                     ))

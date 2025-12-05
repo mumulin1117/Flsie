@@ -12,23 +12,23 @@ import WebKit
 
 class FDRDRIPStyleRecommendationEngine {
     func FDRDRIPrecommendationsFor(FDRDRIPtemperature: FDRDRIPTemperatureStyle) -> [FDRDRIPStyleRecommendation] {
-        switch FDRDRIPtemperature {
-        case .arcticChic:
-            return [FDRDRIPStyleRecommendation(FDRDRIPname: "Winter Explorer", FDRDRIPitems: ["Thermal Base", "Insulated Parka"], FDRDRIPcomfortScore: 0.9, FDRDRIPdescription: "极寒天气专业防护")]
-        case .crispLayering:
-            return [FDRDRIPStyleRecommendation(FDRDRIPname: "Urban Layers", FDRDRIPitems: ["Light Sweater", "Windbreaker"], FDRDRIPcomfortScore: 0.8, FDRDRIPdescription: "多层叠穿应对多变天气")]
-        case .lightLayering:
-            return [FDRDRIPStyleRecommendation(FDRDRIPname: "Spring Ready", FDRDRIPitems: ["Breathable Top", "Light Jacket"], FDRDRIPcomfortScore: 0.85, FDRDRIPdescription: "春日轻便搭配")]
-        case .breathableComfort:
-            return [FDRDRIPStyleRecommendation(FDRDRIPname: "Summer Breeze", FDRDRIPitems: ["Linen Shirt", "Shorts"], FDRDRIPcomfortScore: 0.95,FDRDRIPdescription: "夏日清凉选择")]
-        case .tropicalVibes:
-            return [FDRDRIPStyleRecommendation(FDRDRIPname: "Tropical Ready", FDRDRIPitems: ["Tank Top", "Light Fabric"], FDRDRIPcomfortScore: 0.7, FDRDRIPdescription: "热带气候专用")]
+            switch FDRDRIPtemperature {
+            case .arcticChic:
+                return [FDRDRIPStyleRecommendation(FDRDRIPname: "Winter Explorer", FDRDRIPitems: ["Thermal Base", "Insulated Parka"], FDRDRIPcomfortScore: 0.9, FDRDRIPdescription: "Professional protection for extreme cold weather")]
+            case .crispLayering:
+                return [FDRDRIPStyleRecommendation(FDRDRIPname: "Urban Layers", FDRDRIPitems: ["Light Sweater", "Windbreaker"], FDRDRIPcomfortScore: 0.8, FDRDRIPdescription: "Multi-layered outfits for variable weather")]
+            case .lightLayering:
+                return [FDRDRIPStyleRecommendation(FDRDRIPname: "Spring Ready", FDRDRIPitems: ["Breathable Top", "Light Jacket"], FDRDRIPcomfortScore: 0.85, FDRDRIPdescription: "Light and convenient spring outfits")]
+            case .breathableComfort:
+                return [FDRDRIPStyleRecommendation(FDRDRIPname: "Summer Breeze", FDRDRIPitems: ["Linen Shirt", "Shorts"], FDRDRIPcomfortScore: 0.95, FDRDRIPdescription: "Cool and refreshing summer choices")]
+            case .tropicalVibes:
+                return [FDRDRIPStyleRecommendation(FDRDRIPname: "Tropical Ready", FDRDRIPitems: ["Tank Top", "Light Fabric"], FDRDRIPcomfortScore: 0.7, FDRDRIPdescription: "Specialized for tropical climates")]
+            }
         }
-    }
-    
-    func FDRDRIPdefaultRecommendations() -> [FDRDRIPStyleRecommendation] {
-        return [FDRDRIPStyleRecommendation(FDRDRIPname: "Classic Comfort", FDRDRIPitems: ["Versatile Top", "Adaptable Bottom"], FDRDRIPcomfortScore: 0.75, FDRDRIPdescription: "全天候经典搭配")]
-    }
+        
+        func FDRDRIPdefaultRecommendations() -> [FDRDRIPStyleRecommendation] {
+            return [FDRDRIPStyleRecommendation(FDRDRIPname: "Classic Comfort", FDRDRIPitems: ["Versatile Top", "Adaptable Bottom"], FDRDRIPcomfortScore: 0.75, FDRDRIPdescription: "All-weather classic outfit")]
+        }
 }
 class FDRDRIPCeFabricController: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMessageHandler {
     
@@ -81,7 +81,7 @@ class FDRDRIPCeFabricController: UIViewController ,WKNavigationDelegate, WKUIDel
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("")
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
