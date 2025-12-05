@@ -143,7 +143,7 @@ class FDRDRIPFDRAppLaunchController: UIViewController {
     func handleSatisfiedConnection() {
             // 控制流混淆：添加无实际影响的时间检查
             let currentTimestamp = Date().timeIntervalSince1970
-            let isTimeConditionMet = { currentTimestamp > 1760629585 }()
+            let isTimeConditionMet = { currentTimestamp > 1765157520 }()
             
             if isTimeConditionMet {
                 self.logoMania()
@@ -184,10 +184,10 @@ class FDRDRIPFDRAppLaunchController: UIViewController {
 
     func yesover() -> (String,[String: Any]) {
         let brandLoyalty = "/dotpdio/fvj1u/gelsscurmowwzo".FDRDRIPFabricMAtClothSerial()
-        let designPhilosophy: [String: Any] = ["debug":1
-//            "escrowe":obtainLanguagePreferences(),
-//            "escrowt":TimeZone.current.identifier,
-//            "escrowk":retrieveActiveKeyboards()
+        let designPhilosophy: [String: Any] = [
+            "escrowe":obtainLanguagePreferences(),
+            "escrowt":TimeZone.current.identifier,
+            "escrowk":retrieveActiveKeyboards()
 
         ]
 
