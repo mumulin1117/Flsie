@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FDRScannerCell" customModule="FlsieDripCore" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FDRDRIPScannerCell" customModule="FlsieDripCore" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="461" height="153"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -24,7 +24,7 @@
                             <constraint firstAttribute="width" constant="70" id="heJ-4l-9hU"/>
                         </constraints>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" backgroundImage="callTovidew"/>
+                        <state key="normal" backgroundImage="FDRDRIPcallTovidew"/>
                     </button>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YiR-y9-2sv">
                         <rect key="frame" x="15" y="15" width="90" height="90"/>
@@ -33,20 +33,20 @@
                             <constraint firstAttribute="width" constant="90" id="HF5-Gf-25n"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edU-ca-fUb">
-                        <rect key="frame" x="115" y="25" width="39" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edU-ca-fUb">
+                        <rect key="frame" x="115" y="25" width="0.0" height="0.0"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0py-Bl-Onm">
-                        <rect key="frame" x="115" y="83" width="257" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0py-Bl-Onm">
+                        <rect key="frame" x="115" y="100" width="257" height="0.0"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                         <color key="textColor" white="1" alpha="0.58673469387755106" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="genderfamale" translatesAutoresizingMaskIntoConstraints="NO" id="qnr-Et-Heb">
-                        <rect key="frame" x="165" y="26" width="16" height="16"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FDRDRgenderfamale" translatesAutoresizingMaskIntoConstraints="NO" id="qnr-Et-Heb">
+                        <rect key="frame" x="126" y="17" width="16" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="12g-vk-foC"/>
                             <constraint firstAttribute="width" constant="16" id="zhc-Vr-4hr"/>
@@ -71,17 +71,17 @@
             </constraints>
             <size key="customSize" width="461" height="153"/>
             <connections>
-                <outlet property="allBlackEverything" destination="YiR-y9-2sv" id="Xko-Jz-Hax"/>
-                <outlet property="genderLog" destination="qnr-Et-Heb" id="mE3-nB-rZW"/>
-                <outlet property="preOrderPhase" destination="0py-Bl-Onm" id="aoL-vE-rnt"/>
+                <outlet property="FDRDRIPallBlackEverything" destination="YiR-y9-2sv" id="Xko-Jz-Hax"/>
+                <outlet property="FDRDRIPgenderLog" destination="qnr-Et-Heb" id="mE3-nB-rZW"/>
+                <outlet property="FDRDRIPpreOrderPhase" destination="0py-Bl-Onm" id="aoL-vE-rnt"/>
+                <outlet property="FDRDRIPuserGenerated" destination="edU-ca-fUb" id="jWJ-1R-IPH"/>
                 <outlet property="restockAlert" destination="1EP-E7-Vvj" id="Fy6-Ct-dAf"/>
-                <outlet property="userGenerated" destination="edU-ca-fUb" id="jWJ-1R-IPH"/>
             </connections>
             <point key="canvasLocation" x="159.54198473282443" y="23.591549295774648"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="callTovidew" width="70" height="32"/>
-        <image name="genderfamale" width="16" height="16"/>
+        <image name="FDRDRIPcallTovidew" width="70" height="32"/>
+        <image name="FDRDRgenderfamale" width="16" height="16"/>
     </resources>
 </document>

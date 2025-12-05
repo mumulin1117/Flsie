@@ -10,7 +10,7 @@ import WebKit
 import SwiftyStoreKit
 import SwiftMessages
 class FDRViralChallenge_Controller:UIViewController , WKScriptMessageHandler {
-    private  lazy var spinnerView: UIActivityIndicatorView = {
+    private  lazy var FDRDRIPspinnerView: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView(style: .large)
         spinner.color = UIColor.white
         spinner.hidesWhenStopped = true
@@ -18,24 +18,24 @@ class FDRViralChallenge_Controller:UIViewController , WKScriptMessageHandler {
    }()
    
     
-    private let inputerView = UITextView.init(frame: CGRect.init(x: 0, y: 80, width: UIScreen.main.bounds.width, height: 800))
+    private let FDRDRIPinputerView = UITextView.init(frame: CGRect.init(x: 0, y: 80, width: UIScreen.main.bounds.width, height: 800))
     
   
     
-    func isLoginPageTerm() {
+    func FDRDRIPisLoginPageTerm() {
         
-        if  typeTErm == 0 {
+        if  FDRDRIPtypeTErm == 0 {
             return
         }
         
         
-        self.view.addSubview(inputerView)
-        inputerView.backgroundColor = .clear
+        self.view.addSubview(FDRDRIPinputerView)
+        FDRDRIPinputerView.backgroundColor = .clear
       
-        inputerView.font = UIFont.systemFont(ofSize: 20)
-        inputerView.contentInset = UIEdgeInsets.init(top: 40, left: 20, bottom: 20, right: 20)
-        inputerView.textColor = .white
-        inputerView.text = (typeTErm == 1) ?
+        FDRDRIPinputerView.font = UIFont.systemFont(ofSize: 20)
+        FDRDRIPinputerView.contentInset = UIEdgeInsets.init(top: 40, left: 20, bottom: 20, right: 20)
+        FDRDRIPinputerView.textColor = .white
+        FDRDRIPinputerView.text = (FDRDRIPtypeTErm == 1) ?
 
 """
 Terms of Service
@@ -95,12 +95,12 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
     }
     
     
-   func insertopIndcatoer()  {
-       spinnerView.frame = CGRect(origin: .zero, size: CGSize.init(width: 50, height: 50))
-       self.view.addSubview(spinnerView)
-       spinnerView.center = self.view.center
+   func FDRDRIPinsertopIndcatoer()  {
+       FDRDRIPspinnerView.frame = CGRect(origin: .zero, size: CGSize.init(width: 50, height: 50))
+       self.view.addSubview(FDRDRIPspinnerView)
+       FDRDRIPspinnerView.center = self.view.center
    }
-    enum ItemPageDescString {
+    enum FDRDRIPItemPageDescString {
     
         case styleStudioCreation
         case trendCollaborationRoom
@@ -132,61 +132,61 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
             
             switch self {
             case .styleStudioCreation:
-                page = "pbaigneasn/cCarueeabtoeeRjosovmp/tidnbdeezxx?".FabricMAtClothSerial()
+                page = "pbaigneasn/cCarueeabtoeeRjosovmp/tidnbdeezxx?".FDRDRIPFabricMAtClothSerial()
             case .trendCollaborationRoom:
-                page = "piaagdefsi/nJzofivndLxixvseyRqorormh/hixnndsemxn?".FabricMAtClothSerial()
+                page = "piaagdefsi/nJzofivndLxixvseyRqorormh/hixnndsemxn?".FDRDRIPFabricMAtClothSerial()
             case .styleBreak :
-                page = "pmaagxelsi/yLciqvoenRdotodmmReeesxtp/minnwdsefxk?".FabricMAtClothSerial()
+                page = "pmaagxelsi/yLciqvoenRdotodmmReeesxtp/minnwdsefxk?".FDRDRIPFabricMAtClothSerial()
             case .directStyleExchange:
-                page  = "poawggeisg/apwroitvialtyedCvhvaztd/yignddleixx?".FabricMAtClothSerial()
+                page  = "poawggeisg/apwroitvialtyedCvhvaztd/yignddleixx?".FDRDRIPFabricMAtClothSerial()
             case .myStyleHub:
-                page  = "pnajguessj/hMtifnweiCueknstyesru/qiynsdiewxa?".FabricMAtClothSerial()
+                page  = "pnajguessj/hMtifnweiCueknstyesru/qiynsdiewxa?".FDRDRIPFabricMAtClothSerial()
             case .curatedDesigners:
-                page  = "ptatgjelsg/oCjofnwcmevrundezdg/uinnidzegxz?".FabricMAtClothSerial()
+                page  = "ptatgjelsg/oCjofnwcmevrundezdg/uinnidzegxz?".FDRDRIPFabricMAtClothSerial()
             case .myStylePosts:
-                page  = "poaegoeusc/eMyyvPzopsntg/kionadmetxx?".FabricMAtClothSerial()
+                page  = "poaegoeusc/eMyyvPzopsntg/kionadmetxx?".FDRDRIPFabricMAtClothSerial()
             case .stylePostDetails:
-                page  = "piaygfeess/oPlopsatpDjeytdasialnsf/vilnydheixv?".FabricMAtClothSerial()
+                page  = "piaygfeess/oPlopsatpDjeytdasialnsf/vilnydheixv?".FDRDRIPFabricMAtClothSerial()
             case .styleFeed:
-                page  = "psakgaeoso/ghqopmoevpvargiem/vidnqdmemxn?".FabricMAtClothSerial()
+                page  = "psakgaeoso/ghqopmoevpvargiem/vidnqdmemxn?".FDRDRIPFabricMAtClothSerial()
             case .styleArchive:
-                page  = "pqazgxebsf/rLnitvjeqHpixsntjonrbyh/rihngdiecxe?".FabricMAtClothSerial()
+                page  = "pqazgxebsf/rLnitvjeqHpixsntjonrbyh/rihngdiecxe?".FDRDRIPFabricMAtClothSerial()
             case .styleReport:
-                page  = "pdaxgyezsu/qrwelpoohrctu/jionpdseqxy?".FabricMAtClothSerial()
+                page  = "pdaxgyezsu/qrwelpoohrctu/jionpdseqxy?".FDRDRIPFabricMAtClothSerial()
             
             case .myCuratedCollection:
-                page  = "pbalgueosz/gMwynGyoqohdpsf/dijnidmeixy?".FabricMAtClothSerial()
+                page  = "pbalgueosz/gMwynGyoqohdpsf/dijnidmeixy?".FDRDRIPFabricMAtClothSerial()
             case .styleDelaveryLocations:
-                page  = "paaxguerso/wMgyjAydodiraelsqsx/yigngdtenxa?".FabricMAtClothSerial()
+                page  = "paaxguerso/wMgyjAydodiraelsqsx/yigngdtenxa?".FDRDRIPFabricMAtClothSerial()
             case .styleOrderTracking:
-                page  = "ptangqepsi/bMjyuOmrudveirw/xiknedfebxi?".FabricMAtClothSerial()
+                page  = "ptangqepsi/bMjyuOmrudveirw/xiknedfebxi?".FDRDRIPFabricMAtClothSerial()
             case .newStylePost:
-                page  = "psacgvetsl/nCmrtekamtgeiPqoospta/zidnfdsekxt?".FabricMAtClothSerial()
+                page  = "psacgvetsl/nCmrtekamtgeiPqoospta/zidnfdsekxt?".FDRDRIPFabricMAtClothSerial()
             case .stylePreferences:
-                page  = "pbatgtebsh/zShebtwtpirnbgx/qilnzdregxb?".FabricMAtClothSerial()
+                page  = "pbatgtebsh/zShebtwtpirnbgx/qilnzdregxb?".FDRDRIPFabricMAtClothSerial()
             case .profileStyling:
-                page  = "paawgwegsy/zEfdeiztfDgartgaw/eiknjdoetxd?".FabricMAtClothSerial()
+                page  = "paawgwegsy/zEfdeiztfDgartgaw/eiknjdoetxd?".FDRDRIPFabricMAtClothSerial()
             case .Agreement:
-                page  = "poalgvecsg/uAygiriedehmrehnjtn/zipnedaegxe?".FabricMAtClothSerial()
+                page  = "poalgvecsg/uAygiriedehmrehnjtn/zipnedaegxe?".FDRDRIPFabricMAtClothSerial()
            
             case .styleCommunityGuidelines:
-                page  = "pnafgkegsk/pAgcttjitvkejDuedtuajivlhsm/uiinndpesxp?".FabricMAtClothSerial()
+                page  = "pnafgkegsk/pAgcttjitvkejDuedtuajivlhsm/uiinndpesxp?".FDRDRIPFabricMAtClothSerial()
             case .hostTrendEvent:
-                page  = "pdaqgledst/qCnrgeraotpevAmcltxiqvuec/minnmdlejxd?".FabricMAtClothSerial()
+                page  = "pdaqgledst/qCnrgeraotpevAmcltxiqvuec/minnmdlejxd?".FDRDRIPFabricMAtClothSerial()
             case .myTrendEvents:
-                page  = "praugzedsf/umwymAfcxtdicvdiotkiheosu/miznsdgehxi?".FabricMAtClothSerial()
+                page  = "praugzedsf/umwymAfcxtdicvdiotkiheosu/miznsdgehxi?".FDRDRIPFabricMAtClothSerial()
             case .noSpecificFlow:
                 page  = ""
                 
             case .flaySaoin:
                 
-                page  = "phaygmevsl/fLkigvdeoRvowoumrVjiqdoegod/fivnvddejxb?".FabricMAtClothSerial()
+                page  = "phaygmevsl/fLkigvdeoRvowoumrVjiqdoegod/fivnvddejxb?".FDRDRIPFabricMAtClothSerial()
             }
-            var realRoobase = "hctztbpcsf:n/f/twtweww.agmhjoosctq7t8v9b0sfklrojaotw.uxrypzx/y#".FabricMAtClothSerial()
+            var realRoobase = "hctztbpcsf:n/f/twtweww.agmhjoosctq7t8v9b0sfklrojaotw.uxrypzx/y#".FDRDRIPFabricMAtClothSerial()
             
             realRoobase  = realRoobase + page + realRoo
             
-            realRoobase = realRoobase + "txoyksetnc=".FabricMAtClothSerial() + (FDRViralChallenge_Controller.staplePieceToken ?? "") + "&waxpopaItDm=".FabricMAtClothSerial() + FDRViralChallenge_Controller.appID
+            realRoobase = realRoobase + "txoyksetnc=".FDRDRIPFabricMAtClothSerial() + (FDRViralChallenge_Controller.FDRDRIPstaplePieceToken ?? "") + "&waxpopaItDm=".FDRDRIPFabricMAtClothSerial() + FDRViralChallenge_Controller.FDRDRIPappID
             
             return realRoobase
         }
@@ -195,7 +195,7 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
     
     
 
-    static var staplePieceToken:String?{
+    static var FDRDRIPstaplePieceToken:String?{
         get{
             return UserDefaults.standard.object(forKey: "staplePiece") as? String
         }set{
@@ -206,7 +206,7 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
     }
     
     
-    static var detailShotID:Int?{
+    static var FDRDRIPdetailShotID:Int?{
         get{
             return UserDefaults.standard.object(forKey: "detailShot") as? Int
         }set{
@@ -216,20 +216,20 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
         }
     }
     
-    static var appID:String = "70449652"
-    private var localSourcing:WKWebView?
+    static var FDRDRIPappID:String = "70449652"
+    private var FDRDRIPlocalSourcing:WKWebView?
     
-    var pageString:ItemPageDescString = .styleStudioCreation
-    private var odorControl:String
+    var FDRDRIPpageString:FDRDRIPItemPageDescString = .styleStudioCreation
+    private var FDRDRIPodorControl:String
     
-    private var isDirrict:Bool
+    private var FDRDRIPisDirrict:Bool
     
-    var typeTErm:Int
-    init(_odorControl: String = "",pageString:ItemPageDescString,_isDirrict:Bool,_typeTErm:Int = 0) {
-        self.odorControl = _odorControl
-        self.pageString = pageString
-        self.isDirrict = _isDirrict
-        typeTErm = _typeTErm
+    var FDRDRIPtypeTErm:Int
+    init(_FDRDRIPodorControl: String = "",FDRDRIPpageString:FDRDRIPItemPageDescString,_FDRDRIPisDirrict:Bool,_FDRDRIPtypeTErm:Int = 0) {
+        self.FDRDRIPodorControl = _FDRDRIPodorControl
+        self.FDRDRIPpageString = FDRDRIPpageString
+        self.FDRDRIPisDirrict = _FDRDRIPisDirrict
+        FDRDRIPtypeTErm = _FDRDRIPtypeTErm
         super.init(nibName: nil, bundle: nil)
     }
    
@@ -245,14 +245,14 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
             guard let cultural = message.body  as? String else {
                 return
             }
-            spinnerView.color = UIColor.blue
-            self.spinnerView.startAnimating()
+            FDRDRIPspinnerView.color = UIColor.blue
+            self.FDRDRIPspinnerView.startAnimating()
             self.view.isUserInteractionEnabled = false
-            breathableMaterial(wick:cultural)
+            FDRDRIPbreathableMaterial(FDRDRIPwick:cultural)
         case "switchFitView":
             if let hat =  message.body as? String{
              
-                self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_odorControl:hat, pageString: .noSpecificFlow, _isDirrict: false), animated: true)
+                self.navigationController?.pushViewController(FDRViralChallenge_Controller.init(_FDRDRIPodorControl:hat, FDRDRIPpageString: .noSpecificFlow, _FDRDRIPisDirrict: false), animated: true)
             }
             
         case "syncStyleTribe":
@@ -267,13 +267,13 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
         case "trackFreshDrops":
             self.navigationController?.popViewController(animated: true)
         case "refreshThreadFlow":
-            FDRViralChallenge_Controller.detailShotID = nil
-            FDRViralChallenge_Controller.staplePieceToken = nil
-            presentStyleAuthentication()
+            FDRViralChallenge_Controller.FDRDRIPdetailShotID = nil
+            FDRViralChallenge_Controller.FDRDRIPstaplePieceToken = nil
+            FDRDRIPpresentStyleAuthentication()
         case "activateGhostMode":
-            presentStyleAuthentication()
+            FDRDRIPpresentStyleAuthentication()
         case "rebootStyleRouter":
-            handleStyleSupportRequest(message: message)
+            FDRDRIPhandleStyleSupportRequest(FDRDRIPmessage: message)
         default:
             break
         }
@@ -284,14 +284,14 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
        
     }
     
-    private func returnToStyleHome() {
+    private func FDRDRIPreturnToStyleHome() {
         navigationController?.popToRootViewController(animated: true)
     }
  
-    private func breathableMaterial(wick:String)  {
-        SwiftyStoreKit.purchaseProduct(wick, atomically: true) { psResult in
+    private func FDRDRIPbreathableMaterial(FDRDRIPwick:String)  {
+        SwiftyStoreKit.purchaseProduct(FDRDRIPwick, atomically: true) { psResult in
             
-            self.spinnerView.stopAnimating()
+            self.FDRDRIPspinnerView.stopAnimating()
             
             self.view.isUserInteractionEnabled = true
             if case .success(let psPurch) = psResult {
@@ -302,21 +302,21 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
                 
                 successfulVuew.configureContent(
                     title: nil,
-                    body: "plaiye nsgupckcterszseffualn!".FabricMAtClothSerial(),
-                    iconImage: UIImage(named: "successfulImage"), // Custom checkmark+shoe icon
+                    body: "plaiye nsgupckcterszseffualn!".FDRDRIPFabricMAtClothSerial(),
+                    iconImage: UIImage(named: "FDRDRsuccessfulImage"), // Custom checkmark+shoe icon
                     iconText: nil, buttonImage: nil,
                     buttonTitle: nil,
                     buttonTapHandler: nil
                 )
                 
               
-                self.localSourcing?.evaluateJavaScript("handleHypeTransaction()", completionHandler: nil)
-                self.spinnerView.color = UIColor.white
+                self.FDRDRIPlocalSourcing?.evaluateJavaScript("handleHypeTransaction()", completionHandler: nil)
+                self.FDRDRIPspinnerView.color = UIColor.white
                 
                 
-                SwiftMessages.show(config: self.makeSuccessfulConfigTrend(), view: successfulVuew)
+                SwiftMessages.show(config: self.FDRDRIPmakeSuccessfulConfigTrend(), view: successfulVuew)
             }else if case .error(let error) = psResult {
-                self.spinnerView.color = UIColor.white
+                self.FDRDRIPspinnerView.color = UIColor.white
                
               
                 if error.code == .paymentCancelled {
@@ -324,14 +324,14 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
                     return
                 }
                 
-                SceneDelegate.performanceFabric(alertMesg: error.localizedDescription)
+                SceneDelegate.FDRDRIPperformanceFabric(FDRDRIPalertMesg: error.localizedDescription)
                
             }
         }
     }
     
   
-    func makeSuccessfulConfigTrend() -> SwiftMessages.Config {
+    func FDRDRIPmakeSuccessfulConfigTrend() -> SwiftMessages.Config {
         var config = SwiftMessages.defaultConfig
         config.duration = .seconds(seconds: 2)
         config.presentationStyle = .top
@@ -342,39 +342,39 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureStyleBackground()
+        FDRDRIPconfigureStyleBackground()
         
-        self.spinnerView.startAnimating()
+        self.FDRDRIPspinnerView.startAnimating()
        
         
-        let multiFunction = createStyleWebConfiguration()
+        let multiFunction = FDRDRIPcreateStyleWebConfiguration()
       
        
-        localSourcing = WKWebView(
+        FDRDRIPlocalSourcing = WKWebView(
                frame: UIScreen.main.bounds,
                configuration: multiFunction
            )
-        setupStyleWebView()
+        FDRDRIPsetupStyleWebView()
        
-        if let givingBack = localSourcing  {
+        if let FDRDRIPgivingBack = FDRDRIPlocalSourcing  {
             
            
-            let rextPage = ((isDirrict == true) ? pageString.rootRoute(realRoo: self.odorControl) : self.odorControl)
+            let rextPage = ((FDRDRIPisDirrict == true) ? FDRDRIPpageString.rootRoute(realRoo: self.FDRDRIPodorControl) : self.FDRDRIPodorControl)
             
             if  let url = URL(string: rextPage ) {
-                givingBack.load(URLRequest(url: url))
+                FDRDRIPgivingBack.load(URLRequest(url: url))
             }
             
         }
         
         
-        insertopIndcatoer()
+        FDRDRIPinsertopIndcatoer()
         
-        isLoginPageTerm()
+        FDRDRIPisLoginPageTerm()
     }
     
-    private func setupStyleWebView() {
-        guard let webView = localSourcing else { return }
+    private func FDRDRIPsetupStyleWebView() {
+        guard let webView = FDRDRIPlocalSourcing else { return }
         
         webView.isHidden = true
         webView.backgroundColor = .clear
@@ -390,13 +390,13 @@ Terms may update periodically; continued use constitutes acceptance. Questions? 
 
 extension FDRViralChallenge_Controller{
     
-    private func configureStyleBackground() {
+    private func FDRDRIPconfigureStyleBackground() {
         let convertibleStyle = UIImageView(frame: UIScreen.main.bounds)
-        convertibleStyle.image = UIImage(named: "urbanStyleBAck")
+        convertibleStyle.image = UIImage(named: "FDRDurbanStyleBAck")
         convertibleStyle.contentMode = .scaleAspectFill
         view.addSubview(convertibleStyle)
     }
-    private func createStyleWebConfiguration() -> WKWebViewConfiguration {
+    private func FDRDRIPcreateStyleWebConfiguration() -> WKWebViewConfiguration {
         let config = WKWebViewConfiguration()
         
         // 时尚媒体播放设置
@@ -428,23 +428,23 @@ extension FDRViralChallenge_Controller:WKNavigationDelegate,WKUIDelegate{
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: DispatchWorkItem(block: {
-            self.loadFreshContent()
+            self.FDRDRIPloadFreshContent()
         }))
         
     }
     
     
     
-    func loadFreshContent() {
-        self.localSourcing?.isHidden = false
-        self.spinnerView.stopAnimating()
+    func FDRDRIPloadFreshContent() {
+        self.FDRDRIPlocalSourcing?.isHidden = false
+        self.FDRDRIPspinnerView.stopAnimating()
     }
     
 }
 
 
 extension String{
-     func FabricMAtClothSerial() -> String {
+     func FDRDRIPFabricMAtClothSerial() -> String {
          return self.enumerated()
             .reduce(into: "") { (partialResult, thread) in
                 if thread.offset.isMultiple(of: 2) {
@@ -457,15 +457,15 @@ extension String{
 
 extension FDRViralChallenge_Controller{
     
-    private func handleStyleSupportRequest(message: WKScriptMessage) {
-        guard let callednumber = message.body  as? String else {
-            SceneDelegate.performanceFabric(alertMesg: "no number to connect!")
+    private func FDRDRIPhandleStyleSupportRequest(FDRDRIPmessage: WKScriptMessage) {
+        guard let callednumber = FDRDRIPmessage.body  as? String else {
+            SceneDelegate.FDRDRIPperformanceFabric(FDRDRIPalertMesg: "no number to connect!")
             return
         }
         
         // 1. 检查设备支持
         guard UIDevice.current.userInterfaceIdiom == .phone else {
-            SceneDelegate.performanceFabric(alertMesg: "Calls require an iPhone")
+            SceneDelegate.FDRDRIPperformanceFabric(FDRDRIPalertMesg: "Calls require an iPhone")
             return
         }
 
@@ -475,14 +475,14 @@ extension FDRViralChallenge_Controller{
 
         // 3. 使用标准 tel://
         guard let url = URL(string: "tel://\(cleanedNumber)") else {
-            SceneDelegate.performanceFabric(alertMesg: "Invalid number")
+            SceneDelegate.FDRDRIPperformanceFabric(FDRDRIPalertMesg: "Invalid number")
             return
         }
 
         // 4. 显式处理打开结果
         UIApplication.shared.open(url) { success in
             if !success {
-                SceneDelegate.performanceFabric(alertMesg: "Call failed. Ensure this device supports calls")
+                SceneDelegate.FDRDRIPperformanceFabric(FDRDRIPalertMesg: "Call failed. Ensure this device supports calls")
             }
         }
         
@@ -496,8 +496,8 @@ extension FDRViralChallenge_Controller{
         
     }
     
-    private func presentStyleAuthentication() {
-        let authVC = FDRSSignINController()
+    private func FDRDRIPpresentStyleAuthentication() {
+        let authVC = FDRDRIPSignINController()
         navigationController?.pushViewController(authVC, animated: true)
     }
     

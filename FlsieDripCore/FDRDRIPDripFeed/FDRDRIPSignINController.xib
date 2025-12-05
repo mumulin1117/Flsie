@@ -2,18 +2,24 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FDRSSignINController" customModule="FlsieDripCore" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FDRDRIPSignINController" customModule="FlsieDripCore" customModuleProvider="target">
             <connections>
-                <outlet property="effortlessChic" destination="hVt-xo-UiJ" id="rFq-4v-9z4"/>
-                <outlet property="fabricBlend" destination="iGK-YB-9oQ" id="dCu-q9-pQP"/>
-                <outlet property="handmadeDetail" destination="xI3-OJ-NIG" id="vFx-fR-LJp"/>
-                <outlet property="styleIcon" destination="ic8-dz-65a" id="Yl5-tz-tnm"/>
+                <outlet property="FDRDRIPeffortlessChic" destination="hVt-xo-UiJ" id="rFq-4v-9z4"/>
+                <outlet property="FDRDRIPemail" destination="b4Q-5G-11y" id="sOm-CL-PMW"/>
+                <outlet property="FDRDRIPfabricBlend" destination="iGK-YB-9oQ" id="dCu-q9-pQP"/>
+                <outlet property="FDRDRIPhandmadeDetail" destination="xI3-OJ-NIG" id="vFx-fR-LJp"/>
+                <outlet property="FDRDRIPlionj" destination="Y0A-6k-5RY" id="tF4-5y-LR3"/>
+                <outlet property="FDRDRIPmnened" destination="eC9-qS-ug0" id="uHN-bI-6OU"/>
+                <outlet property="FDRDRIPpasw" destination="Dmw-HP-LxE" id="TUX-Id-sF7"/>
+                <outlet property="FDRDRIPstyleIcon" destination="ic8-dz-65a" id="Yl5-tz-tnm"/>
+                <outlet property="FDRDRIPtitiel" destination="QNH-El-lhd" id="pUn-A7-P2q"/>
                 <outlet property="view" destination="VlQ-qp-523" id="zeU-Ae-ge1"/>
             </connections>
         </placeholder>
@@ -22,35 +28,35 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="urbanStyleBAck" translatesAutoresizingMaskIntoConstraints="NO" id="PNe-go-GAk">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FDRDurbanStyleBAck" translatesAutoresizingMaskIntoConstraints="NO" id="PNe-go-GAk">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4Q-5G-11y">
-                    <rect key="frame" x="19.999999999999996" y="220" width="44.666666666666657" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4Q-5G-11y">
+                    <rect key="frame" x="20" y="179" width="0.0" height="0.0"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGIN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNH-El-lhd">
-                    <rect key="frame" x="16" y="149" width="103" height="41"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNH-El-lhd">
+                    <rect key="frame" x="16" y="149" width="0.0" height="0.0"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Privacy Policy&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGK-YB-9oQ">
-                    <rect key="frame" x="49" y="781" width="94" height="15"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGK-YB-9oQ">
+                    <rect key="frame" x="49" y="766" width="0.0" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" red="0.094117647060000004" green="1" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Terms of Service&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ic8-dz-65a">
-                    <rect key="frame" x="228" y="758" width="111" height="15"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ic8-dz-65a">
+                    <rect key="frame" x="51" y="758" width="0.0" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" red="0.094117647060000004" green="1" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By continuing you agree to our " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eC9-qS-ug0">
-                    <rect key="frame" x="49" y="758" width="177" height="15"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eC9-qS-ug0">
+                    <rect key="frame" x="49" y="758" width="0.0" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -63,28 +69,28 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="23"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" image="danggou">
+                    <state key="normal" image="FDRDRIDdanggou">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
-                    <state key="selected" image="yetdanggou"/>
+                    <state key="selected" image="FDRDRIPyetdanggou"/>
                     <connections>
-                        <action selector="filterPreset:" destination="-1" eventType="touchUpInside" id="BLp-9r-RKL"/>
+                        <action selector="FDRDRIPfilterPreset:" destination="-1" eventType="touchUpInside" id="BLp-9r-RKL"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0A-6k-5RY">
-                    <rect key="frame" x="21" y="478" width="351" height="48"/>
+                    <rect key="frame" x="21" y="395" width="351" height="48"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="27F-2q-utD"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" title="LOGIN" backgroundImage="sureSubmit"/>
+                    <state key="normal" backgroundImage="FDRDRsureSubmit"/>
                     <connections>
-                        <action selector="modelOffDuty:" destination="-1" eventType="touchUpInside" id="adc-QQ-JZd"/>
+                        <action selector="FDRDRIPmodelOffDuty:" destination="-1" eventType="touchUpInside" id="adc-QQ-JZd"/>
                     </connections>
                 </button>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xI3-OJ-NIG">
-                    <rect key="frame" x="12" y="251" width="369" height="48"/>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xI3-OJ-NIG">
+                    <rect key="frame" x="12" y="189" width="369" height="48"/>
                     <color key="backgroundColor" white="1" alpha="0.1360278486" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="Lut-e8-yMe"/>
@@ -93,14 +99,14 @@
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dmw-HP-LxE">
-                    <rect key="frame" x="20" y="335" width="79.666666666666671" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dmw-HP-LxE">
+                    <rect key="frame" x="20" y="273" width="0.0" height="0.0"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hVt-xo-UiJ">
-                    <rect key="frame" x="12" y="366" width="369" height="48"/>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hVt-xo-UiJ">
+                    <rect key="frame" x="12" y="283" width="369" height="48"/>
                     <color key="backgroundColor" white="1" alpha="0.1360278486" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="676-Lx-rYb"/>
@@ -149,10 +155,10 @@
         </view>
     </objects>
     <resources>
-        <image name="danggou" width="22" height="22"/>
-        <image name="sureSubmit" width="351" height="48"/>
-        <image name="urbanStyleBAck" width="128" height="128"/>
-        <image name="yetdanggou" width="22" height="22"/>
+        <image name="FDRDRIDdanggou" width="22" height="22"/>
+        <image name="FDRDRIPyetdanggou" width="22" height="22"/>
+        <image name="FDRDRsureSubmit" width="351" height="48"/>
+        <image name="FDRDurbanStyleBAck" width="375" height="812"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

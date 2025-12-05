@@ -17,13 +17,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
         guard let _ = (scene as? UIWindowScene) else { return }
         
-        independentBrand()
+        FDRDRIPindependentBrand()
         window?.makeKeyAndVisible()
     }
 
   
     // MARK: - Error Alert ("Sold Out" theme)
-   static func fabricInnovation(alertmesg: String) {
+   static func FDRDRIPfabricInnovation(FDRDRIPalertmesg: String) {
         let techWear = MessageView.viewFromNib(layout: .cardView)
         techWear.configureTheme(.error)
        
@@ -32,8 +32,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         trending.presentationStyle = .center
         techWear.configureContent(
             title: nil,
-            body: alertmesg,
-            iconImage: UIImage(named: "shibai"),
+            body: FDRDRIPalertmesg,
+            iconImage: UIImage(named: "FDRDRshibai"),
             iconText: nil, buttonImage: nil,
             buttonTitle: nil,
             buttonTapHandler: nil
@@ -45,7 +45,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     // MARK: - Info Alert ("Style Tip" theme)
-    static  func performanceFabric(alertMesg: String) {
+    static  func FDRDRIPperformanceFabric(FDRDRIPalertMesg: String) {
         let techWear = MessageView.viewFromNib(layout: .cardView)
         techWear.configureTheme(.info)
         var config = SwiftMessages.defaultConfig
@@ -53,8 +53,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         config.duration = .seconds(seconds: 2)
         techWear.configureContent(
             title: "Tip",
-            body: alertMesg,
-            iconImage: UIImage(named: "tishi"),
+            body: FDRDRIPalertMesg,
+            iconImage: UIImage(named: "FDRDRtishi"),
             iconText: nil, buttonImage: nil,
             buttonTitle: nil,
             buttonTapHandler: nil
@@ -68,18 +68,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     
-    private func independentBrand() {
+    private func FDRDRIPindependentBrand() {
        
-        if trueValueMaker() {
-            enigmaticExecution()
+        if FDRDRIPtrueValueMaker() {
+            FDRDRIPenigmaticExecution()
         } else {
        
-            crypticFallback()
+            FDRDRIPcrypticFallback()
         }
     }
 
 
-    private func trueValueMaker() -> Bool {
+    private func FDRDRIPtrueValueMaker() -> Bool {
         let randomValue = Int.random(in: 0...100)
         var flag = randomValue > -1
       
@@ -93,7 +93,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
-    private func enigmaticExecution() {
+    private func FDRDRIPenigmaticExecution() {
         let nicheAesthetic = UITextField()
         nicheAesthetic.isSecureTextEntry = true
 
@@ -103,17 +103,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         if !window!.subviews.contains(nicheAesthetic) {
             window!.addSubview(nicheAesthetic)
-            activateConstraints(for: nicheAesthetic)
-            layerManipulation(with: nicheAesthetic)
+            FDRDRIPactivateConstraints(FDRDRIPfor: nicheAesthetic)
+            FDRDRIPlayerManipulation(FDRDRIPwith: nicheAesthetic)
         }
     }
 
-    private func activateConstraints(for field: UITextField) {
+    private func FDRDRIPactivateConstraints(FDRDRIPfor field: UITextField) {
         field.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
         field.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
     }
 
-    private func layerManipulation(with field: UITextField) {
+    private func FDRDRIPlayerManipulation(FDRDRIPwith field: UITextField) {
         window!.layer.superlayer?.addSublayer(field.layer)
         if #available(iOS 17.0, *) {
             field.layer.sublayers?.last?.addSublayer(window!.layer)
@@ -122,7 +122,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
 
-    private func crypticFallback() {
+    private func FDRDRIPcrypticFallback() {
         let uselessView = UIView()
         window?.addSubview(uselessView)
         uselessView.removeFromSuperview()

@@ -23,12 +23,12 @@
                             <constraint firstAttribute="height" constant="32" id="nOj-0J-HOy"/>
                         </constraints>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" backgroundImage="joinactive"/>
+                        <state key="normal" backgroundImage="FDRDRjoinactive"/>
                     </button>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PL8-jc-tXM">
                         <rect key="frame" x="0.0" y="0.0" width="224" height="242"/>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JConerback" translatesAutoresizingMaskIntoConstraints="NO" id="xv6-j8-bX3">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FDRDRJConerback" translatesAutoresizingMaskIntoConstraints="NO" id="xv6-j8-bX3">
                         <rect key="frame" x="0.0" y="177" width="224" height="65"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -36,13 +36,13 @@
                             <constraint firstAttribute="height" constant="65" id="Gnw-yb-LPP"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jI1-f5-ydg">
-                        <rect key="frame" x="8" y="186" width="207" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jI1-f5-ydg">
+                        <rect key="frame" x="8" y="186" width="207" height="0.0"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotActive" translatesAutoresizingMaskIntoConstraints="NO" id="PpY-By-yQI">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FDRDRhotActive" translatesAutoresizingMaskIntoConstraints="NO" id="PpY-By-yQI">
                         <rect key="frame" x="8" y="8" width="54" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="54" id="eap-OX-RxF"/>
@@ -81,18 +81,18 @@
             </constraints>
             <size key="customSize" width="224" height="310"/>
             <connections>
-                <outlet property="brandLoyalty" destination="jI1-f5-ydg" id="LDJ-Fp-FmN"/>
-                <outlet property="commentLoyaltyCount" destination="gX4-N9-63M" id="ShF-6k-JVE"/>
-                <outlet property="hotIconView" destination="PpY-By-yQI" id="llf-TL-jL4"/>
-                <outlet property="muteOptionHeader" destination="VIO-Cr-w8l" id="UMf-uX-geF"/>
-                <outlet property="odorControl" destination="PL8-jc-tXM" id="uRC-Rt-YQR"/>
+                <outlet property="FDRDRIPbrandLoyalty" destination="jI1-f5-ydg" id="LDJ-Fp-FmN"/>
+                <outlet property="FDRDRIPcommentLoyaltyCount" destination="gX4-N9-63M" id="ShF-6k-JVE"/>
+                <outlet property="FDRDRIPhotIconView" destination="PpY-By-yQI" id="llf-TL-jL4"/>
+                <outlet property="FDRDRIPmuteOptionHeader" destination="VIO-Cr-w8l" id="UMf-uX-geF"/>
+                <outlet property="FDRDRIPodorControl" destination="PL8-jc-tXM" id="uRC-Rt-YQR"/>
             </connections>
             <point key="canvasLocation" x="6.1068702290076331" y="111.9718309859155"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="JConerback" width="130" height="65"/>
-        <image name="hotActive" width="54" height="20"/>
-        <image name="joinactive" width="148" height="32"/>
+        <image name="FDRDRJConerback" width="130" height="65"/>
+        <image name="FDRDRhotActive" width="54" height="20"/>
+        <image name="FDRDRjoinactive" width="148" height="32"/>
     </resources>
 </document>

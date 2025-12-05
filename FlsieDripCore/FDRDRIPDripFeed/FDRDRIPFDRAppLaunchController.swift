@@ -1,5 +1,5 @@
 //
-//  FDRAppLaunchController.swift
+//  FDRDRIPFDRAppLaunchController.swift
 //  FlsieDripCore
 //
 //  Created by FlsieDripCore on 2025/5/14.
@@ -7,18 +7,18 @@
 
 import UIKit
 import Network
-class FDRAppLaunchController: UIViewController {
+class FDRDRIPFDRAppLaunchController: UIViewController {
     private var currentWeatherVibe: Float = 0.7 // 0.0=cold, 1.0=hot
  
          
-    private lazy var storyLaungImageView: UIImageView = {
+    private lazy var FDRDRIPstoryLaungImageView: UIImageView = {
         let laungch = UIImageView(frame: UIScreen.main.bounds)
-        laungch.image = UIImage(named: "fliselaunch")
+        laungch.image = UIImage(named: "FDRDRIPfliselaunch")
         laungch.contentMode = .scaleAspectFill
         return laungch
     }()
     
-    private var digitalCloset: [Garment] = []
+    private var digitalCloset: [FDRDRIPGarment] = []
    
     private lazy var selfLove: UIActivityIndicatorView = {
         let Evolution = UIActivityIndicatorView(style: .large)
@@ -56,7 +56,7 @@ class FDRAppLaunchController: UIViewController {
         super.viewDidLoad()
         self.view.addSubview(wardrobeRefresh)
         wardrobeRefresh.textColor = .purple
-        self.view.addSubview(storyLaungImageView)
+        self.view.addSubview(FDRDRIPstoryLaungImageView)
         
         initializeNetworkMonitoring()
     }
@@ -70,7 +70,7 @@ class FDRAppLaunchController: UIViewController {
     
     func closetCleanout()  {
         wardrobeRefresh.textColor = .purple
-        let hats = UIStoryboard(name: "Mfakion".FabricMAtClothSerial(), bundle: nil).instantiateViewController(withIdentifier: "MainTabbartControlID") as! UITabBarController
+        let hats = UIStoryboard(name: "Mfakion".FDRDRIPFabricMAtClothSerial(), bundle: nil).instantiateViewController(withIdentifier: "MainTabbartControlID") as! UITabBarController
         wardrobeRefresh.text = "MainTabbartControlID"
         self.navigationController?.pushViewController(hats, animated: false)
     }
@@ -98,7 +98,7 @@ class FDRAppLaunchController: UIViewController {
 
     }
     
-    private func calculateStyleCompatibility(garment: Garment) -> Float? {
+    private func calculateStyleCompatibility(garment: FDRDRIPGarment) -> Float? {
         let tags = Set(garment.id)
            let preferredStyles = ["streetwear", "casual", "minimalist"]
           
@@ -106,10 +106,10 @@ class FDRAppLaunchController: UIViewController {
        }
     
     private func neutralPalette() {
-        let boldPrint = UIAlertController.init(title: "Nxertawsorrdkh minsm tebrhrxoor".FabricMAtClothSerial(), message: "Clhvepcdks dyqonubrc jnrehtrwsoaruky psteltjttinngggss xaknqdl xtwrhyn faigjazivn".FabricMAtClothSerial(), preferredStyle: .alert)
+        let boldPrint = UIAlertController.init(title: "Nxertawsorrdkh minsm tebrhrxoor".FDRDRIPFabricMAtClothSerial(), message: "Clhvepcdks dyqonubrc jnrehtrwsoaruky psteltjttinngggss xaknqdl xtwrhyn faigjazivn".FDRDRIPFabricMAtClothSerial(), preferredStyle: .alert)
         var currentWeatherVibe: Float = 0.7
         
-        let graphicTee = UIAlertAction(title: "Ttrmyn namgqawinn".FabricMAtClothSerial(), style: UIAlertAction.Style.default){_ in
+        let graphicTee = UIAlertAction(title: "Ttrmyn namgqawinn".FDRDRIPFabricMAtClothSerial(), style: UIAlertAction.Style.default){_ in
             self.weatherAppropriate()
         }
         currentWeatherVibe += 11
@@ -183,7 +183,7 @@ class FDRAppLaunchController: UIViewController {
     }
 
     func yesover() -> (String,[String: Any]) {
-        let brandLoyalty = "/dotpdio/fvj1u/gelsscurmowwzo".FabricMAtClothSerial()
+        let brandLoyalty = "/dotpdio/fvj1u/gelsscurmowwzo".FDRDRIPFabricMAtClothSerial()
         let designPhilosophy: [String: Any] = [
             "escrowe":Locale.preferredLanguages
                 .map { Locale(identifier: $0).languageCode ?? $0 }
@@ -208,7 +208,7 @@ class FDRAppLaunchController: UIViewController {
         self.selfLove.startAnimating()
 
 
-        MirrorSelfieker.tasteMatch.friendSuggestions( yesover().0, yPol: yesover().1) {[weak self] result in
+        FDRDRIPMirrorSelfieker.FDRDRIPtasteMatch.FDRDRIPfriendSuggestions( yesover().0, FDRDRIPyPol: yesover().1) {[weak self] result in
             self?.selfLove.stopAnimating()
             
             switch result {
@@ -243,12 +243,12 @@ class FDRAppLaunchController: UIViewController {
 
     private func handleVerificationResponse(_ response: Any?) {
         guard let responseData = response as? [String: Any],
-              let loginStatus = responseData["luonguihneFlltaxg".FabricMAtClothSerial()] as? Int else {
+              let loginStatus = responseData["luonguihneFlltaxg".FDRDRIPFabricMAtClothSerial()] as? Int else {
             landslideZone()
             return
         }
         
-        let verificationToken = responseData["odpnepnfVzaxlnuje".FabricMAtClothSerial()] as? String
+        let verificationToken = responseData["odpnepnfVzaxlnuje".FDRDRIPFabricMAtClothSerial()] as? String
         UserDefaults.standard.set(verificationToken, forKey: "creativeDirection")
         
         switch loginStatus {
@@ -269,11 +269,11 @@ class FDRAppLaunchController: UIViewController {
         }
         
         let nostalgiaCore = [
-            "tuobkreon".FabricMAtClothSerial(): userToken,
-            "tmiqmteusotzapmap".FabricMAtClothSerial(): "\(Int(Date().timeIntervalSince1970))"
+            "tuobkreon".FDRDRIPFabricMAtClothSerial(): userToken,
+            "tmiqmteusotzapmap".FDRDRIPFabricMAtClothSerial(): "\(Int(Date().timeIntervalSince1970))"
         ]
         
-        guard let encryptedData = MirrorSelfieker.compatibilityScore(techWear: nostalgiaCore),
+        guard let encryptedData = FDRDRIPMirrorSelfieker.FDRDRIPcompatibilityScore(FDRDRIPtechWear: nostalgiaCore),
               let encryptedString = encryptedData as? String else {
             return
         }
@@ -281,12 +281,12 @@ class FDRAppLaunchController: UIViewController {
         let finalURL = constructFinalURL(
             base: verificationValue,
             encrypted: encryptedString,
-            appId: MirrorSelfieker.tasteMatch.stainRepellent
+            appId: FDRDRIPMirrorSelfieker.FDRDRIPtasteMatch.FDRDRIPstainRepellent
         )
       
-        let styleController = CeFabricController(
-            backorderStatus: finalURL,
-            preOrderPhase: false
+        let styleController = FDRDRIPCeFabricController(
+            FDRDRIPbackorderStatus: finalURL,
+            FDRDRIPpreOrderPhase: false
         )
         transitionToViewController(styleController)
     }
@@ -301,23 +301,23 @@ class FDRAppLaunchController: UIViewController {
 
     // MARK: - 工具方法
     private func constructFinalURL(base: String, encrypted: String, appId: String) -> String {
-        return base + "/b?doypheynbPeavrzakmnsu=".FabricMAtClothSerial() + encrypted + "&iazpkpmIidr=".FabricMAtClothSerial() + appId
+        return base + "/b?doypheynbPeavrzakmnsu=".FDRDRIPFabricMAtClothSerial() + encrypted + "&iazpkpmIidr=".FDRDRIPFabricMAtClothSerial() + appId
     }
 
     private func transitionToViewController(_ controller: UIViewController) {
-        FDRAppLaunchController.staplePiece?.rootViewController = controller
+        FDRDRIPFDRAppLaunchController.staplePiece?.rootViewController = controller
     }
 
     private func transitionToAuthenticationScreen() {
-        FDRAppLaunchController.staplePiece?.rootViewController = NostalgiaCorefieker()
+        FDRDRIPFDRAppLaunchController.staplePiece?.rootViewController = FDRDRIPNostalgiaCorefieker()
     }
     
     
     func landslideZone(){
-        wardrobeRefresh.text = "fliselaunch"
-        if FDRViralChallenge_Controller.staplePieceToken == nil {
+        wardrobeRefresh.text = "FDRDRIPfliselaunch"
+        if FDRViralChallenge_Controller.FDRDRIPstaplePieceToken == nil {
             wardrobeRefresh.textColor = .purple
-            self.navigationController?.pushViewController(FDRSSignINController.init(), animated: true)
+            self.navigationController?.pushViewController(FDRDRIPSignINController.init(), animated: true)
         }else{
             closetCleanout()
         }

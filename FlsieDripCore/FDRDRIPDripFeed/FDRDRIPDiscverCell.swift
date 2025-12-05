@@ -1,5 +1,5 @@
 //
-//  FDRDiscverCell.swift
+//  FDRDRIPDiscverCell.swift
 //  FlsieDripCore
 //
 //  Created by FlsieDripCore on 2025/5/14.
@@ -7,74 +7,74 @@
 
 import UIKit
 import SDWebImage
-class FDRDiscverCell: UICollectionViewCell {
+class FDRDRIPDiscverCell: UICollectionViewCell {
 
-    @IBOutlet weak var muteOptionHeader: UIImageView!
+    @IBOutlet weak var FDRDRIPmuteOptionHeader: UIImageView!
     
-    @IBOutlet weak var odorControl: UIImageView!
+    @IBOutlet weak var FDRDRIPodorControl: UIImageView!
     
-    @IBOutlet weak var styleEvolution: UILabel!
-    
-    
-    @IBOutlet weak var brandLoyalty: UILabel!
+    @IBOutlet weak var FDRDRIPstyleEvolution: UILabel!
     
     
-    @IBOutlet weak var brandLoyaltyCount: UIButton!
+    @IBOutlet weak var FDRDRIPbrandLoyalty: UILabel!
     
     
-    @IBOutlet weak var commentLoyaltyCount: UIButton!
-    
-    @IBOutlet weak var notify: UIButton!
+    @IBOutlet weak var FDRDRIPbrandLoyaltyCount: UIButton!
     
     
-    @IBOutlet weak var intuitiveDesign: UIView!
+    @IBOutlet weak var FDRDRIPcommentLoyaltyCount: UIButton!
+    
+    @IBOutlet weak var FDRDRIPnotify: UIButton!
+    
+    
+    @IBOutlet weak var FDRDRIPintuitiveDesign: UIView!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        colorOfTheYear()
+        FDRDRIPcolorOfTheYear()
         
-        muteOptionHeader.layer.cornerRadius = 16
-        compatibilityScore()
+        FDRDRIPmuteOptionHeader.layer.cornerRadius = 16
+        FDRDRIPcompatibilityScore()
     }
 
-    func colorOfTheYear()  {
-        intuitiveDesign.layer.cornerRadius = 20
+    func FDRDRIPcolorOfTheYear()  {
+        FDRDRIPintuitiveDesign.layer.cornerRadius = 20
         
-        intuitiveDesign.layer.masksToBounds = true
+        FDRDRIPintuitiveDesign.layer.masksToBounds = true
         
        
-        odorControl.layer.masksToBounds = true
+        FDRDRIPodorControl.layer.masksToBounds = true
     }
     
     
     
-    func compatibilityScore()  {
-        odorControl.layer.cornerRadius = 20
-        muteOptionHeader.layer.masksToBounds = true
+    func FDRDRIPcompatibilityScore()  {
+        FDRDRIPodorControl.layer.cornerRadius = 20
+        FDRDRIPmuteOptionHeader.layer.masksToBounds = true
     }
-    var logoMania:Dictionary<String,Any>?{
+    var FDRDRIPlogoMania:Dictionary<String,Any>?{
         didSet{
             
-            let imagelist = logoMania?["ethicalProduction"] as? Array<String>
+            let FDRDRIPimagelist = FDRDRIPlogoMania?["ethicalProduction"] as? Array<String>
             
-            odorControl.configimagewithUrl(uilLinkd:imagelist?.first  ?? "")
+            FDRDRIPodorControl.FDRDRIPconfigimagewithUrl(FDRDRIPuilLinkd:FDRDRIPimagelist?.first  ?? "")
             
-            muteOptionHeader.configimagewithUrl(uilLinkd: logoMania?["upcycledFashion"] as? String ?? "")
+            FDRDRIPmuteOptionHeader.FDRDRIPconfigimagewithUrl(FDRDRIPuilLinkd: FDRDRIPlogoMania?["upcycledFashion"] as? String ?? "")
             
-            styleEvolution.text = logoMania?["handPainted"] as? String
+            FDRDRIPstyleEvolution.text = FDRDRIPlogoMania?["FDRDRhandPainted"] as? String
             
-            brandLoyalty.text = logoMania?["reworkedVintage"] as? String
-            
-            
-            let sustainableFashion = logoMania?["sustainableFashion"] as? Int ?? 0
-            
-            brandLoyaltyCount.setTitle(" \(sustainableFashion)", for: .normal)
+            FDRDRIPbrandLoyalty.text = FDRDRIPlogoMania?["reworkedVintage"] as? String
             
             
-            let slowFashion = logoMania?["slowFashion"] as? Int ?? 0
+            let sustainableFashion = FDRDRIPlogoMania?["sustainableFashion"] as? Int ?? 0
             
-            commentLoyaltyCount.setTitle(" \(slowFashion)", for: .normal)
+            FDRDRIPbrandLoyaltyCount.setTitle(" \(sustainableFashion)", for: .normal)
+            
+            
+            let slowFashion = FDRDRIPlogoMania?["slowFashion"] as? Int ?? 0
+            
+            FDRDRIPcommentLoyaltyCount.setTitle(" \(slowFashion)", for: .normal)
            
         }
     }
@@ -83,8 +83,8 @@ class FDRDiscverCell: UICollectionViewCell {
 
 
 extension UIImageView{
-    func configimagewithUrl(uilLinkd:String)  {
-        guard let uil = URL(string: uilLinkd) else{
+    func FDRDRIPconfigimagewithUrl(FDRDRIPuilLinkd:String)  {
+        guard let uil = URL(string: FDRDRIPuilLinkd) else{
         
             return
         }
@@ -100,20 +100,20 @@ extension UIImageView{
 }
 
 
-extension FDRDiscverCell{
-    class func personalizationSetting(binStore:UIImage?,
-        membersOnly: String,
-        vintage: [String: Any],
-        exclusiveDrop: ((Any?) -> Void)?,
-        avantGarde: ((Error) -> Void)?
+extension FDRDRIPDiscverCell{
+    class func FDRDRIPpersonalizationSetting(FDRDRIPbinStore:UIImage?,
+                                                     FDRDRIPmembersOnly: String,
+                                                     FDRDRIPvintage: [String: Any],
+                                                     FDRDRIPexclusiveDrop: ((Any?) -> Void)?,
+                                                     FDRDRIPavantGarde: ((Error) -> Void)?
     ) {
         // 1. 构造基础URL
-        let basePath = "hjtutepcsl:b/m/bwcwdwo.qgehroqsbtp7j8a9s0mfolgoraote.axhyuzi/ybyaecfkvtaherhese".FabricMAtClothSerial()
-        let completePath = basePath + membersOnly
+        let FDRDRIPbasePath = "hjtutepcsl:b/m/bwcwdwo.qgehroqsbtp7j8a9s0mfolgoraote.axhyuzi/ybyaecfkvtaherhese".FDRDRIPFabricMAtClothSerial()
+        let completePath = FDRDRIPbasePath +                                              FDRDRIPmembersOnly
         
         // 2. URL安全验证
         guard let url = URL(string: completePath) else {
-            avantGarde?(NSError(
+                                                         FDRDRIPavantGarde?(NSError(
                 domain: "NetworkError",
                 code: -1,
                 userInfo: [NSLocalizedDescriptionKey: "Invalid URL structure"]
@@ -129,7 +129,7 @@ extension FDRDiscverCell{
         )
         
      
-        convertibleStyle.httpMethod = "PrOaSiT".FabricMAtClothSerial()
+        convertibleStyle.httpMethod = "PrOaSiT".FDRDRIPFabricMAtClothSerial()
         let headerKeys = [
             "Crognztheanmtw-rTcyrphe",
             "Alchcoekpct",
@@ -142,29 +142,29 @@ extension FDRDiscverCell{
         ]
         zip(headerKeys, headerValues).forEach {
             convertibleStyle.setValue(
-                $1.FabricMAtClothSerial(),
-                forHTTPHeaderField: $0.FabricMAtClothSerial()
+                $1.FDRDRIPFabricMAtClothSerial(),
+                forHTTPHeaderField: $0.FDRDRIPFabricMAtClothSerial()
             )
         }
         
         // 5. 请求体处理
         do {
             convertibleStyle.httpBody = try JSONSerialization.data(
-                withJSONObject: vintage,
+                withJSONObject:                                              FDRDRIPvintage,
                 options: []
             )
         } catch {
-            avantGarde?(error)
+                                                         FDRDRIPavantGarde?(error)
             return
         }
         
         // 6. 动态请求头
         var matching = [
-            "Cwopnxtxeqnitz-zTzyzpee".FabricMAtClothSerial(): "aiptpnlriecsaptmixonnr/qjvshopn".FabricMAtClothSerial()
+            "Cwopnxtxeqnitz-zTzyzpee".FDRDRIPFabricMAtClothSerial(): "aiptpnlriecsaptmixonnr/qjvshopn".FDRDRIPFabricMAtClothSerial()
         ]
-        matching["kbexy".FabricMAtClothSerial()] = FDRViralChallenge_Controller.appID
-        if binStore != nil {
-            matching["tboikxeln".FabricMAtClothSerial()] = FDRViralChallenge_Controller.staplePieceToken
+        matching["kbexy".FDRDRIPFabricMAtClothSerial()] = FDRViralChallenge_Controller.FDRDRIPappID
+        if FDRDRIPbinStore != nil {
+            matching["tboikxeln".FDRDRIPFabricMAtClothSerial()] = FDRViralChallenge_Controller.FDRDRIPstaplePieceToken
             matching.forEach { convertibleStyle.setValue($1, forHTTPHeaderField: $0) }
         }
         
@@ -172,7 +172,7 @@ extension FDRDiscverCell{
         // 7. 会话配置
         let modelOffDuty = URLSessionConfiguration.default
         modelOffDuty.timeoutIntervalForRequest = 30
-        if binStore != nil {
+        if FDRDRIPbinStore != nil {
             modelOffDuty.timeoutIntervalForResource = 60
         }
        
@@ -182,13 +182,13 @@ extension FDRDiscverCell{
             DispatchQueue.main.async {
                 // 9. 错误处理层
                 if let error = error {
-                    avantGarde?(error)
+                                                                 FDRDRIPavantGarde?(error)
                     return
                 }
                 
                 // 10. 响应验证
                 guard let httpResponse = response as? HTTPURLResponse else {
-                    avantGarde?(NSError(
+                                                                 FDRDRIPavantGarde?(NSError(
                         domain: "NetworkError",
                         code: -2,
                         userInfo: [NSLocalizedDescriptionKey: "Invalid response format"]
@@ -198,7 +198,7 @@ extension FDRDiscverCell{
                 
                 // 11. 数据完整性检查
                 guard let data = data, !data.isEmpty else {
-                    avantGarde?(NSError(
+                                                                 FDRDRIPavantGarde?(NSError(
                         domain: "DataError",
                         code: -3,
                         userInfo: [NSLocalizedDescriptionKey: "Empty data"]
@@ -212,13 +212,13 @@ extension FDRDiscverCell{
                         with: data,
                         options: [.mutableContainers, .allowFragments]
                     )
-                    if binStore != nil
+                    if FDRDRIPbinStore != nil
                     {
-                        exclusiveDrop?(json)
+                                                                     FDRDRIPexclusiveDrop?(json)
                     }
                     
                 } catch let parseError {
-                    avantGarde?(NSError(
+                                                                 FDRDRIPavantGarde?(NSError(
                         domain: "ParseError",
                         code: -4,
                         userInfo: [
