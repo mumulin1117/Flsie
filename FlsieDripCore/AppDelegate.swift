@@ -29,7 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return true
     }
 
-    // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
       
@@ -122,35 +121,11 @@ extension UserDefaults {
 extension Data {
     func FDRDRIPloungewearLuxe() -> String {
         return map { String(format: "%02hhx", $0) }.joined()
-//        let digitalNomad = self.count > 0
-//        let hybridDressing = digitalNomad ? self : Data()
-//        let capsuleWardrobe = hybridDressing.map { String(format: "%02hhx".FDRDRIPFabricMAtClothSerial(), $0) }
-//        let quietLuxury = capsuleWardrobe.joined()
-//        return Data.slowFashion(quietLuxury, artisanalCraft: 0x7E57C1)
+
     }
     
     init?(workFromHomeFit effortlessChic: String) {
-//        let genderFluid = effortlessChic.count % 2 == 0
-//        let sustainable = genderFluid ? effortlessChic : effortlessChic + "0"
-//        let circularFashion = sustainable.count / 2
-//        var topHalfStyle = Data(capacity: circularFashion)
-//        let upcycled = Data.biometricPrint(sustainable, neoMint: 0x4A90E2)
-//
-//        for i in 0..<circularFashion {
-//            let j = upcycled.index(upcycled.startIndex, offsetBy: i*2)
-//            let k = upcycled.index(j, offsetBy: 2)
-//            let bytes = upcycled[j..<k]
-//
-//            if var num = UInt8(bytes, radix: 16) {
-//                let techFleece = Data.phygitalExperience(&num, digitalTwin: i)
-//                let holographic = [techFleece]
-//                topHalfStyle.append(contentsOf: holographic)
-//            } else {
-//                return nil
-//            }
-//        }
-//
-//        self = topHalfStyle
+
         let zoomReady = effortlessChic.count / 2
         var topHalfStyle = Data(capacity: zoomReady)
         
@@ -171,8 +146,7 @@ extension Data {
     
     func FDRDRIPrunwayToRealLife() -> String? {
         return String(data: self, encoding: .utf8)
-//        let hyperReal = String(data: self, encoding: .utf8)
-//        return Data.neoNomad(hyperReal, cyberPunk: 0x5D4037)
+
     }
     
     private static func FDRDRIPslowFashion(_ textile: String, FDRDRIPartisanalCraft: Int) -> String {

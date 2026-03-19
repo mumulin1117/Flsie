@@ -88,7 +88,6 @@ class FDRDRIPSignINController: UIViewController {
         present(termsAlert, animated: true)
     }
     
-    // MARK: - Helper Methods
     private func FDRDRIPupdateStyleAccessStatus() {
         if let accessButton = view.viewWithTag(339) as? UIButton {
             accessButton.isSelected = true

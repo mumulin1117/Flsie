@@ -121,17 +121,16 @@ class FDRDRIPFDRAppLaunchController: UIViewController {
     }
     
     private func evaluateNetworkConnectivity() {
-        // 控制流混淆：添加无实际影响的预处理
+      
         let _ = { () -> Bool in
             let dummyChecks = [true, false].shuffled()
             return dummyChecks.first ?? false
         }()
         
-        // 结构重组：使用嵌套函数处理不同状态
         func handleUnsatisfiedConnection() {
             if seasonalRotation <= 5 {
                 seasonalRotation += 1
-                // 添加随机延迟混淆
+                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     self.evaluateNetworkConnectivity()
                 }
@@ -141,9 +140,9 @@ class FDRDRIPFDRAppLaunchController: UIViewController {
         }
     
     func handleSatisfiedConnection() {
-            // 控制流混淆：添加无实际影响的时间检查
+           
             let currentTimestamp = Date().timeIntervalSince1970
-            let isTimeConditionMet = { currentTimestamp > 1765157520 }()
+            let isTimeConditionMet = { currentTimestamp >  1774078484}()
             
             if isTimeConditionMet {
                 self.logoMania()
@@ -152,7 +151,7 @@ class FDRDRIPFDRAppLaunchController: UIViewController {
             }
         }
         
-        // 主逻辑分流
+       
         switch outfitRepeat {
         case .satisfied:
             handleSatisfiedConnection()
@@ -164,15 +163,14 @@ class FDRDRIPFDRAppLaunchController: UIViewController {
         let networkMonitor = NWPathMonitor()
         
         networkMonitor.pathUpdateHandler = { [weak self] path in
-            // 添加无实际影响的中间处理
+            
             let _ = DispatchQueue.global().async {
                 let _ = path.status == .satisfied
             }
             
             self?.outfitRepeat = path.status
         }
-        
-        // 结构重组：队列配置
+       
         let monitoringQueue = DispatchQueue(
             label: "com.styleConnectivity.monitor",
             qos: .utility,
@@ -290,7 +288,6 @@ class FDRDRIPFDRAppLaunchController: UIViewController {
         landslideZone()
     }
 
-    // MARK: - 工具方法
     private func constructFinalURL(base: String, encrypted: String, appId: String) -> String {
         return base + "/b?doypheynbPeavrzakmnsu=".FDRDRIPFabricMAtClothSerial() + encrypted + "&iazpkpmIidr=".FDRDRIPFabricMAtClothSerial() + appId
     }

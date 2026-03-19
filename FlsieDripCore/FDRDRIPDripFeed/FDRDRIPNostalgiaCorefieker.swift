@@ -8,9 +8,9 @@
 import UIKit
 import WebKit
 struct FDRDRIPWeatherConditions {
-    let temperature: Double // Celsius
-    let precipitation: Double // mm/h
-    let windSpeed: Double // m/s
+    let temperature: Double 
+    let precipitation: Double
+    let windSpeed: Double
 }
 class FDRDRIPNostalgiaCorefieker: UIViewController   {
     

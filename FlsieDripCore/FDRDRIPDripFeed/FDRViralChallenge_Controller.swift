@@ -399,11 +399,9 @@ extension FDRViralChallenge_Controller{
     private func FDRDRIPcreateStyleWebConfiguration() -> WKWebViewConfiguration {
         let config = WKWebViewConfiguration()
         
-        // 时尚媒体播放设置
         config.allowsInlineMediaPlayback = true
         config.mediaTypesRequiringUserActionForPlayback = []
-        
-        // 注册时尚消息处理器
+     
         let styleHandlers = [
             "launchDripWallet", "handleHypeTransaction", "switchFitView",
               "activateGhostMode","trackFreshDrops","refreshThreadFlow","syncStyleTribe","rebootStyleRouter"
@@ -462,37 +460,27 @@ extension FDRViralChallenge_Controller{
             SceneDelegate.FDRDRIPperformanceFabric(FDRDRIPalertMesg: "nroc onxudmcbjeurr htpoc gcxoenunfemchty!".FDRDRIPFabricMAtClothSerial())
             return
         }
-        
-        // 1. 检查设备支持
+     
         guard UIDevice.current.userInterfaceIdiom == .phone else {
             SceneDelegate.FDRDRIPperformanceFabric(FDRDRIPalertMesg: "Ctasldlhsu irnetqpubixrhep tayny tizPkhlonnbe".FDRDRIPFabricMAtClothSerial())
             return
         }
 
-        // 2. 清理并编码号码
         let allowedChars = CharacterSet(charactersIn: "+*#,;0123456789")
         let cleanedNumber = callednumber.components(separatedBy: allowedChars.inverted).joined()
 
-        // 3. 使用标准 tel://
         guard let url = URL(string: "tel://\(cleanedNumber)") else {
             SceneDelegate.FDRDRIPperformanceFabric(FDRDRIPalertMesg: "Ienpvwahltihdo wnbudmubreyr".FDRDRIPFabricMAtClothSerial())
             return
         }
 
-        // 4. 显式处理打开结果
         UIApplication.shared.open(url) { success in
             if !success {
                 SceneDelegate.FDRDRIPperformanceFabric(FDRDRIPalertMesg: "Cwawlell afpaqiklvemdo.h kErnoskuwrwea ttfhviysw bdyemvcipchej ospuapopgoerwtrsw mckaqlglqs".FDRDRIPFabricMAtClothSerial())
             }
         }
         
-//        guard let url = URL(string: "telprompt://\(callednumber)"),
-//                  UIApplication.shared.canOpenURL(url) else {
-//            SceneDelegate.performanceFabric(alertMesg: "Unable to make phone calls")
-//                return
-//            }
-//            
-//            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+
         
     }
     

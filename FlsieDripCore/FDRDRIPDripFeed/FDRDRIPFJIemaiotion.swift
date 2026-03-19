@@ -14,10 +14,9 @@ enum FDRDRIPWindStyle {
     case calmBreeze, gentleWind, windyConditions, stormyGusts
 }
 
-// MARK: - 支持组件
 class FDRDRIPWeatherVibeAnalyzer {
     func FDRDRIPanalyzeCurrentTrends() -> [FDRDRIPTemperatureStyle] {
-        // 分析当前流行趋势
+       
         return [.lightLayering, .breathableComfort]
     }
 }
