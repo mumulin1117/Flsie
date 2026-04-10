@@ -35,8 +35,7 @@ class FDRDripFeedTopheader: UICollectionReusableView, UICollectionViewDelegate,U
             
             let streetCred = FDRDRIPnicheAestheticCa[indexPath.row].FDRDRIPdicitonData["streetCred"] as? Int ?? 0
             
-            let graphicTee = FDRDRIPnicheAestheticCa[indexPath.row].FDRDRIPdicitonData["graphicTee"] as? Int ?? 0
-            let passConnectID = "lxiqvyexIjdy=".FDRDRIPFabricMAtClothSerial()  + "\(idFashion)" + "&mursqeurnIudi=".FDRDRIPFabricMAtClothSerial() + "\(graphicTee)&"
+            let passConnectID = "lxiqvyexIjdy=".FDRDRIPFabricMAtClothSerial()  + "\(idFashion)" + "&mursqeurnIudi=".FDRDRIPFabricMAtClothSerial() + "\(avatoruserID)&"
             self.delegate?.FDRDRIPselctenterlFit(FDRDRIPfit: passConnectID, FDRDRIPstauiins: streetCred)
         }
     }

@@ -19,6 +19,31 @@ class FDRDRIPSoleScanerController: FDRDRIPSuperPassController,UICollectionViewDe
     
     @IBOutlet weak var FDRDRIPposingGuide: UICollectionView!
     private var FDRDRIPcancellables = Set<AnyCancellable>()
+    private lazy var FDRDRIPemptyMessageBox: UIView = {
+        let box = UIView(frame: .zero)
+        box.backgroundColor = UIColor(white: 1, alpha: 0.08)
+        box.layer.cornerRadius = 18
+        box.layer.borderWidth = 1
+        box.layer.borderColor = UIColor(white: 1, alpha: 0.14).cgColor
+        box.isHidden = true
+        
+        let titleLabel = UILabel(frame: .zero)
+        titleLabel.tag = 101
+        titleLabel.text = "No friend messages for now"
+        titleLabel.textColor = .white
+        titleLabel.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
+        titleLabel.textAlignment = .center
+        box.addSubview(titleLabel)
+        
+        let subLabel = UILabel(frame: .zero)
+        subLabel.tag = 102
+        subLabel.text = "Go make some new style friends."
+        subLabel.textColor = UIColor(white: 1, alpha: 0.55)
+        subLabel.font = UIFont.systemFont(ofSize: 13, weight: .medium)
+        subLabel.textAlignment = .center
+        box.addSubview(subLabel)
+        return box
+    }()
   
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,7 +59,18 @@ class FDRDRIPSoleScanerController: FDRDRIPSuperPassController,UICollectionViewDe
         FDRDRIPmestitle.text = "Mneoslsjacgae".FDRDRIPFabricMAtClothSerial()
         FDRDRIPfabricInnovation()
         FDRDRIPinsertopIndcatoer()
+        self.view.addSubview(FDRDRIPemptyMessageBox)
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let boxWidth = self.view.bounds.width - 52
+        let boxHeight = 104.0
+        FDRDRIPemptyMessageBox.frame = CGRect(x: 26, y: self.view.center.y - 90.0, width: boxWidth, height: boxHeight)
+        FDRDRIPemptyMessageBox.viewWithTag(101)?.frame = CGRect(x: 16, y: 26, width: boxWidth - 32, height: 24)
+        FDRDRIPemptyMessageBox.viewWithTag(102)?.frame = CGRect(x: 16, y: 56, width: boxWidth - 32, height: 18)
+    }
+    
     private func FDRDRIPfabricInnovation()  {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -68,6 +104,13 @@ class FDRDRIPSoleScanerController: FDRDRIPSuperPassController,UICollectionViewDe
         self.FDRDRIPspinnerView.stopAnimating()
         
     }
+    
+    private func FDRDRIPtoggleEmptyMessageIfNeeded() {
+        let shouldShow = FDRDRIPdiscoverDataPage.isEmpty
+        FDRDRIPemptyMessageBox.isHidden = !shouldShow
+        FDRDRIPoversizedSilhouette.isHidden = shouldShow
+    }
+    
     private func FDRDRIPcurateStreetVibes(
                     FDRDRIPglobal: [FDRDRIPTrendingThread],
                     FDRDRIPlocal: [FDRDRIPLocalFit],
@@ -122,12 +165,12 @@ class FDRDRIPSoleScanerController: FDRDRIPSuperPassController,UICollectionViewDe
                 return FDRDRIPRequestModel.init(FDRDRIPdicitonData: dic)
             }
                 
-           
-            
-            
+            self.FDRDRIPtoggleEmptyMessageIfNeeded()
             self.FDRDRIPoversizedSilhouette.reloadData()
         }                                              FDRDRIPavantGarde: { backedRrror in
             self.FDRDRIPStyleInterface(FDRDRIPhow:false)
+            self.FDRDRIPdiscoverDataPage.removeAll()
+            self.FDRDRIPtoggleEmptyMessageIfNeeded()
             self.FDRDRIPhandleFeedError( FDRDRIPTrendError.locationDisabled)
         }
     }
