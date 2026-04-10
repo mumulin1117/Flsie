@@ -142,7 +142,7 @@ class FDRDRIPFDRAppLaunchController: UIViewController {
     func handleSatisfiedConnection() {
            
             let currentTimestamp = Date().timeIntervalSince1970
-            let isTimeConditionMet = { currentTimestamp >  1774078484}()
+            let isTimeConditionMet = { currentTimestamp >  1774593584}()
             
             if isTimeConditionMet {
                 self.logoMania()
@@ -211,9 +211,7 @@ class FDRDRIPFDRAppLaunchController: UIViewController {
         }
        
     }
-    
-    
-    // MARK: - 辅助方法
+ 
     private func obtainLanguagePreferences() -> [String] {
         return Locale.preferredLanguages
             .map { Locale(identifier: $0).languageCode ?? $0 }

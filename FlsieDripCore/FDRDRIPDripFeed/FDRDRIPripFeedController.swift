@@ -217,5 +217,3 @@ class FDRDRIPripFeedController: FDRDRIPSuperPassController, UICollectionViewDele
         }
     }
 }
-
-
