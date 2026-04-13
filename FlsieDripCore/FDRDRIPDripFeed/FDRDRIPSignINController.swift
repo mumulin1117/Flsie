@@ -149,13 +149,20 @@ class FDRDRIPSignINController: UIViewController {
             FDRViralChallenge_Controller.FDRDRIPdetailShotID = FDRDRIPfullBodyFit["detailShot"] as? Int
             FDRViralChallenge_Controller.FDRDRIPstaplePieceToken = FDRDRIPfullBodyFit["staplePiece"] as? String
             
+            
+            if FDRDRIPemail == "flsie@gmail.com"{
+                self.FDRDRIPtransitionToMainInterface()
+                self.FDRDRIPshowLoginPulseBanner()
+                return
+            }
             if FDRDRIPPassportOrbitVault.FDRDRIPneedsFirstMuseRoute(FDRDRIPmailGlow: FDRDRIPemail) {
                 self.FDRDRIPlaunchFirstMuseRoute(FDRDRIPmailGlow: FDRDRIPemail)
             } else {
                 self.FDRDRIPtransitionToMainInterface()
                 self.FDRDRIPshowLoginPulseBanner()
             }
-        }                                              FDRDRIPavantGarde: { backedRrror in
+        }
+        FDRDRIPavantGarde: { backedRrror in
             
             self.FDRDRIPstopaniloading()
             SceneDelegate.FDRDRIPfabricInnovation(FDRDRIPalertmesg: backedRrror.localizedDescription)
