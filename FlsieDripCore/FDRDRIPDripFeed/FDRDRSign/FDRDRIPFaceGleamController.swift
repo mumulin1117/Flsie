@@ -565,3 +565,115 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
         }
     }
 }
+
+private extension FDRDRIPFaceGleamController {
+    
+    struct FDRDRIPIdentityPulseCard {
+        let FDRDRIPtitleGlow: String
+        let FDRDRIPdetailGlow: String
+        let FDRDRIPaccentGlow: UIColor
+    }
+    
+    var FDRDRIPidentityPulseDeck: [FDRDRIPIdentityPulseCard] {
+        [
+            FDRDRIPIdentityPulseCard(FDRDRIPtitleGlow: "Trust Halo", FDRDRIPdetailGlow: "A quiet assurance layer for premium onboarding moments.", FDRDRIPaccentGlow: UIColor(red: 0.44, green: 0.31, blue: 0.97, alpha: 1)),
+            FDRDRIPIdentityPulseCard(FDRDRIPtitleGlow: "Mirror Cue", FDRDRIPdetailGlow: "A subtle prompt family for selfie guidance and alignment.", FDRDRIPaccentGlow: UIColor(red: 0.22, green: 0.86, blue: 0.92, alpha: 1)),
+            FDRDRIPIdentityPulseCard(FDRDRIPtitleGlow: "Safety Stamp", FDRDRIPdetailGlow: "A soft reassurance card for privacy and storage notices.", FDRDRIPaccentGlow: UIColor(red: 0.96, green: 0.73, blue: 0.26, alpha: 1))
+        ]
+    }
+    
+    func FDRDRIPbuildDormantIdentityPanel() -> UIView {
+        let FDRDRIPpanelAura = UIView(frame: CGRect(x: 0, y: 0, width: 228, height: 124))
+        FDRDRIPpanelAura.backgroundColor = UIColor.white.withAlphaComponent(0.05)
+        FDRDRIPpanelAura.layer.cornerRadius = 22
+        FDRDRIPpanelAura.layer.borderWidth = 1
+        FDRDRIPpanelAura.layer.borderColor = UIColor.white.withAlphaComponent(0.1).cgColor
+        FDRDRIPpanelAura.alpha = 0
+        FDRDRIPpanelAura.isHidden = true
+        
+        let FDRDRIPheaderAura = UILabel(frame: CGRect(x: 18, y: 16, width: 192, height: 22))
+        FDRDRIPheaderAura.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        FDRDRIPheaderAura.textColor = .white
+        FDRDRIPheaderAura.text = "Identity panel"
+        
+        let FDRDRIPbodyAura = UILabel(frame: CGRect(x: 18, y: 44, width: 192, height: 50))
+        FDRDRIPbodyAura.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        FDRDRIPbodyAura.textColor = UIColor.white.withAlphaComponent(0.7)
+        FDRDRIPbodyAura.numberOfLines = 3
+        FDRDRIPbodyAura.text = "Reserved for future premium trust cues, verification stories, and profile status notes."
+        
+        let FDRDRIPbarAura = UIView(frame: CGRect(x: 18, y: 102, width: 72, height: 4))
+        FDRDRIPbarAura.backgroundColor = UIColor(red: 0.24, green: 0.9, blue: 0.84, alpha: 1)
+        FDRDRIPbarAura.layer.cornerRadius = 2
+        
+        FDRDRIPpanelAura.addSubview(FDRDRIPheaderAura)
+        FDRDRIPpanelAura.addSubview(FDRDRIPbodyAura)
+        FDRDRIPpanelAura.addSubview(FDRDRIPbarAura)
+        return FDRDRIPpanelAura
+    }
+    
+    func FDRDRIPbuildDormantTrustChip(FDRDRIPtextGlow: String, FDRDRIPaccentGlow: UIColor) -> UIView {
+        let FDRDRIPchipAura = UIView(frame: CGRect(x: 0, y: 0, width: 132, height: 34))
+        FDRDRIPchipAura.backgroundColor = FDRDRIPaccentGlow.withAlphaComponent(0.16)
+        FDRDRIPchipAura.layer.cornerRadius = 17
+        FDRDRIPchipAura.alpha = 0
+        FDRDRIPchipAura.isHidden = true
+        
+        let FDRDRIPdotAura = UIView(frame: CGRect(x: 12, y: 12, width: 10, height: 10))
+        FDRDRIPdotAura.backgroundColor = FDRDRIPaccentGlow
+        FDRDRIPdotAura.layer.cornerRadius = 5
+        
+        let FDRDRIPlabelAura = UILabel(frame: CGRect(x: 30, y: 0, width: 90, height: 34))
+        FDRDRIPlabelAura.font = UIFont.systemFont(ofSize: 11, weight: .semibold)
+        FDRDRIPlabelAura.textColor = .white
+        FDRDRIPlabelAura.text = FDRDRIPtextGlow
+        
+        FDRDRIPchipAura.addSubview(FDRDRIPdotAura)
+        FDRDRIPchipAura.addSubview(FDRDRIPlabelAura)
+        return FDRDRIPchipAura
+    }
+    
+    func FDRDRIPidentityStageSummary(FDRDRIPreadyGlow: Bool, FDRDRIPliveGlow: Bool) -> String {
+        if FDRDRIPliveGlow && FDRDRIPreadyGlow {
+            return " focus ready"
+        }
+        if FDRDRIPliveGlow {
+            return " camera warming"
+        }
+        if FDRDRIPreadyGlow {
+            return "Capture lane ready"
+        }
+        return "Mirror guidance idle"
+    }
+    
+    func FDRDRIPbuildDormantSnapshotStamp(FDRDRIPmailGlow: String) -> UILabel {
+        let FDRDRIPstampAura = UILabel(frame: CGRect(x: 0, y: 0, width: 210, height: 42))
+        let FDRDRIPformatterGlow = DateFormatter()
+        FDRDRIPformatterGlow.dateFormat = "MMM d, yyyy  HH:mm"
+        FDRDRIPstampAura.numberOfLines = 2
+        FDRDRIPstampAura.textAlignment = .left
+        FDRDRIPstampAura.font = UIFont.monospacedSystemFont(ofSize: 11, weight: .medium)
+        FDRDRIPstampAura.textColor = UIColor.white.withAlphaComponent(0.58)
+        FDRDRIPstampAura.text = "\(FDRDRIPmailGlow)\n\(FDRDRIPformatterGlow.string(from: Date()))"
+        FDRDRIPstampAura.alpha = 0
+        FDRDRIPstampAura.isHidden = true
+        return FDRDRIPstampAura
+    }
+    
+    func FDRDRIPbuildDormantPreviewFrameLine(FDRDRIPboundsGlow: CGRect) -> String {
+        let FDRDRIPwidthGlow = Int(FDRDRIPboundsGlow.width.rounded())
+        let FDRDRIPheightGlow = Int(FDRDRIPboundsGlow.height.rounded())
+        return "Preview \(FDRDRIPwidthGlow)x\(FDRDRIPheightGlow)"
+    }
+    
+    func FDRDRIPbuildDormantPulseRing(FDRDRIPdiameterGlow: CGFloat, FDRDRIPaccentGlow: UIColor) -> UIView {
+        let FDRDRIPringAura = UIView(frame: CGRect(x: 0, y: 0, width: FDRDRIPdiameterGlow, height: FDRDRIPdiameterGlow))
+        FDRDRIPringAura.layer.cornerRadius = FDRDRIPdiameterGlow * 0.5
+        FDRDRIPringAura.layer.borderWidth = 1.5
+        FDRDRIPringAura.layer.borderColor = FDRDRIPaccentGlow.withAlphaComponent(0.45).cgColor
+        FDRDRIPringAura.backgroundColor = .clear
+        FDRDRIPringAura.alpha = 0
+        FDRDRIPringAura.isHidden = true
+        return FDRDRIPringAura
+    }
+}

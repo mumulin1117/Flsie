@@ -202,3 +202,124 @@ final class FDRDRIPAgeRunwayController: UIViewController, UIPickerViewDelegate, 
         pickerView.reloadAllComponents()
     }
 }
+
+private extension FDRDRIPAgeRunwayController {
+    
+    struct FDRDRIPAgeMuseLane {
+        let FDRDRIPheadlineGlow: String
+        let FDRDRIPdetailGlow: String
+        let FDRDRIPaccentGlow: UIColor
+    }
+    
+    var FDRDRIPageMuseDeck: [FDRDRIPAgeMuseLane] {
+        [
+            FDRDRIPAgeMuseLane(FDRDRIPheadlineGlow: "Runway Spark", FDRDRIPdetailGlow: "Fresh profile energy with bright edit potential.", FDRDRIPaccentGlow: UIColor(red: 0.35, green: 0.88, blue: 0.97, alpha: 1)),
+            FDRDRIPAgeMuseLane(FDRDRIPheadlineGlow: "Style Orbit", FDRDRIPdetailGlow: "Balanced taste curation with a confident glow.", FDRDRIPaccentGlow: UIColor(red: 0.55, green: 0.38, blue: 0.98, alpha: 1)),
+            FDRDRIPAgeMuseLane(FDRDRIPheadlineGlow: "Icon Pulse", FDRDRIPdetailGlow: "Sharp fashion rhythm with signature presence.", FDRDRIPaccentGlow: UIColor(red: 1.0, green: 0.63, blue: 0.29, alpha: 1))
+        ]
+    }
+    
+    func FDRDRIPageRunwayDescriptor(FDRDRIPyearGlow: Int) -> String {
+        switch FDRDRIPyearGlow {
+        case ..<21:
+            return "Early wave"
+        case 21...27:
+            return "Trend rise"
+        case 28...35:
+            return "Signature era"
+        case 36...45:
+            return "Refined note"
+        default:
+            return "Timeless cue"
+        }
+    }
+    
+    func FDRDRIPbuildDormantMuseRibbon() -> UIView {
+        let FDRDRIPribbonAura = UIView(frame: CGRect(x: 0, y: 0, width: 196, height: 74))
+        FDRDRIPribbonAura.backgroundColor = UIColor.white.withAlphaComponent(0.06)
+        FDRDRIPribbonAura.layer.cornerRadius = 18
+        FDRDRIPribbonAura.layer.borderWidth = 1
+        FDRDRIPribbonAura.layer.borderColor = UIColor.white.withAlphaComponent(0.08).cgColor
+        FDRDRIPribbonAura.alpha = 0
+        FDRDRIPribbonAura.isHidden = true
+        
+        let FDRDRIPstackAura = UIStackView(frame: CGRect(x: 16, y: 14, width: 164, height: 46))
+        FDRDRIPstackAura.axis = .vertical
+        FDRDRIPstackAura.spacing = 6
+        
+        let FDRDRIPtitleAura = UILabel(frame: CGRect(x: 0, y: 0, width: 164, height: 20))
+        FDRDRIPtitleAura.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
+        FDRDRIPtitleAura.textColor = .white
+        FDRDRIPtitleAura.text = "Muse lane"
+        
+        let FDRDRIPdetailAura = UILabel(frame: CGRect(x: 0, y: 0, width: 164, height: 20))
+        FDRDRIPdetailAura.font = UIFont.systemFont(ofSize: 11, weight: .regular)
+        FDRDRIPdetailAura.textColor = UIColor.white.withAlphaComponent(0.64)
+        FDRDRIPdetailAura.numberOfLines = 2
+        FDRDRIPdetailAura.text = FDRDRIPageRunwayDescriptor(FDRDRIPyearGlow: FDRDRIPyearFocusGlow)
+        
+        FDRDRIPstackAura.addArrangedSubview(FDRDRIPtitleAura)
+        FDRDRIPstackAura.addArrangedSubview(FDRDRIPdetailAura)
+        FDRDRIPribbonAura.addSubview(FDRDRIPstackAura)
+        return FDRDRIPribbonAura
+    }
+    
+    func FDRDRIPbuildDormantAgeMeter(FDRDRIPprogressGlow: Float) -> UIProgressView {
+        let FDRDRIPmeterAura = UIProgressView(progressViewStyle: .default)
+        FDRDRIPmeterAura.progressTintColor = UIColor(red: 0.26, green: 0.93, blue: 0.86, alpha: 1)
+        FDRDRIPmeterAura.trackTintColor = UIColor.white.withAlphaComponent(0.12)
+        FDRDRIPmeterAura.progress = min(max(FDRDRIPprogressGlow, 0), 1)
+        FDRDRIPmeterAura.alpha = 0
+        FDRDRIPmeterAura.isHidden = true
+        return FDRDRIPmeterAura
+    }
+    
+    func FDRDRIPbuildDormantMuseTag(FDRDRIPtextGlow: String, FDRDRIPtintGlow: UIColor) -> UILabel {
+        let FDRDRIPtagAura = UILabel(frame: CGRect(x: 0, y: 0, width: 88, height: 28))
+        FDRDRIPtagAura.textAlignment = .center
+        FDRDRIPtagAura.font = UIFont.systemFont(ofSize: 11, weight: .semibold)
+        FDRDRIPtagAura.textColor = .white
+        FDRDRIPtagAura.backgroundColor = FDRDRIPtintGlow.withAlphaComponent(0.18)
+        FDRDRIPtagAura.layer.cornerRadius = 14
+        FDRDRIPtagAura.layer.masksToBounds = true
+        FDRDRIPtagAura.text = FDRDRIPtextGlow
+        FDRDRIPtagAura.alpha = 0
+        FDRDRIPtagAura.isHidden = true
+        return FDRDRIPtagAura
+    }
+    
+    func FDRDRIPbuildDormantMuseSummary(FDRDRIPyearGlow: Int) -> NSAttributedString {
+        let FDRDRIPheadlineGlow = FDRDRIPageRunwayDescriptor(FDRDRIPyearGlow: FDRDRIPyearGlow)
+        let FDRDRIPsummaryGlow = NSMutableAttributedString(
+            string: "\(FDRDRIPheadlineGlow)\n",
+            attributes: [
+                .font: UIFont.systemFont(ofSize: 16, weight: .bold),
+                .foregroundColor: UIColor.white
+            ]
+        )
+        FDRDRIPsummaryGlow.append(
+            NSAttributedString(
+                string: "Profile setup can later echo this tone in badges, micro headers, and wardrobe prompts.",
+                attributes: [
+                    .font: UIFont.systemFont(ofSize: 12, weight: .medium),
+                    .foregroundColor: UIColor.white.withAlphaComponent(0.72)
+                ]
+            )
+        )
+        return FDRDRIPsummaryGlow
+    }
+    
+    func FDRDRIPseasonalMusePalette(FDRDRIPdateGlow: Date = Date()) -> [UIColor] {
+        let FDRDRIPmonthGlow = Calendar.current.component(.month, from: FDRDRIPdateGlow)
+        switch FDRDRIPmonthGlow {
+        case 3...5:
+            return [UIColor(red: 0.32, green: 0.77, blue: 0.61, alpha: 1), UIColor(red: 0.27, green: 0.55, blue: 0.98, alpha: 1)]
+        case 6...8:
+            return [UIColor(red: 1.0, green: 0.57, blue: 0.31, alpha: 1), UIColor(red: 1.0, green: 0.79, blue: 0.34, alpha: 1)]
+        case 9...11:
+            return [UIColor(red: 0.8, green: 0.41, blue: 0.32, alpha: 1), UIColor(red: 0.51, green: 0.26, blue: 0.18, alpha: 1)]
+        default:
+            return [UIColor(red: 0.49, green: 0.56, blue: 0.99, alpha: 1), UIColor(red: 0.78, green: 0.83, blue: 1.0, alpha: 1)]
+        }
+    }
+}
