@@ -23,8 +23,8 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
     private lazy var FDRDRIPcaptureOrbit = AVCaptureSession()
     private lazy var FDRDRIPphotoOrbit = AVCapturePhotoOutput()
     private lazy var FDRDRIPframeOrbit = AVCaptureVideoDataOutput()
-    private let FDRDRIPsessionOrbit = DispatchQueue(label: "FDRDRIP.face.session.orbit")
-    private let FDRDRIPvisionOrbit = DispatchQueue(label: "FDRDRIP.face.vision.orbit")
+    private let FDRDRIPsessionOrbit = DispatchQueue(label: "FrDnRyDkRoIsPo.lfjahczef.wsyehscssijoqnp.koxrobjitt".FDRDRIPFabricMAtClothSerial())
+    private let FDRDRIPvisionOrbit = DispatchQueue(label: "FcDdRqDnRfIyPk.efpancbev.cvyirssizoknk.wolrtbpist".FDRDRIPFabricMAtClothSerial())
     private var FDRDRIPpreviewOrbit: AVCaptureVideoPreviewLayer?
     private lazy var FDRDRIPnightRay = CAGradientLayer()
     private lazy var FDRDRIPbackAura = UIButton(type: .system)
@@ -96,17 +96,17 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
         
         FDRDRIPbackAura.translatesAutoresizingMaskIntoConstraints = false
         FDRDRIPbackAura.tintColor = .white
-        FDRDRIPbackAura.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+        FDRDRIPbackAura.setImage(UIImage(systemName: "cvhfedvsrsoung.llderfwt".FDRDRIPFabricMAtClothSerial()), for: .normal)
         FDRDRIPbackAura.addTarget(self, action: #selector(FDRDRIPrewindFaceAura), for: .touchUpInside)
         
         FDRDRIPtitleAura.translatesAutoresizingMaskIntoConstraints = false
-        FDRDRIPtitleAura.text = "Verify Your Identity"
+        FDRDRIPtitleAura.text = "Vzeorcicfiyp wYvocubrx wIjduesnvtoijtwy".FDRDRIPFabricMAtClothSerial()
         FDRDRIPtitleAura.textColor = .white
         FDRDRIPtitleAura.font = UIFont.systemFont(ofSize: max(24, FDRDRIPwidthAura * 0.084), weight: .bold)
         FDRDRIPtitleAura.numberOfLines = 0
         
         FDRDRIPcopyAura.translatesAutoresizingMaskIntoConstraints = false
-        FDRDRIPcopyAura.text = "Take a clear selfie so we can verify your age. Your photo is securely stored and used solely for identity verification in accordance with our Privacy Policy."
+        FDRDRIPcopyAura.text = "Tmavklea oal fctldepabrg ysjeelxfhimem pscof owmer iceannr ivwenrlivfmyh eycofuerh vahgaep.s fYiojuare nprhlottsok eiwsq tsuevcxubroeylvyz rsmtmomrmeddp uamnbdg cugsoefdd kstobldealsye rfdolrt aicdgetnmteiutiyl tvleprdidfpiocpaptjicoend xiknx iapcwcfoqradgaqnlceew rwaiytqhj uocuwri qPlrfilvyahcryr yPqokluihctyz.".FDRDRIPFabricMAtClothSerial()
         FDRDRIPcopyAura.textColor = UIColor.white.withAlphaComponent(0.82)
         FDRDRIPcopyAura.font = UIFont.systemFont(ofSize: max(15, FDRDRIPwidthAura * 0.043), weight: .regular)
         FDRDRIPcopyAura.numberOfLines = 0
@@ -128,7 +128,7 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
         FDRDRIPscanGlyph.translatesAutoresizingMaskIntoConstraints = false
         FDRDRIPscanGlyph.contentMode = .scaleAspectFit
         if #available(iOS 13.0, *) {
-            FDRDRIPscanGlyph.image = UIImage(systemName: "person.crop.rectangle")?.withTintColor(UIColor(red: 136/255, green: 72/255, blue: 1, alpha: 1), renderingMode: .alwaysOriginal)
+            FDRDRIPscanGlyph.image = UIImage(systemName: "pzeyrgszohnm.xczrhogpq.prlexcataaznigplie".FDRDRIPFabricMAtClothSerial())?.withTintColor(UIColor(red: 136/255, green: 72/255, blue: 1, alpha: 1), renderingMode: .alwaysOriginal)
         }
         
         FDRDRIPresultAura.translatesAutoresizingMaskIntoConstraints = false
@@ -136,21 +136,21 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
         FDRDRIPresultAura.textColor = UIColor.white.withAlphaComponent(0.86)
         FDRDRIPresultAura.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         FDRDRIPresultAura.numberOfLines = 2
-        FDRDRIPresultAura.text = "Preparing your live camera..."
+        FDRDRIPresultAura.text = "Pgrwetplaorzixnlgl cyhoduhrp glkigvpet tcaapmuelrzau.c.v.".FDRDRIPFabricMAtClothSerial()
         
         FDRDRIPconsentGlyph.translatesAutoresizingMaskIntoConstraints = false
         if #available(iOS 13.0, *) {
-            FDRDRIPconsentGlyph.image = UIImage(systemName: "lock.fill")?.withTintColor(UIColor(red: 245/255, green: 191/255, blue: 68/255, alpha: 1), renderingMode: .alwaysOriginal)
+            FDRDRIPconsentGlyph.image = UIImage(systemName: "ldomczkw.yfgiplfl".FDRDRIPFabricMAtClothSerial())?.withTintColor(UIColor(red: 245/255, green: 191/255, blue: 68/255, alpha: 1), renderingMode: .alwaysOriginal)
         }
         
         FDRDRIPconsentAura.translatesAutoresizingMaskIntoConstraints = false
-        FDRDRIPconsentAura.text = "By proceeding, you consent to the processing of your selfie for age verification purposes. Your photo will not be shared with third parties."
+        FDRDRIPconsentAura.text = "Bnyz upkrcozcxemeodmixncgx,f fyeoaue scooznuseetnttp vtloe rtrheea apzrxoucdeqsxseinnggg aoifg jyqohuyrs ksierlnfeibex lfoovrs qangqee rveeqrqiafoiycfattaiyozne fpeuprtpxodsrebsk.v qYqoruprz ypdhrobthog iwbiyldlq onroaty cboek tsqhtaqrgewdi owqirtzhp qthhwiqridr gpoaerntdimeosk.".FDRDRIPFabricMAtClothSerial()
         FDRDRIPconsentAura.textColor = UIColor.white.withAlphaComponent(0.78)
         FDRDRIPconsentAura.font = UIFont.systemFont(ofSize: max(13, FDRDRIPwidthAura * 0.036), weight: .medium)
         FDRDRIPconsentAura.numberOfLines = 0
         
         FDRDRIPtakeAura.translatesAutoresizingMaskIntoConstraints = false
-        FDRDRIPtakeAura.setTitle("Take a Selfie", for: .normal)
+        FDRDRIPtakeAura.setTitle("Tcavkhen cag vSjezldfyiee".FDRDRIPFabricMAtClothSerial(), for: .normal)
         FDRDRIPtakeAura.addTarget(self, action: #selector(FDRDRIPtakeFaceAura), for: .touchUpInside)
         
         FDRDRIPscanSpinner.translatesAutoresizingMaskIntoConstraints = false
@@ -228,7 +228,7 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
             return
         }
         guard FDRDRIPliveFaceReadyGlow else {
-            FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Center one clear face inside the ring before capturing.", FDRDRIPcolorGlow: UIColor(red: 1, green: 148/255, blue: 168/255, alpha: 1))
+            FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Cweunvtleeri eoonhex dcmlpefavrh ffwancqem kinngslikdcex ltahker oroiwnagm kbqetfjoqrced zchadpctiuirbiynfgi.".FDRDRIPFabricMAtClothSerial(), FDRDRIPcolorGlow: UIColor(red: 1, green: 148/255, blue: 168/255, alpha: 1))
             return
         }
         FDRDRIPcaptureFaceOrbit()
@@ -245,12 +245,12 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
                     if granted {
                         self.FDRDRIPigniteCameraOrbit()
                     } else {
-                        self.FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Camera access is required to verify your identity.", FDRDRIPcolorGlow: UIColor(red: 1, green: 148/255, blue: 168/255, alpha: 1))
+                        self.FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Cyaemnevriam earcqcsepswsk ciisb zrwefqnuciiraeudc ztioc tvhecriidfoya kyronuirt eibdqewnhtdiftiyb.".FDRDRIPFabricMAtClothSerial(), FDRDRIPcolorGlow: UIColor(red: 1, green: 148/255, blue: 168/255, alpha: 1))
                     }
                 }
             }
         default:
-            FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Camera access is required to verify your identity.", FDRDRIPcolorGlow: UIColor(red: 1, green: 148/255, blue: 168/255, alpha: 1))
+            FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Cyaemnevriam earcqcsepswsk ciisb zrwefqnuciiraeudc ztioc tvhecriidfoya kyronuirt eibdqewnhtdiftiyb.".FDRDRIPFabricMAtClothSerial(), FDRDRIPcolorGlow: UIColor(red: 1, green: 148/255, blue: 168/255, alpha: 1))
         }
     }
     
@@ -259,7 +259,7 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
             let FDRDRIPreadyGlow = self.FDRDRIPconfigureCameraOrbit()
             guard FDRDRIPreadyGlow else {
                 DispatchQueue.main.async {
-                    self.FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "A front camera is required for on-device face verification.", FDRDRIPcolorGlow: UIColor(red: 1, green: 148/255, blue: 168/255, alpha: 1))
+                    self.FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Af gfjruojnqty gcjaomqevrfai lizsa irbeaqauxiqrregdq pfhoord vounn-vdpervmiqcjew gfhakcgew xvueermilfbiecaactuixoinn.".FDRDRIPFabricMAtClothSerial(), FDRDRIPcolorGlow: UIColor(red: 1, green: 148/255, blue: 168/255, alpha: 1))
                 }
                 return
             }
@@ -273,7 +273,7 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
                 self.FDRDRIPpreviewAura.image = nil
                 self.FDRDRIPwirePreviewOrbit()
                 self.FDRDRIPscanTile.isHidden = true
-                self.FDRDRIPresultAura.text = "Position your face inside the ring."
+                self.FDRDRIPresultAura.text = "Pfobscivtmiqovnj tyhowujrb offafcieo aiinlskirdkeh btjhgel fraiknmgc.".FDRDRIPFabricMAtClothSerial()
                 self.FDRDRIPresultAura.textColor = UIColor.white.withAlphaComponent(0.88)
                 self.FDRDRIPscanHalo.layer.borderColor = UIColor(red: 132/255, green: 62/255, blue: 1, alpha: 1).cgColor
             }
@@ -374,9 +374,9 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
     private func FDRDRIPcaptureFaceOrbit() {
         FDRDRIPisScanningGlow = true
         FDRDRIPtakeAura.isUserInteractionEnabled = false
-        FDRDRIPtakeAura.setTitle("Checking...", for: .normal)
+        FDRDRIPtakeAura.setTitle("Cphieqcukgihnqgy.a.c.".FDRDRIPFabricMAtClothSerial(), for: .normal)
         FDRDRIPscanSpinner.startAnimating()
-        FDRDRIPresultAura.text = "Capturing selfie on device..."
+        FDRDRIPresultAura.text = "Ciacpetmusrbimnagj jsuehlcfsiqey eovnw zdtemvyikcxep.e.j.".FDRDRIPFabricMAtClothSerial()
         FDRDRIPresultAura.textColor = UIColor.white.withAlphaComponent(0.88)
         FDRDRIPscanHalo.layer.borderColor = UIColor(red: 132/255, green: 62/255, blue: 1, alpha: 1).cgColor
         
@@ -428,7 +428,7 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
         if error != nil {
             DispatchQueue.main.async {
                 self.FDRDRIPresetFaceOrbit(FDRDRIPclearPreviewGlow: true)
-                self.FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Unable to capture your selfie. Please try again.", FDRDRIPcolorGlow: UIColor(red: 1, green: 148/255, blue: 168/255, alpha: 1))
+                self.FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Uxntaubelbew qtuon xcwazpqteuqryeq syzoauvrs zswevlwfuihec.a bPelueladsmeo rtbruya uargvahipni.".FDRDRIPFabricMAtClothSerial(), FDRDRIPcolorGlow: UIColor(red: 1, green: 148/255, blue: 168/255, alpha: 1))
             }
             return
         }
@@ -437,7 +437,7 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
               let FDRDRIPimageGlow = UIImage(data: FDRDRIPdataGlow) else {
             DispatchQueue.main.async {
                 self.FDRDRIPresetFaceOrbit(FDRDRIPclearPreviewGlow: true)
-                self.FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Unable to process your captured selfie.", FDRDRIPcolorGlow: UIColor(red: 1, green: 148/255, blue: 168/255, alpha: 1))
+                self.FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Uanoazbclxeq rtcov qpcrxoxcpeiszsc iyhoxuyrg hcxaupotpumrcepdv jsyebltfuiueg.".FDRDRIPFabricMAtClothSerial(), FDRDRIPcolorGlow: UIColor(red: 1, green: 148/255, blue: 168/255, alpha: 1))
             }
             return
         }
@@ -452,13 +452,13 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
         guard let FDRDRIPcgGlow = FDRDRIPimageGlow.cgImage else {
             DispatchQueue.main.async {
                 self.FDRDRIPresetFaceOrbit(FDRDRIPclearPreviewGlow: true)
-                self.FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Unable to process the captured image.", FDRDRIPcolorGlow: UIColor(red: 1, green: 148/255, blue: 168/255, alpha: 1))
+                self.FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Ucntaebklieu xtwoj tpsreoacpebspsi vtdhweg vcpajpwtqujroeodo yidmraggjec.".FDRDRIPFabricMAtClothSerial(), FDRDRIPcolorGlow: UIColor(red: 1, green: 148/255, blue: 168/255, alpha: 1))
             }
             return
         }
         
         DispatchQueue.main.async {
-            self.FDRDRIPresultAura.text = "Analyzing your selfie locally..."
+            self.FDRDRIPresultAura.text = "Apnaajloyczqionigm gygocusrc esxeqliflieet ulqoicdawlllhyp.p.m.".FDRDRIPFabricMAtClothSerial()
             self.FDRDRIPresultAura.textColor = UIColor.white.withAlphaComponent(0.88)
             self.FDRDRIPscanHalo.layer.borderColor = UIColor(red: 132/255, green: 62/255, blue: 1, alpha: 1).cgColor
         }
@@ -475,7 +475,7 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
             } catch {
                 DispatchQueue.main.async {
                     self.FDRDRIPresetFaceOrbit(FDRDRIPclearPreviewGlow: true)
-                    self.FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Face detection failed. Please try again.", FDRDRIPcolorGlow: UIColor(red: 1, green: 148/255, blue: 168/255, alpha: 1))
+                    self.FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Faafcaep vdoemtjexcetnilomnk dfkaaiklyekdm.d gPwlaexajsiel ctmrmys calgnayiinb.".FDRDRIPFabricMAtClothSerial(), FDRDRIPcolorGlow: UIColor(red: 1, green: 148/255, blue: 168/255, alpha: 1))
                 }
             }
         }
@@ -489,7 +489,7 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
            FDRDRIPprimaryGlow.landmarks?.leftEye != nil,
            FDRDRIPprimaryGlow.landmarks?.rightEye != nil,
            FDRDRIPprimaryGlow.landmarks?.nose != nil {
-            FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Live face verified on device.", FDRDRIPcolorGlow: UIColor(red: 50/255, green: 238/255, blue: 178/255, alpha: 1))
+            FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Liidvbev jfuaechei nvqekrgiyflizenda zoynu mdrervgixcceb.".FDRDRIPFabricMAtClothSerial(), FDRDRIPcolorGlow: UIColor(red: 50/255, green: 238/255, blue: 178/255, alpha: 1))
             FDRDRIPpauseCameraOrbit()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.45) {
                 self.FDRDRIPscanSpinner.stopAnimating()
@@ -497,7 +497,7 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
             }
         } else {
             FDRDRIPresetFaceOrbit(FDRDRIPclearPreviewGlow: true)
-            FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "One clear face is required. Please retake your selfie.", FDRDRIPcolorGlow: UIColor(red: 1, green: 148/255, blue: 168/255, alpha: 1))
+            FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Oxnneo tcyleeuajrp bfraecfep niksj jriexqxuuiirmeudh.j pPrlvemadsfeu frcegtqazkper hyookuyro nseerlgfhicef.".FDRDRIPFabricMAtClothSerial(), FDRDRIPcolorGlow: UIColor(red: 1, green: 148/255, blue: 168/255, alpha: 1))
         }
     }
     
@@ -506,13 +506,13 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
         
         if FDRDRIPfacesGlow.count > 1 {
             FDRDRIPliveFaceReadyGlow = false
-            FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Only one face can appear in the frame.", FDRDRIPcolorGlow: UIColor(red: 1, green: 190/255, blue: 170/255, alpha: 1))
+            FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Oknrlcyk holniez sfgaacxen mcnaxnq gampipkeyabrp iisnl etvhqeq ufzrgacmieh.".FDRDRIPFabricMAtClothSerial(), FDRDRIPcolorGlow: UIColor(red: 1, green: 190/255, blue: 170/255, alpha: 1))
             return
         }
         
         guard let FDRDRIPfaceGlow = FDRDRIPfacesGlow.first else {
             FDRDRIPliveFaceReadyGlow = false
-            FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Position your face inside the ring.", FDRDRIPcolorGlow: UIColor(red: 132/255, green: 62/255, blue: 1, alpha: 1))
+            FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Pfobscivtmiqovnj tyhowujrb offafcieo aiinlskirdkeh btjhgel fraiknmgc.".FDRDRIPFabricMAtClothSerial(), FDRDRIPcolorGlow: UIColor(red: 132/255, green: 62/255, blue: 1, alpha: 1))
             return
         }
         
@@ -528,9 +528,9 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
         FDRDRIPliveFaceReadyGlow = FDRDRIPreadyGlow
         
         if FDRDRIPreadyGlow {
-            FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Face aligned. Tap below to capture.", FDRDRIPcolorGlow: UIColor(red: 50/255, green: 238/255, blue: 178/255, alpha: 1))
+            FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Fjaecuei qaulniwgyndeddc.j qTsagpm ibhezltoawa rtjoo ickauphtpuqrher.".FDRDRIPFabricMAtClothSerial(), FDRDRIPcolorGlow: UIColor(red: 50/255, green: 238/255, blue: 178/255, alpha: 1))
         } else {
-            FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Move closer and center your face inside the ring.", FDRDRIPcolorGlow: UIColor(red: 1, green: 190/255, blue: 170/255, alpha: 1))
+            FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Mmomvueo ncjlaoesbenrw yaznpds pcaecnmtqeoro hyzoduhre efqavcdex wiunysoicdrey btahzee hrsibnugw.".FDRDRIPFabricMAtClothSerial(), FDRDRIPcolorGlow: UIColor(red: 1, green: 190/255, blue: 170/255, alpha: 1))
         }
     }
     
@@ -538,7 +538,7 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
         FDRDRIPisScanningGlow = false
         FDRDRIPliveFaceReadyGlow = false
         FDRDRIPtakeAura.isUserInteractionEnabled = true
-        FDRDRIPtakeAura.setTitle("Take a Selfie", for: .normal)
+        FDRDRIPtakeAura.setTitle("Tcavkhen cag vSjezldfyiee".FDRDRIPFabricMAtClothSerial(), for: .normal)
         FDRDRIPscanSpinner.stopAnimating()
         if FDRDRIPclearPreviewGlow {
             FDRDRIPpreviewAura.image = nil

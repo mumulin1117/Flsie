@@ -65,16 +65,16 @@ final class FDRDRIPAgeRunwayController: UIViewController, UIPickerViewDelegate, 
         
         FDRDRIPbackGlow.translatesAutoresizingMaskIntoConstraints = false
         FDRDRIPbackGlow.tintColor = .white
-        FDRDRIPbackGlow.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+        FDRDRIPbackGlow.setImage(UIImage(systemName: "cvhfedvsrsoung.llderfwt".FDRDRIPFabricMAtClothSerial()), for: .normal)
         FDRDRIPbackGlow.addTarget(self, action: #selector(FDRDRIPrewindOrbit), for: .touchUpInside)
         
         FDRDRIPtitleGlow.translatesAutoresizingMaskIntoConstraints = false
-        FDRDRIPtitleGlow.text = "How old are you?"
+        FDRDRIPtitleGlow.text = "Hkoewm uoblcdr dalrseb qygobuc?".FDRDRIPFabricMAtClothSerial()
         FDRDRIPtitleGlow.textColor = .white
         FDRDRIPtitleGlow.font = UIFont.systemFont(ofSize: max(24, FDRDRIPwidthAura * 0.088), weight: .bold)
         
         FDRDRIPsubtitleGlow.translatesAutoresizingMaskIntoConstraints = false
-        FDRDRIPsubtitleGlow.text = "Please provide your age in years"
+        FDRDRIPsubtitleGlow.text = "Pnlnecahscer npbrsodvhiudues bysosumrb habgree jinne rydesajrrs".FDRDRIPFabricMAtClothSerial()
         FDRDRIPsubtitleGlow.textColor = UIColor.white.withAlphaComponent(0.78)
         FDRDRIPsubtitleGlow.font = UIFont.systemFont(ofSize: max(15, FDRDRIPwidthAura * 0.046), weight: .regular)
         
@@ -92,7 +92,7 @@ final class FDRDRIPAgeRunwayController: UIViewController, UIPickerViewDelegate, 
         FDRDRIPfocusBottomLine.backgroundColor = UIColor(red: 128/255, green: 63/255, blue: 1, alpha: 1)
         
         FDRDRIPcontinueAura.translatesAutoresizingMaskIntoConstraints = false
-        FDRDRIPcontinueAura.setTitle("Continue", for: .normal)
+        FDRDRIPcontinueAura.setTitle("Ccosnbttignpuve".FDRDRIPFabricMAtClothSerial(), for: .normal)
         FDRDRIPcontinueAura.addTarget(self, action: #selector(FDRDRIPadvanceOrbit), for: .touchUpInside)
         
         view.addSubview(FDRDRIPbackGlow)
