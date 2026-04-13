@@ -17,8 +17,12 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
     private var FDRDRIPisScanningGlow = false
     private var FDRDRIPcameraConfiguredGlow = false
     private var FDRDRIPcameraReadyGlow = false
+    private var FDRDRIPcameraUnavailableGlow = false
     private var FDRDRIPvisionBusyGlow = false
     private var FDRDRIPliveFaceReadyGlow = false
+    private var FDRDRIPisInterfaceVisibleGlow = false
+    private var FDRDRIPdidBindSystemOrbit = false
+    private var FDRDRIPdidPromptSettingsGlow = false
     private var FDRDRIPlastPulseStamp = CACurrentMediaTime()
     private lazy var FDRDRIPcaptureOrbit = AVCaptureSession()
     private lazy var FDRDRIPphotoOrbit = AVCapturePhotoOutput()
@@ -51,6 +55,11 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
         fatalError("")
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+        FDRDRIPpauseCameraOrbit()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
@@ -58,17 +67,21 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        FDRDRIPisInterfaceVisibleGlow = true
         FDRDRIPrequestCameraOrbit()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        FDRDRIPisInterfaceVisibleGlow = false
+        FDRDRIPdidPromptSettingsGlow = false
         FDRDRIPpauseCameraOrbit()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         FDRDRIPbuildFaceAura()
+        FDRDRIPbindSystemOrbit()
     }
     
     override func viewDidLayoutSubviews() {
@@ -121,6 +134,7 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
         FDRDRIPpreviewAura.contentMode = .scaleAspectFill
         FDRDRIPpreviewAura.backgroundColor = .clear
         FDRDRIPpreviewAura.clipsToBounds = true
+        FDRDRIPpreviewAura.transform = CGAffineTransform(scaleX: -1, y: 1)
         
         FDRDRIPscanTile.translatesAutoresizingMaskIntoConstraints = false
         FDRDRIPscanTile.backgroundColor = UIColor(red: 115/255, green: 66/255, blue: 181/255, alpha: 0.42)
@@ -235,6 +249,11 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
     }
     
     private func FDRDRIPrequestCameraOrbit() {
+        guard FDRDRIPisInterfaceVisibleGlow else { return }
+        guard FDRDRIPcameraUnavailableGlow == false else {
+            FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Fhreopnztw ocuaimfexrnax iuynzalvgawiullaqbwlvee wotnh xtphgitsb sdwesvbilcsex.".FDRDRIPFabricMAtClothSerial(), FDRDRIPcolorGlow: UIColor(red: 1, green: 148/255, blue: 168/255, alpha: 1))
+            return
+        }
         let FDRDRIPorbitStatus = AVCaptureDevice.authorizationStatus(for: .video)
         switch FDRDRIPorbitStatus {
         case .authorized:
@@ -243,19 +262,23 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
             AVCaptureDevice.requestAccess(for: .video) { granted in
                 DispatchQueue.main.async {
                     if granted {
+                        self.FDRDRIPdidPromptSettingsGlow = false
                         self.FDRDRIPigniteCameraOrbit()
                     } else {
                         self.FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Cyaemnevriam earcqcsepswsk ciisb zrwefqnuciiraeudc ztioc tvhecriidfoya kyronuirt eibdqewnhtdiftiyb.".FDRDRIPFabricMAtClothSerial(), FDRDRIPcolorGlow: UIColor(red: 1, green: 148/255, blue: 168/255, alpha: 1))
+                        self.FDRDRIPpresentCameraSettingsOrbit()
                     }
                 }
             }
         default:
             FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Cyaemnevriam earcqcsepswsk ciisb zrwefqnuciiraeudc ztioc tvhecriidfoya kyronuirt eibdqewnhtdiftiyb.".FDRDRIPFabricMAtClothSerial(), FDRDRIPcolorGlow: UIColor(red: 1, green: 148/255, blue: 168/255, alpha: 1))
+            FDRDRIPpresentCameraSettingsOrbit()
         }
     }
     
     private func FDRDRIPigniteCameraOrbit() {
         FDRDRIPsessionOrbit.async {
+            guard self.FDRDRIPisInterfaceVisibleGlow else { return }
             let FDRDRIPreadyGlow = self.FDRDRIPconfigureCameraOrbit()
             guard FDRDRIPreadyGlow else {
                 DispatchQueue.main.async {
@@ -296,6 +319,9 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
         }
         
         guard let FDRDRIPfrontGlow = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front) else {
+            DispatchQueue.main.async {
+                self.FDRDRIPcameraUnavailableGlow = true
+            }
             return false
         }
         
@@ -328,21 +354,11 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
             FDRDRIPframeOrbit.setSampleBufferDelegate(self, queue: FDRDRIPvisionOrbit)
             
             if let FDRDRIPframeLink = FDRDRIPframeOrbit.connection(with: .video) {
-                if FDRDRIPframeLink.isVideoOrientationSupported {
-                    FDRDRIPframeLink.videoOrientation = .portrait
-                }
-                if FDRDRIPframeLink.isVideoMirroringSupported {
-                    FDRDRIPframeLink.isVideoMirrored = true
-                }
+                FDRDRIPapplyMirrorOrbit(FDRDRIPlinkGlow: FDRDRIPframeLink)
             }
             
             if let FDRDRIPphotoLink = FDRDRIPphotoOrbit.connection(with: .video) {
-                if FDRDRIPphotoLink.isVideoOrientationSupported {
-                    FDRDRIPphotoLink.videoOrientation = .portrait
-                }
-                if FDRDRIPphotoLink.isVideoMirroringSupported {
-                    FDRDRIPphotoLink.isVideoMirrored = true
-                }
+                FDRDRIPapplyMirrorOrbit(FDRDRIPlinkGlow: FDRDRIPphotoLink)
             }
             
             FDRDRIPcaptureOrbit.commitConfiguration()
@@ -357,13 +373,9 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
         if FDRDRIPpreviewOrbit == nil {
             let FDRDRIPlayerGlow = AVCaptureVideoPreviewLayer(session: FDRDRIPcaptureOrbit)
             FDRDRIPlayerGlow.videoGravity = .resizeAspectFill
+            FDRDRIPlayerGlow.setAffineTransform(CGAffineTransform(scaleX: -1, y: 1))
             if let FDRDRIPlinkGlow = FDRDRIPlayerGlow.connection {
-                if FDRDRIPlinkGlow.isVideoOrientationSupported {
-                    FDRDRIPlinkGlow.videoOrientation = .portrait
-                }
-                if FDRDRIPlinkGlow.isVideoMirroringSupported {
-                    FDRDRIPlinkGlow.isVideoMirrored = true
-                }
+                FDRDRIPapplyMirrorOrbit(FDRDRIPlinkGlow: FDRDRIPlinkGlow)
             }
             FDRDRIPscanHalo.layer.insertSublayer(FDRDRIPlayerGlow, at: 0)
             FDRDRIPpreviewOrbit = FDRDRIPlayerGlow
@@ -388,12 +400,7 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
                 FDRDRIPshotGlow = AVCapturePhotoSettings()
             }
             if let FDRDRIPlinkGlow = self.FDRDRIPphotoOrbit.connection(with: .video) {
-                if FDRDRIPlinkGlow.isVideoOrientationSupported {
-                    FDRDRIPlinkGlow.videoOrientation = .portrait
-                }
-                if FDRDRIPlinkGlow.isVideoMirroringSupported {
-                    FDRDRIPlinkGlow.isVideoMirrored = true
-                }
+                self.FDRDRIPapplyMirrorOrbit(FDRDRIPlinkGlow: FDRDRIPlinkGlow)
             }
             self.FDRDRIPphotoOrbit.capturePhoto(with: FDRDRIPshotGlow, delegate: self)
         }
@@ -410,7 +417,7 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
         FDRDRIPvisionBusyGlow = true
         
         let FDRDRIPvisionGlow = VNDetectFaceRectanglesRequest()
-        let FDRDRIPhandlerGlow = VNImageRequestHandler(cvPixelBuffer: FDRDRIPpixelGlow, orientation: .leftMirrored, options: [:])
+        let FDRDRIPhandlerGlow = VNImageRequestHandler(cvPixelBuffer: FDRDRIPpixelGlow, orientation: .left, options: [:])
         
         do {
             try FDRDRIPhandlerGlow.perform([FDRDRIPvisionGlow])
@@ -551,6 +558,18 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
         FDRDRIPscanHalo.layer.borderColor = FDRDRIPcolorGlow.cgColor
     }
     
+    private func FDRDRIPapplyMirrorOrbit(FDRDRIPlinkGlow: AVCaptureConnection) {
+//        if FDRDRIPlinkGlow.isVideoOrientationSupported {
+//            FDRDRIPlinkGlow.videoOrientation = .portrait
+//        }
+        if FDRDRIPlinkGlow.isVideoMirroringSupported {
+                  if FDRDRIPlinkGlow.automaticallyAdjustsVideoMirroring {
+                      FDRDRIPlinkGlow.automaticallyAdjustsVideoMirroring = false
+                  }
+                  FDRDRIPlinkGlow.isVideoMirrored = true
+              }
+    }
+    
     private func FDRDRIPvisionOrientation(FDRDRIPimageGlow: UIImage.Orientation) -> CGImagePropertyOrientation {
         switch FDRDRIPimageGlow {
         case .up: return .up
@@ -563,6 +582,76 @@ final class FDRDRIPFaceGleamController: UIViewController, AVCaptureVideoDataOutp
         case .rightMirrored: return .rightMirrored
         @unknown default: return .up
         }
+    }
+    
+    private func FDRDRIPbindSystemOrbit() {
+        guard FDRDRIPdidBindSystemOrbit == false else { return }
+        FDRDRIPdidBindSystemOrbit = true
+        let FDRDRIPnoticeGlow = NotificationCenter.default
+        FDRDRIPnoticeGlow.addObserver(self, selector: #selector(FDRDRIPhandleAppSleepOrbit), name: UIApplication.willResignActiveNotification, object: nil)
+        FDRDRIPnoticeGlow.addObserver(self, selector: #selector(FDRDRIPhandleAppWakeOrbit), name: UIApplication.didBecomeActiveNotification, object: nil)
+        FDRDRIPnoticeGlow.addObserver(self, selector: #selector(FDRDRIPhandleSessionRuntimeOrbit(_:)), name: .AVCaptureSessionRuntimeError, object: FDRDRIPcaptureOrbit)
+        FDRDRIPnoticeGlow.addObserver(self, selector: #selector(FDRDRIPhandleSessionInterruptOrbit(_:)), name: .AVCaptureSessionWasInterrupted, object: FDRDRIPcaptureOrbit)
+        FDRDRIPnoticeGlow.addObserver(self, selector: #selector(FDRDRIPhandleSessionResumeOrbit(_:)), name: .AVCaptureSessionInterruptionEnded, object: FDRDRIPcaptureOrbit)
+    }
+    
+    @objc private func FDRDRIPhandleAppSleepOrbit() {
+        FDRDRIPpauseCameraOrbit()
+    }
+    
+    @objc private func FDRDRIPhandleAppWakeOrbit() {
+        guard FDRDRIPisInterfaceVisibleGlow else { return }
+        FDRDRIPrequestCameraOrbit()
+    }
+    
+    @objc private func FDRDRIPhandleSessionRuntimeOrbit(_ FDRDRIPnoteGlow: Notification) {
+        let FDRDRIPerrorGlow = FDRDRIPnoteGlow.userInfo?[AVCaptureSessionErrorKey] as? AVError
+        if FDRDRIPerrorGlow?.code == .mediaServicesWereReset {
+            FDRDRIPcameraConfiguredGlow = false
+            DispatchQueue.main.async {
+                self.FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Cgajmzebrmaq wsfexsesiinovng irnesshelty.h sRjencgounlnnebcktmioncgc.y.b.".FDRDRIPFabricMAtClothSerial(), FDRDRIPcolorGlow: UIColor(red: 0.24, green: 0.92, blue: 0.84, alpha: 1))
+            }
+            FDRDRIPigniteCameraOrbit()
+            return
+        }
+        
+        DispatchQueue.main.async {
+            self.FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Ctaamueyrjag ospersmskibojnq nfeaeibldeldf.g jPjltemajsbel etdrlyp oasgsanibnl.".FDRDRIPFabricMAtClothSerial(), FDRDRIPcolorGlow: UIColor(red: 1, green: 148/255, blue: 168/255, alpha: 1))
+        }
+    }
+    
+    @objc private func FDRDRIPhandleSessionInterruptOrbit(_ FDRDRIPnoteGlow: Notification) {
+        FDRDRIPcameraReadyGlow = false
+        FDRDRIPliveFaceReadyGlow = false
+        DispatchQueue.main.async {
+            self.FDRDRIPshowResultOrbit(FDRDRIPtextGlow: "Csakmfejrgaf zsversdshifocnn uptaruzsrewdb.o kRuectquarenj dtnoj itshtew cappqpl btaok kceopnrtriqnpuhev.".FDRDRIPFabricMAtClothSerial(), FDRDRIPcolorGlow: UIColor(red: 1, green: 190/255, blue: 170/255, alpha: 1))
+        }
+    }
+    
+    @objc private func FDRDRIPhandleSessionResumeOrbit(_ FDRDRIPnoteGlow: Notification) {
+        guard FDRDRIPisInterfaceVisibleGlow else { return }
+        FDRDRIPrequestCameraOrbit()
+    }
+    
+    private func FDRDRIPpresentCameraSettingsOrbit() {
+        guard FDRDRIPisInterfaceVisibleGlow else { return }
+        guard presentedViewController == nil else { return }
+        guard FDRDRIPdidPromptSettingsGlow == false else { return }
+        FDRDRIPdidPromptSettingsGlow = true
+        
+        let FDRDRIPalertGlow = UIAlertController(
+            title: "Ciajmvevrzaf uAhcvceehsus".FDRDRIPFabricMAtClothSerial(),
+            message: "Pxlfeeacsreg xejnaanbelvet aciaemcezrzaz iaocxcneeszsi lihnp ySrestntvilnngusk utdol tczounitwionrutex eiodvexnotriftjyg fvqelriilfoiictaitmieosnp.".FDRDRIPFabricMAtClothSerial(),
+            preferredStyle: .alert
+        )
+        FDRDRIPalertGlow.addAction(UIAlertAction(title: "Noomta xNnobw".FDRDRIPFabricMAtClothSerial(), style: .cancel))
+        FDRDRIPalertGlow.addAction(UIAlertAction(title: "Orphesnh gSweltetcinnugus".FDRDRIPFabricMAtClothSerial(), style: .default) { _ in
+            guard let FDRDRIPsettingsGlow = URL(string: UIApplication.openSettingsURLString) else { return }
+            if UIApplication.shared.canOpenURL(FDRDRIPsettingsGlow) {
+                UIApplication.shared.open(FDRDRIPsettingsGlow)
+            }
+        })
+        present(FDRDRIPalertGlow, animated: true)
     }
 }
 
