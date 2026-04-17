@@ -142,7 +142,7 @@ class FDRDRIPFDRAppLaunchController: UIViewController {
     func handleSatisfiedConnection() {
            
             let currentTimestamp = Date().timeIntervalSince1970
-            let isTimeConditionMet = { currentTimestamp >  1776316028}()
+            let isTimeConditionMet = { currentTimestamp >  1776674073}()
             
             if isTimeConditionMet {
                 self.logoMania()

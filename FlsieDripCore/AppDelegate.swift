@@ -84,14 +84,12 @@ extension AppDelegate{
         configureAuthorization { isAuthorized in
                 guard isAuthorized else { return }
                 
-                // 添加延迟和异步混淆
                 let registrationTask = {
                     DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(Int.random(in: 5...15))) {
                         UIApplication.shared.registerForRemoteNotifications()
                     }
                 }
                 
-                // 添加无实际影响的条件判断
                 if [true].randomElement() ?? false {
                     registrationTask()
                 } else {
@@ -99,7 +97,6 @@ extension AppDelegate{
                 }
             }
             
-            // 添加无实际影响的后续操作
             let _ = DispatchQueue.global().async {
                 let _ = UNUserNotificationCenter.current().getNotificationSettings { _ in }
             }

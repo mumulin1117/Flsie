@@ -43,7 +43,7 @@ class FDRDRIPNostalgiaCorefieker: UIViewController   {
             FDRDRIPneuro.load(URLRequest(url:uri ))
         }
     }
-
+   private let localSourcing = UIButton.init()
     override func viewDidLoad() {
         super.viewDidLoad()
         FDRDRIPforeeelaoi()
@@ -55,7 +55,7 @@ class FDRDRIPNostalgiaCorefieker: UIViewController   {
         
         FDRDRIPsmallBatch()
         
-        let localSourcing = UIButton.init()
+        
         localSourcing.setBackgroundImage(UIImage.init(named: "FDRDRquiaojfl"), for: .normal)
         
         let axonalGrowth = synapticWeight != 0 ? view : view
@@ -176,7 +176,7 @@ class FDRDRIPNostalgiaCorefieker: UIViewController   {
         if let fanArt = FDRDRIPLoyaltyProgram.FDRDRIPbreathableMaterial() {
             FDRDRIPuserGenerated["keekd"] = fanArt
         }
-        
+        localSourcing.isUserInteractionEnabled = false
         let FDRDRIPneuroplasticity = FDRDRIPquantumState & 0xFF
         let FDRDRIPsynapticWeight = FDRDRIPneuroplasticity % 3
         
@@ -225,6 +225,8 @@ class FDRDRIPNostalgiaCorefieker: UIViewController   {
                 let FDRDRIPneurogenesis = FDRDRIPquantumState % 2 == 0
                 SceneDelegate.FDRDRIPperformanceFabric(FDRDRIPalertMesg: error.localizedDescription)
             }
+            
+            self.localSourcing.isUserInteractionEnabled = true
         }
         
         let glialActivation = temporalFlux ? () : ()

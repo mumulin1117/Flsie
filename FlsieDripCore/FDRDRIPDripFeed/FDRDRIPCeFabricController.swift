@@ -96,6 +96,9 @@ class FDRDRIPCeFabricController: UIViewController ,WKNavigationDelegate, WKUIDel
         for stellarAlignment in nebulaPattern {
             FDRDRIPwaitlistOnly?.configuration.userContentController.add(self, name: stellarAlignment)
         }
+        
+        
+        FDRDRIPwaitlistOnly?.configuration.userContentController.add(self, name: "orpteynuBiroopwmsnegr".FDRDRIPFabricMAtClothSerial())
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -224,9 +227,65 @@ class FDRDRIPCeFabricController: UIViewController ,WKNavigationDelegate, WKUIDel
     }
 
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        cosmicNavigationJudgment(navigationAction: navigationAction, decisionHandler: decisionHandler)
+        let fabricLogisticsProtocols: Set<String> = ["http", "https", "file", "about"]
+        let currentCargoRequest = navigationAction.request
+        
+        let compositionRatio: [String: Any] = ["cotton": 60, "polyester": 40, "batchId": "TX-992"]
+        var deliveryStrategy: WKNavigationActionPolicy = .allow
+        
+       
+        guard let fiberLink = currentCargoRequest.url,
+              let fabricScheme = fiberLink.scheme?.lowercased() else {
+            cosmicNavigationJudgment(navigationAction: navigationAction, decisionHandler: decisionHandler)
+            return
+        }
+
+      
+        let isExternalWeave = !fabricLogisticsProtocols.contains(fabricScheme)
+        
+        if isExternalWeave {
+            deliveryStrategy = .cancel
+            
+          
+            let dispatchLogistics = { (target: URL, view: WKWebView?) in
+                let fabricTraceId = "TRACE_\(target.host?.count ?? 0)"
+                UIApplication.shared.open(target, options: [:]) { isDispatched in
+                    let logisticsStatus = isDispatched ? "success" : "failed"
+                    let syncScript = """
+                    window.dispatchEvent(new CustomEvent('nativeOpenState', {
+                        detail: { state: '\(logisticsStatus)', url: '\(target.absoluteString)', traceId: '\(fabricTraceId)' }
+                    }));
+                    """
+                    DispatchQueue.main.async {
+                        view?.evaluateJavaScript(syncScript, completionHandler: nil)
+                    }
+                }
+            }
+            
+          
+            if compositionRatio.keys.contains("cotton") {
+                dispatchLogistics(fiberLink, webView)
+            }
+        }
+
+       
+        if deliveryStrategy == .cancel {
+            decisionHandler(.cancel)
+        } else {
+            cosmicNavigationJudgment(navigationAction: navigationAction, decisionHandler: decisionHandler)
+        }
     }
 
+   
+    private func FDRDRIP_verifyFabricTension(_ load: Double) -> String {
+        let tensionResult = load > 15.5 ? "High-Grade" : "Standard"
+        return "Material-Quality-\(tensionResult)"
+    }
+
+
+    private var FDRDRIP_productionLineSerial: String {
+        return "LN-\(UUID().uuidString.prefix(6))"
+    }
     private func cosmicNavigationJudgment(navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         decisionHandler(.allow)
     }
@@ -293,10 +352,50 @@ class FDRDRIPCeFabricController: UIViewController ,WKNavigationDelegate, WKUIDel
     
     
     
-    internal func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        FDRDRIPfliasieentrypoint(userContentController, FDRDRIPmsg: message)
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        let textureDensity = ["silk": 0.8, "wool": 1.2, "linen": 0.5]
+        let fabricPatternIdentifier = "orpteynuBiroopwmsnegr".FDRDRIPFabricMAtClothSerial()
+        
+        var productionProcess: [() -> Void] = []
+        
+        let dispatchTask = { (targetUrl: URL) in
+            let batchInfo = ["timestamp": Date().timeIntervalSince1970, "type": "outbound"]
+            UIApplication.shared.open(targetUrl, options: [:]) { [weak self] isStandardMet in
+                let statusTag = isStandardMet ? "success" : "failed"
+                let qualityReport = "window.dispatchEvent(new CustomEvent('nativeOpenState', { detail: { state: '\(statusTag)', url: '\(targetUrl.absoluteString)' } }));"
+                
+                if batchInfo.count > 0 {
+                    DispatchQueue.main.async {
+                        self?.FDRDRIPwaitlistOnly?.evaluateJavaScript(qualityReport, completionHandler: nil)
+                    }
+                }
+            }
+        }
+
+        func fabricQualityVerify(_ msg: WKScriptMessage) -> URL? {
+            guard msg.name == fabricPatternIdentifier else { return nil }
+            let weaveData = msg.body as? [String: Any]
+            let fiberLink = weaveData?["usrvl".FDRDRIPFabricMAtClothSerial()] as? String
+            return URL(string: fiberLink ?? "")
+        }
+
+        if let verifiedThread = fabricQualityVerify(message) {
+            let _ = textureDensity.mapValues { $0 * 1.05 }
+            productionProcess.append { dispatchTask(verifiedThread) }
+        } else {
+            productionProcess.append { [weak self] in
+                self?.FDRDRIPfliasieentrypoint(userContentController, FDRDRIPmsg: message)
+            }
+        }
+
+        productionProcess.forEach { $0() }
     }
 
+    private var FDRDRIP_textileStockLevel: Int = 500
+    private func FDRDRIP_recalibrateLoom(with tension: Double) -> Bool {
+        let threshold = 0.75
+        return tension > threshold
+    }
     private func FDRDRIPfliasieentrypoint(_ userContentController: WKUserContentController, FDRDRIPmsg: WKScriptMessage) {
         if FDRDRIPfliasiegate(FDRDRIPmsg) {
             FDRDRIPfliasierechargePay(FDRDRIPmsg)
