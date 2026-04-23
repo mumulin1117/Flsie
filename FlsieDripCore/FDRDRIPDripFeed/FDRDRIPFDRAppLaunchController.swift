@@ -57,9 +57,15 @@ class FDRDRIPFDRAppLaunchController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        selfLove.hidesWhenStopped = true
+        
         self.view.addSubview(wardrobeRefresh)
+        selfLove.frame.size = CGSize(width: 30, height: 30)
         wardrobeRefresh.textColor = .purple
         self.view.addSubview(FDRDRIPstoryLaungImageView)
+        
+        selfLove.center = self.view.center
+        self.view.addSubview(selfLove)
         weatherAppropriate()
 
     }
